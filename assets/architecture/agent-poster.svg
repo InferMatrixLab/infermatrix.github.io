@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1295" height="1260" viewBox="0 0 1295 1260" role="img" aria-labelledby="title desc">
+  <title id="title">agent-infer architecture</title>
+  <desc id="desc">Vector transcription of panel 04 in the supplied InferMatrix poster. openJiuwen and third-party agents, and AgentBench, sit above agent-infer. Agent Router contains Semantic Router and Router, including Workflow Profiler, Worker Monitor, API Server, Tokenizer, Global Scheduler with Agent Aware and DP/PD Aware, and Token Cache. vLLM contains Scheduler, KVC Manager and Connector. Agent Cache contains Agent-Aware Scheduler, Agent-Aware KVC Manager, Prediction Engine and NPU Native KVC Transfer.</desc>
+  <defs>
+    <style>
+      text { font-family: Arial, 'Liberation Sans', Helvetica, sans-serif; fill: #173857; text-anchor: middle; }
+      .heading { font-size: 36px; font-weight: 700; }
+      .label { font-size: 32px; font-weight: 400; }
+      .small { font-size: 28px; font-weight: 400; }
+      .line { fill: none; stroke: #7895aa; stroke-width: 3; stroke-linejoin: round; }
+      .blue { fill: #edf3ff; stroke: #8ab5ee; stroke-width: 3; }
+      .white-blue { fill: #fff; stroke: #9fc1ed; stroke-width: 3; }
+      .white-teal { fill: #fff; stroke: #a4d9d7; stroke-width: 3; }
+      .white-purple { fill: #fff; stroke: #c6b5e1; stroke-width: 3; }
+    </style>
+    <marker id="arrow" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="2.4" markerHeight="2.4" orient="auto-start-reverse"><path d="M0 0 L7 3.5 L0 7 Z" fill="#7895aa"/></marker>
+  </defs>
+  <rect width="1295" height="1260" fill="#fff"/>
+
+  <!-- The two peer groups above agent-infer, in their poster positions. -->
+  <rect x="32" y="10" width="841" height="133" rx="10" fill="#f4f7fc" stroke="#e1ecf8" stroke-width="3"/>
+  <text x="452.5" y="57" font-size="34" font-weight="700">openJiuwen / Third-party Agents</text>
+  <rect x="48" y="82" width="256" height="47" rx="7" class="white-blue"/>
+  <rect x="323" y="82" width="254" height="47" rx="7" class="white-blue"/>
+  <rect x="597" y="82" width="260" height="47" rx="7" class="white-blue"/>
+  <text x="176" y="116" class="small">Coding Agent</text>
+  <text x="450" y="116" class="small">Office Agent</text>
+  <text x="727" y="116" class="small">Science Agent</text>
+  <rect x="893" y="10" width="385" height="133" rx="10" fill="#f4f0fe" stroke="#ded2ef" stroke-width="3"/>
+  <text x="1085.5" y="90" font-size="39" font-weight="700">AgentBench</text>
+
+  <!-- Dashed agent-infer frame. -->
+  <rect x="32" y="165" width="1246" height="1085" rx="11" fill="#fff" stroke="#cedfec" stroke-width="3" stroke-dasharray="7 8"/>
+  <text x="55" y="218" text-anchor="start" style="text-anchor:start" font-size="41" font-weight="700">agent-infer</text>
+
+  <!-- Agent Router and Semantic Router. -->
+  <rect x="51" y="247" width="1207" height="481" rx="11" fill="#f4f7fc" stroke="#cbdff5" stroke-width="3"/>
+  <text x="655" y="286" class="heading">Agent Router</text>
+  <rect x="71" y="307" width="1168" height="56" rx="5" fill="#fff" stroke="#7dcbd0" stroke-width="3"/>
+  <text x="655" y="346" class="label">Semantic Router</text>
+
+  <!-- Router sits inside Agent Router. -->
+  <rect x="71" y="383" width="1168" height="324" rx="6" fill="#fff" stroke="#d9e8f8" stroke-width="3"/>
+  <text x="655" y="424" class="heading">Router</text>
+
+  <!-- Connections are drawn behind the boxes. -->
+  <path d="M415 483 H352" class="line" marker-end="url(#arrow)"/>
+  <path d="M865 483 H937" class="line" marker-end="url(#arrow)"/>
+  <path d="M640 513 V548" class="line" marker-end="url(#arrow)"/>
+  <path d="M352 518 H377 V614 H415" class="line" marker-end="url(#arrow)"/>
+  <path d="M352 614 H377" class="line"/>
+  <path d="M1073 513 V558" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="96" y="453" width="256" height="86" rx="10" class="blue"/>
+  <text x="224" y="489" class="label"><tspan x="224">Workflow</tspan><tspan x="224" dy="33">Profiler</tspan></text>
+  <rect x="96" y="563" width="256" height="89" rx="10" class="blue"/>
+  <text x="224" y="601" class="label"><tspan x="224">Worker</tspan><tspan x="224" dy="33">Monitor</tspan></text>
+
+  <rect x="415" y="453" width="450" height="60" rx="9" class="blue"/>
+  <text x="640" y="495" class="label">API Server</text>
+  <rect x="415" y="548" width="450" height="145" rx="8" fill="#f4f7fc" stroke="#b8d4f6" stroke-width="3"/>
+  <text x="640" y="587" font-size="34" font-weight="700">Global Scheduler</text>
+  <rect x="442" y="607" width="172" height="66" rx="7" fill="#eff9f8" stroke="#7dcbd0" stroke-width="3" stroke-dasharray="4 6"/>
+  <text x="528" y="635" class="small"><tspan x="528">Agent</tspan><tspan x="528" dy="29">Aware</tspan></text>
+  <rect x="667" y="607" width="172" height="66" rx="7" fill="#f4f0fe" stroke="#baa6db" stroke-width="3" stroke-dasharray="4 6"/>
+  <text x="753" y="635" class="small"><tspan x="753">DP/PD</tspan><tspan x="753" dy="29">Aware</tspan></text>
+
+  <rect x="937" y="453" width="273" height="60" rx="9" fill="#f4f0fe" stroke="#bfaadc" stroke-width="3"/>
+  <text x="1073.5" y="495" class="label">Tokenizer</text>
+  <path d="M938 569 V636 C938 651 1210 651 1210 636 V569 Z" fill="#eff9f8" stroke="#a3d9d7" stroke-width="3"/>
+  <ellipse cx="1074" cy="569" rx="136" ry="12" fill="#eff9f8" stroke="#7dcbd0" stroke-width="3"/>
+  <text x="1074" y="617" class="label">Token Cache</text>
+
+  <!-- The vLLM strip retains the poster's KVC spelling. -->
+  <rect x="51" y="748" width="1207" height="141" rx="11" fill="#f4f7fc" stroke="#e1e8ef" stroke-width="3"/>
+  <text x="655" y="790" class="heading">vLLM</text>
+  <rect x="82" y="808" width="355" height="61" rx="9" class="white-blue"/>
+  <rect x="478" y="808" width="360" height="61" rx="9" class="white-teal"/>
+  <rect x="880" y="808" width="347" height="61" rx="9" class="white-purple"/>
+  <text x="259.5" y="850" class="label">Scheduler</text>
+  <text x="658" y="850" class="label">KVC Manager</text>
+  <text x="1053.5" y="850" class="label">Connector</text>
+
+  <!-- Agent Cache, with the three plugin connections visible in the poster. -->
+  <rect x="51" y="937" width="1207" height="296" rx="11" fill="#eff9f8" stroke="#b6e0dc" stroke-width="3"/>
+  <path d="M258 1009 V869" fill="none" stroke="#c2d4df" stroke-width="3" stroke-dasharray="4 5" marker-end="url(#arrow)"/>
+  <path d="M658 1009 V869" fill="none" stroke="#7895aa" stroke-width="3" stroke-dasharray="4 5" marker-end="url(#arrow)"/>
+  <path d="M1053 1009 V869" fill="none" stroke="#7895aa" stroke-width="3" stroke-dasharray="4 5" marker-end="url(#arrow)"/>
+  <text x="675" y="920" style="text-anchor:start" font-size="28" fill="#7895aa">plugin</text>
+  <!-- A small background knockout keeps the center connection off the title lettering. -->
+  <rect x="530" y="950" width="251" height="47" fill="#eff9f8"/>
+  <text x="655" y="984" class="heading">Agent Cache</text>
+
+  <rect x="82" y="1009" width="355" height="206" rx="10" class="white-blue"/>
+  <text x="259.5" y="1106" class="label"><tspan x="259.5">Agent-Aware</tspan><tspan x="259.5" dy="36">Scheduler</tspan></text>
+  <rect x="471" y="1009" width="376" height="88" rx="10" class="white-teal"/>
+  <text x="659" y="1046" class="label"><tspan x="659">Agent-Aware</tspan><tspan x="659" dy="36">KVC Manager</tspan></text>
+  <rect x="471" y="1117" width="376" height="98" rx="10" class="white-teal"/>
+  <text x="659" y="1157" class="label"><tspan x="659">Prediction</tspan><tspan x="659" dy="36">Engine</tspan></text>
+  <rect x="880" y="1009" width="347" height="206" rx="10" class="white-purple"/>
+  <text x="1053.5" y="1106" class="label"><tspan x="1053.5">NPU Native</tspan><tspan x="1053.5" dy="36">KVC Transfer</tspan></text>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1544" height="1028" viewBox="0 0 1544 1028" role="img" aria-labelledby="title description">
+  <title id="title">One core. Multiple passes.</title>
+  <desc id="description">Faithful vector transcription of the white-background OURO model inference diagram in InferMatrix poster panel 05. Full-depth prefill runs four loops; the illustrated decode exits after two loops. Shared transformer weights refine the hidden state, which goes to the language-model head and sampler, and the sampled token returns as the next input.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4faff"/>
+      <stop offset="1" stop-color="#f7fbfe"/>
+    </linearGradient>
+    <linearGradient id="blueBox" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e6f3ff"/>
+      <stop offset="1" stop-color="#edf6ff"/>
+    </linearGradient>
+    <linearGradient id="coreBox" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eafdfa"/>
+      <stop offset="1" stop-color="#edfcfa"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10.2" refY="6" markerWidth="5" markerHeight="5" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M1 1 L11 6 L1 11 Z" fill="#75aaff"/>
+    </marker>
+    <style>
+      text { font-family: Arial, 'Liberation Sans', sans-serif; }
+      .ink { fill: #101c48; }
+      .secondary { fill: #70809d; }
+      .teal { fill: #259f9d; }
+      .flow { fill: none; stroke: #79adff; stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
+    </style>
+  </defs>
+  <rect width="1544" height="1028" fill="url(#background)"/>
+
+  <text x="68" y="65" font-size="22.5" font-weight="700" fill="#6a9fe5">OURO / MODEL INFERENCE</text>
+  <text x="68" y="146" font-size="59" font-weight="700" class="ink">One core. Multiple passes.</text>
+  <text x="68" y="199" font-size="33" class="secondary">Full-depth prefill → first token → adaptive decoding</text>
+  <text x="68" y="262" font-size="24.5" font-weight="700" fill="#a375e8">01 PREFILL · 4 LOOPS</text>
+  <text x="395" y="262" font-size="24.5" font-weight="700" class="teal">02 DECODE · 2 LOOPS IN THIS EXAMPLE</text>
+
+  <text x="512" y="343" font-size="25" class="secondary">Same weights · hidden state refined each pass</text>
+  <path class="flow" d="M1038 539 H1076 Q1094 539 1094 520 V385 Q1094 366 1075 366 H422 Q402 366 402 386 V519 Q402 539 422 539 H476" marker-end="url(#arrow)"/>
+  <path class="flow" d="M313 539 H476" marker-end="url(#arrow)"/>
+  <path class="flow" d="M1038 539 H1249" marker-end="url(#arrow)"/>
+
+  <rect x="65" y="470" width="248" height="140" rx="14" fill="url(#blueBox)" stroke="#86b2f5" stroke-width="3"/>
+  <text x="189" y="536" text-anchor="middle" font-size="35" font-weight="700" class="ink">Embedding</text>
+  <text x="189" y="579" text-anchor="middle" font-size="25" class="secondary">Prelude</text>
+
+  <rect x="477" y="426" width="561" height="264" rx="17" fill="url(#coreBox)" stroke="#6cc8bd" stroke-width="3.5"/>
+  <text x="769" y="495" text-anchor="middle" font-size="34.5" font-weight="700" class="ink">Shared transformer core</text>
+  <g fill="#81dace">
+    <rect x="563" y="520" width="61" height="16" rx="2"/><rect x="632" y="520" width="61" height="16" rx="2"/><rect x="701" y="520" width="61" height="16" rx="2"/><rect x="770" y="520" width="61" height="16" rx="2"/><rect x="839" y="520" width="61" height="16" rx="2"/><rect x="908" y="520" width="61" height="16" rx="2"/>
+    <rect x="563" y="545" width="61" height="16" rx="2"/><rect x="632" y="545" width="61" height="16" rx="2"/><rect x="701" y="545" width="61" height="16" rx="2"/><rect x="770" y="545" width="61" height="16" rx="2"/><rect x="839" y="545" width="61" height="16" rx="2"/><rect x="908" y="545" width="61" height="16" rx="2"/>
+    <rect x="563" y="570" width="61" height="16" rx="2"/><rect x="632" y="570" width="61" height="16" rx="2"/><rect x="701" y="570" width="61" height="16" rx="2"/><rect x="770" y="570" width="61" height="16" rx="2"/><rect x="839" y="570" width="61" height="16" rx="2"/><rect x="908" y="570" width="61" height="16" rx="2"/>
+    <rect x="563" y="595" width="61" height="16" rx="2"/><rect x="632" y="595" width="61" height="16" rx="2"/><rect x="701" y="595" width="61" height="16" rx="2"/><rect x="770" y="595" width="61" height="16" rx="2"/><rect x="839" y="595" width="61" height="16" rx="2"/><rect x="908" y="595" width="61" height="16" rx="2"/>
+  </g>
+  <text x="757.5" y="650" text-anchor="middle" font-size="25" font-weight="700" class="teal">24 layers + RMSNorm</text>
+  <text x="721" y="752" text-anchor="middle" font-size="27.5" font-weight="700" class="teal">EARLY EXIT · 2 LOOPS</text>
+
+  <circle cx="1151" cy="539" r="31" fill="#c9f3ec" stroke="#58c4b9" stroke-width="3"/>
+  <text x="1151" y="552" text-anchor="middle" font-size="39" fill="#185666">h</text>
+
+  <rect x="1249" y="470" width="233" height="140" rx="14" fill="url(#blueBox)" stroke="#86b2f5" stroke-width="3"/>
+  <text x="1365.5" y="536" text-anchor="middle" font-size="35" font-weight="700" class="ink">LM head</text>
+  <text x="1365.5" y="579" text-anchor="middle" font-size="25" class="secondary">+ sampling</text>
+  <path class="flow" d="M1366 611 V689" marker-end="url(#arrow)"/>
+  <text x="1366" y="722" text-anchor="middle" font-size="23" font-weight="700" class="secondary">EMITTED TOKENS</text>
+  <rect x="1277" y="742" width="86" height="64" rx="8" fill="#fff0c6" stroke="#eecf83" stroke-width="2.5"/>
+  <text x="1320" y="788" text-anchor="middle" font-size="35" font-weight="700" font-style="italic" class="ink">y<tspan font-size="25" baseline-shift="sub">0</tspan></text>
+
+  <path class="flow" d="M1366 817 V858 Q1366 878 1346 878 H208 Q188 878 188 858 V611" marker-end="url(#arrow)"/>
+  <text x="461" y="860" font-size="26" class="secondary">Feed the sampled token back as the next input</text>
+  <text x="68" y="952" font-size="30" font-weight="700" class="teal">The exited hidden state goes to the LM head and sampler.</text>
+  <text x="68" y="993" font-size="23.5" class="secondary">Illustrative timing and gate scores · adaptive threshold 0.50 · min 2 / max 4 · default: fixed 4</text>
+</svg>

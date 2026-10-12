@@ -1,0 +1,114 @@
+{
+  "recordedOn": "2026-10-12",
+  "assets": [
+    {
+      "file": "assets/architecture/omni.png",
+      "project": "vLLM-Omni",
+      "origin": "official-upstream",
+      "sourceUrl": "https://github.com/vllm-project/vllm-omni/blob/main/docs/source/architecture/omni-modality-model-architecture.png",
+      "upstreamGitBlobSha": "7bbd5b9b3ec99b9a15165e0467ce6353feae56f6",
+      "license": "Apache-2.0",
+      "licenseFile": "licenses/vllm-omni-LICENSE.txt",
+      "width": 1757,
+      "height": 895,
+      "changes": "None",
+      "sha256": "ae0a52e430db46ca989b63eb679b13db0a6b90516fc70f3269172bd1c5fc2ff6",
+      "bytes": 1132831
+    },
+    {
+      "file": "assets/architecture/afd.svg",
+      "project": "afd-plugin",
+      "origin": "official-upstream",
+      "sourceUrl": "https://github.com/vllm-project/afd-plugin/blob/main/docs/assets/vllm-afd-plugin-architecture.svg",
+      "upstreamGitBlobSha": "99e3065a5dd82aaf0870ddbf86760c78edbd2e02",
+      "license": "Apache-2.0",
+      "licenseFile": "licenses/afd-plugin-LICENSE.txt",
+      "width": 1280,
+      "height": 720,
+      "changes": "One additional trailing newline; no diagram-content changes",
+      "sha256": "53cf5937ee480102fbabd8e26a52adf1e936a49c2c24d0fc1948465982466017",
+      "bytes": 28858
+    },
+    {
+      "file": "assets/architecture/router-poster.svg",
+      "project": "vLLM Router",
+      "origin": "poster-vector-redraw",
+      "sourceFile": "assets/infermatrix-poster.png",
+      "sourcePanel": 3,
+      "license": "No new license grant asserted",
+      "width": 1800,
+      "height": 1360,
+      "changes": "Native SVG transcription of supplied poster; see ATTRIBUTION.md for scope and caveats",
+      "sha256": "5c35d3277b107940d1cf501b5344d5e3a06f68f60cda6b34dfa274b0defdd731",
+      "bytes": 6824
+    },
+    {
+      "file": "assets/architecture/agent-poster.svg",
+      "project": "agent-infer",
+      "origin": "poster-vector-redraw",
+      "sourceFile": "assets/infermatrix-poster.png",
+      "sourcePanel": 4,
+      "license": "No new license grant asserted",
+      "width": 1295,
+      "height": 1260,
+      "changes": "Native SVG transcription of supplied poster; see ATTRIBUTION.md for scope and caveats",
+      "sha256": "afd5498f57126b4d5d94ad57a413690e741f6a8fe16becbf8657af55df22ba88",
+      "bytes": 7686
+    },
+    {
+      "file": "assets/architecture/rlt-poster.svg",
+      "project": "vllm-rlt",
+      "origin": "poster-vector-redraw",
+      "sourceFile": "assets/infermatrix-poster.png",
+      "sourcePanel": 5,
+      "license": "No new license grant asserted",
+      "width": 1544,
+      "height": 1028,
+      "changes": "Native SVG transcription of supplied poster; see ATTRIBUTION.md for scope and caveats",
+      "sha256": "9699db2e0fd79309702d52c467fa09b318ae8bb30a8c29ecf8da0b04c5167cf3",
+      "bytes": 6257
+    },
+    {
+      "file": "assets/architecture/mlx-poster.svg",
+      "project": "vllm-omni-mlx",
+      "origin": "poster-vector-redraw",
+      "sourceFile": "assets/infermatrix-poster.png",
+      "sourcePanel": 6,
+      "license": "No new license grant asserted",
+      "width": 1792,
+      "height": 1044,
+      "changes": "Native SVG transcription of supplied poster; see ATTRIBUTION.md for scope and caveats",
+      "sha256": "fb38f9521354fb072a4e6078cdc5f5867b54cd6264b8e18cd460a4e3dc55868b",
+      "bytes": 4243
+    },
+    {
+      "file": "assets/infermatrix-logo.png",
+      "origin": "supplied-logo",
+      "license": "No new license grant asserted",
+      "width": 2048,
+      "height": 683,
+      "changes": "Original supplied PNG bytes preserved",
+      "sha256": "7b1b2d9403e7a8b83cd695adc6d5a7c9ff5b697225de3149057c0f708c1fddc5",
+      "bytes": 882601
+    },
+    {
+      "file": "assets/infermatrix-poster.png",
+      "origin": "supplied-poster",
+      "license": "No new license grant asserted",
+      "width": 1862,
+      "height": 2048,
+      "changes": "Original supplied PNG bytes preserved",
+      "sha256": "79d4c4265b2d7c5635056ab49064469ab48c98dfb326e2e1fcbfbb1c3effe5ad",
+      "bytes": 2655041
+    },
+    {
+      "file": "assets/favicon.svg",
+      "origin": "logo-embedding-wrapper",
+      "license": "No new license grant asserted",
+      "sourceFile": "assets/infermatrix-logo.png",
+      "changes": "SVG wrapper embeds exact supplied logo PNG",
+      "sha256": "1e43c9c8b4dc78086790a41fd46369141802e12e592349f08a804107a35fa1a3",
+      "bytes": 1176952
+    }
+  ]
+}

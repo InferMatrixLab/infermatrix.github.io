@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1360" viewBox="0 0 1800 1360" role="img" aria-labelledby="title desc">
+<title id="title">vLLM Router — faithful redraw of poster panel 03</title>
+<desc id="desc">Poster architecture with API Server, three APIs, Workflow Profiler, Worker Monitor, Global Scheduler containing DP/PD Aware, Agent Aware and Cache Aware, Tokenizer and Token Cache, HTTP/ZMQ/gRPC transport, and HTTP and ZMQ/gRPC workers. Three tiny source annotations are omitted because they cannot be read reliably in the provided poster. This reproduces the poster concept and is not a statement of current implementation.</desc>
+<defs><marker id="arrow" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0 0L5 2.5L0 5Z" fill="#92aac1"/></marker></defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#23435a;text-anchor:middle} .title{font-weight:700;fill:#16384f} .label{font-weight:500} .note{font-size:28px;fill:#567287} .line{fill:none;stroke:#8ea8bf;stroke-width:4;stroke-linecap:round;stroke-linejoin:round} .faint{stroke:#dfe7ef} .dash{stroke-dasharray:10 10}</style>
+<rect width="1800" height="1360" fill="#fff"/>
+
+<rect x="28" y="8" width="1744" height="960" rx="17" fill="#f5f7fc" stroke="#cbdff8" stroke-width="3"/>
+<path d="M28 35V940 M1772 35V940" class="line"/>
+<path d="M28 35V940M1772 35V940" fill="none" stroke="#8ab6f7" stroke-width="3"/>
+<rect x="28" y="1134" width="1744" height="211" rx="17" fill="#effaf9" stroke="#77c7cc" stroke-width="3"/>
+<path d="M300 326V499" class="line dash"/>
+<path d="M953 326V499" class="line faint" marker-end="url(#arrow)"/>
+<path d="M404 578H490V405H953" class="line"/>
+<path d="M404 759H460V665H615" class="line"/>
+<path d="M1579 326V499" class="line" marker-end="url(#arrow)"/>
+<path d="M1579 590V645" class="line" marker-end="url(#arrow)"/>
+<path d="M953 762V850" class="line faint" marker-end="url(#arrow)"/>
+<path d="M238 832V900H615" class="line dash"/>
+<path d="M953 940V1030H416V1168" class="line faint" marker-end="url(#arrow)"/>
+<path d="M953 1030H1428V1168" class="line faint" marker-end="url(#arrow)"/>
+<text x="900" y="73" font-size="46" class="title" font-weight="700">
+<tspan x="900" dy="0">vLLM-Router</tspan>
+</text>
+<rect x="64" y="117" width="1672" height="213" rx="12" fill="#eaf2ff" stroke="#9dc1f7" stroke-width="3"/>
+<text x="900" y="169" font-size="44" class="title" font-weight="700">
+<tspan x="900" dy="0">API Server</tspan>
+</text>
+<rect x="90" y="211" width="518" height="87" rx="9" fill="#fff" stroke="#98bdf4" stroke-width="3"/>
+<text x="349.0" y="268" font-size="40" class="label">
+<tspan x="349.0" dy="0">OpenAI API</tspan>
+</text>
+<rect x="640" y="211" width="520" height="87" rx="9" fill="#fff" stroke="#98bdf4" stroke-width="3"/>
+<text x="900.0" y="268" font-size="40" class="label">
+<tspan x="900.0" dy="0">Anthropic API</tspan>
+</text>
+<rect x="1193" y="211" width="518" height="87" rx="9" fill="#fff" stroke="#98bdf4" stroke-width="3"/>
+<text x="1452.0" y="268" font-size="40" class="label">
+<tspan x="1452.0" dy="0">Responses API</tspan>
+</text>
+<rect x="65" y="499" width="340" height="153" rx="10" fill="#f5effe" stroke="#bba6dd" stroke-width="3"/>
+<text x="235" y="564" font-size="40" class="label">
+<tspan x="235" dy="0">Workflow</tspan>
+<tspan x="235" dy="48">Profiler</tspan>
+</text>
+<rect x="65" y="691" width="340" height="140" rx="8" fill="#effaf9" stroke="#7fc8cc" stroke-width="3"/>
+<text x="235" y="749" font-size="41" class="label">
+<tspan x="235" dy="0">Worker</tspan>
+<tspan x="235" dy="48">Monitor</tspan>
+</text>
+<rect x="614" y="499" width="686" height="263" rx="12" fill="#f4effd" stroke="#bda9de" stroke-width="3"/>
+<text x="957" y="558" font-size="46" class="title" font-weight="700">
+<tspan x="957" dy="0">Global Scheduler</tspan>
+</text>
+<rect x="635" y="591" width="200" height="148" rx="9" fill="#fff" stroke="#cdbce8" stroke-width="3" stroke-dasharray="8 9"/>
+<text x="735.0" y="654" font-size="38" class="label">
+<tspan x="735.0" dy="0">DP/PD</tspan>
+<tspan x="735.0" dy="45">Aware</tspan>
+</text>
+<rect x="851" y="591" width="200" height="148" rx="9" fill="#fff" stroke="#cdbce8" stroke-width="3" stroke-dasharray="8 9"/>
+<text x="951.0" y="654" font-size="38" class="label">
+<tspan x="951.0" dy="0">Agent</tspan>
+<tspan x="951.0" dy="45">Aware</tspan>
+</text>
+<rect x="1068" y="591" width="212" height="148" rx="9" fill="#fff" stroke="#cdbce8" stroke-width="3" stroke-dasharray="8 9"/>
+<text x="1174.0" y="654" font-size="38" class="label">
+<tspan x="1174.0" dy="0">Cache</tspan>
+<tspan x="1174.0" dy="45">Aware</tspan>
+</text>
+<rect x="1418" y="499" width="321" height="87" rx="8" fill="#effaf9" stroke="#80ced0" stroke-width="3"/>
+<text x="1578.5" y="557" font-size="42" class="label">
+<tspan x="1578.5" dy="0">Tokenizer</tspan>
+</text>
+<path d="M1418 655C1418 634 1739 634 1739 655V759C1739 780 1418 780 1418 759Z" fill="#effaf9" stroke="#76c9cc" stroke-width="3" stroke-dasharray="27 17"/>
+<path d="M1418 655C1418 677 1739 677 1739 655" fill="none" stroke="#83cdcf" stroke-width="3"/>
+<path d="M1418 666V757M1739 666V757" fill="none" stroke="#80cdd0" stroke-width="3"/>
+<text x="1578.5" y="724" font-size="39" class="label">
+<tspan x="1578.5" dy="0">Token Cache</tspan>
+</text>
+<rect x="615" y="850" width="685" height="89" rx="9" fill="#eaf2ff" stroke="#8fb8f4" stroke-width="3"/>
+<text x="958" y="910" font-size="43" class="label">
+<tspan x="958" dy="0">HTTP / ZMQ / gRPC</tspan>
+</text>
+<text x="1115" y="397" font-size="28" class="note">
+<tspan x="1115" dy="0">Agent-aware</tspan>
+<tspan x="1115" dy="34">scheduling</tspan>
+</text>
+<text x="537" y="719" font-size="27" class="note">
+<tspan x="537" dy="0">Resource</tspan>
+<tspan x="537" dy="31">info</tspan>
+</text>
+<text x="411" y="940" font-size="28" class="note">
+<tspan x="411" dy="0">Backend monitoring</tspan>
+</text>
+<text x="953" y="1082" font-size="29" class="note">
+<tspan x="953" dy="0">High-speed RPC backends</tspan>
+<tspan x="953" dy="34">with HTTP compatibility</tspan>
+</text>
+<rect x="65" y="1168" width="708" height="86" rx="8" fill="#fff" stroke="#78c7cb" stroke-width="3"/>
+<text x="419" y="1227" font-size="43" class="label">
+<tspan x="419" dy="0">HTTP Workers</tspan>
+</text>
+<rect x="1070" y="1168" width="669" height="86" rx="8" fill="#fff" stroke="#78c7cb" stroke-width="3"/>
+<text x="1404" y="1227" font-size="41" class="label">
+<tspan x="1404" dy="0">ZMQ/gRPC Workers</tspan>
+</text>
+<path d="M667 1280L691 1280L698 1328L680 1311Z" fill="#f6aa20"/>
+<path d="M699 1278L731 1262L718 1317L699 1331L694 1316Z" fill="#24a6e7"/>
+<path d="M706 1275L731 1262L714 1320L699 1331Z" fill="#188dcc" opacity=".4"/>
+<text x="935" y="1322" font-size="49" class="title" font-weight="700">
+<tspan x="935" dy="0">vLLM Workers</tspan>
+</text>
+</svg>

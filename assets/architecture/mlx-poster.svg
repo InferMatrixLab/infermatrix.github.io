@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1792" height="1044" viewBox="0 0 448 261" role="img" aria-labelledby="title desc">
+  <title id="title">vllm-omni-mlx</title>
+  <desc id="desc">Faithful vector transcription of panel 06 in the supplied InferMatrix poster. Applications connect to Anthropic API and OpenAI API. Chat selects Text mlx-lm or Multimodal mlx-vlm. OpenAI API also connects to Speech synthesis mlx-audio. All three backends connect to MLX Runtime, then Apple Silicon · Metal GPU.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="3.4" markerHeight="3.4" refX="3.2" refY="1.7" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 3.4 1.7 0 3.4Z" fill="#31536e"/></marker>
+  </defs>
+  <style>
+    text{font-family:Arial,'Liberation Sans',sans-serif;fill:#17364d;text-anchor:middle}
+    .bold{font-weight:700}
+    .box{fill:#fafbff;stroke:#54748f;stroke-width:.8}
+    .group{fill:#dfebf7;stroke:#54748f;stroke-width:.8}
+    .edge{fill:none;stroke:#31536e;stroke-width:.85;stroke-linejoin:miter}
+  </style>
+  <rect width="448" height="261" fill="#fff"/>
+  <text x="224.7" y="16.2" class="bold" font-size="13.4">vllm-omni-mlx</text>
+
+  <!-- Containers use the poster's original positions and proportions. -->
+  <rect class="group" x="13.3" y="61.4" width="423.1" height="40.6"/>
+  <rect class="group" x="13.3" y="117.5" width="272.2" height="85.3"/>
+  <rect class="group" x="300.4" y="117.5" width="136.0" height="85.3"/>
+
+  <!-- All connectors reproduce the poster's routing. -->
+  <g class="edge">
+    <path d="M224.7 48.3V54.4H111.6V76.1" marker-end="url(#arrow)"/>
+    <path d="M224.7 54.4H338.5V76.1" marker-end="url(#arrow)"/>
+    <path d="M111.6 96V136.7" marker-end="url(#arrow)"/>
+    <path d="M294.5 96V108H243.5V136.7" marker-end="url(#arrow)"/>
+    <path d="M368.5 96V144.7" marker-end="url(#arrow)"/>
+    <path d="M149.4 157.5V165.6H82.5V172" marker-end="url(#arrow)"/>
+    <path d="M149.4 165.6H216.5V172" marker-end="url(#arrow)"/>
+    <path d="M82.5 197.5V207.7H175.8V212" marker-end="url(#arrow)"/>
+    <path d="M216.5 197.5V212" marker-end="url(#arrow)"/>
+    <path d="M368.5 185.5V207.7H274.1V212" marker-end="url(#arrow)"/>
+    <path d="M224.7 229.5V238" marker-end="url(#arrow)"/>
+  </g>
+
+  <rect class="box" x="156.6" y="26.5" width="136.4" height="21.8"/>
+  <text x="224.8" y="40.8" class="bold" font-size="12.4">Applications</text>
+
+  <text x="224.8" y="71.7" class="bold" font-size="10.5">Compatible APIs</text>
+  <rect class="box" x="32.3" y="76.5" width="158.4" height="19.5"/>
+  <rect class="box" x="258.7" y="76.5" width="159.0" height="19.5"/>
+  <text x="111.5" y="89.7" class="bold" font-size="11.2">Anthropic API</text>
+  <text x="338.2" y="89.7" class="bold" font-size="11.2">OpenAI API</text>
+
+  <text x="20.5" y="129" text-anchor="start" style="text-anchor:start" class="bold" font-size="11.7">Chat</text>
+  <text x="307.5" y="129" text-anchor="start" style="text-anchor:start" class="bold" font-size="11.7">Speech</text>
+  <rect class="box" x="28.3" y="137.4" width="242.2" height="20.1"/>
+  <text x="149.4" y="151" class="bold" font-size="11.1">Select chat backend</text>
+
+  <rect class="box" x="28.3" y="172.5" width="108.3" height="25"/>
+  <rect class="box" x="162.4" y="172.5" width="108.1" height="25"/>
+  <text x="82.45" y="183.3" class="bold" font-size="11.4">Text</text>
+  <text x="82.45" y="193.7" font-size="9.9">mlx-lm</text>
+  <text x="149.4" y="187.7" font-size="9.6" fill="#647f91">or</text>
+  <text x="216.45" y="183.3" class="bold" font-size="11.4">Multimodal</text>
+  <text x="216.45" y="193.7" font-size="9.9">mlx-vlm</text>
+
+  <rect class="box" x="309.4" y="145.5" width="118.1" height="40"/>
+  <text x="368.45" y="160.9" class="bold" font-size="11">Speech synthesis</text>
+  <text x="368.45" y="176.2" font-size="10.4">mlx-audio</text>
+
+  <rect x="132.3" y="212.5" width="185.2" height="17" fill="#d4e4f3" stroke="#31536e" stroke-width=".9"/>
+  <text x="224.9" y="224.7" class="bold" font-size="12.2">MLX Runtime</text>
+  <rect x="132.3" y="238.5" width="185.2" height="17" fill="#e5ecf2" stroke="#54748f" stroke-width=".8"/>
+  <text x="224.9" y="250.5" class="bold" font-size="10.9">Apple Silicon · Metal GPU</text>
+</svg>

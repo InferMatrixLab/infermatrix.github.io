@@ -1,0 +1,5 @@
+Source: vllm-project/afd-plugin, docs/assets/vllm-afd-plugin-architecture.svg
+Source URL: https://github.com/vllm-project/afd-plugin/blob/main/docs/assets/vllm-afd-plugin-architecture.svg
+Source Git blob SHA: 99e3065a5dd82aaf0870ddbf86760c78edbd2e02
+License: Apache-2.0 (complete upstream text: ../../licenses/afd-plugin-LICENSE.txt)
+Modification notice: this deployed copy adds one trailing newline to the original SVG; all diagram content and metadata are unchanged.
