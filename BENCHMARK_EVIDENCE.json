@@ -1,0 +1,424 @@
+{
+  "checked_at": "2026-10-19T08:47:00Z",
+  "verification": "Source documents and arithmetic independently checked; hardware experiments NOT rerun.",
+  "qwen": {
+    "source": "https://github.com/InferMatrixLab/qwen3-tts-engine/blob/b4451682abac651f26046f8d27467de3f007e1e7/README.md",
+    "raw_source": "https://github.com/InferMatrixLab/qwen3-tts-engine/blob/b4451682abac651f26046f8d27467de3f007e1e7/evidence/campaign-20261017/results/final-three-arm-performance.json",
+    "hardware": "1× Ascend 910B1 64 GiB",
+    "precision": "BF16",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+    "model_revision": "0c0e3051f131929182e2c023b9537f8b1c68adfe",
+    "engine_revision": "e783a64b0fb4f9ade2ffb3980b3e1f74a00c9a6a",
+    "vllm_omni_revision": "b164fea797531c1fa10f8b87829632cad006b9fc",
+    "sglang_omni_revision": "6bdd47967caa55c38430d18175b750008aecab61",
+    "aggregation": "3-run arithmetic mean, each 128 requests (64 EN Ryan +64 ZH Vivian), seed42 max_new_tokens2048",
+    "metric": "decoded PCM duration × 12.5 / cohort wall time, frames/s",
+    "qualifications": [
+      "Author-reported pinned campaign; not a universal ranking.",
+      "Shared host, sequential trials; SD is not CI.",
+      "SGLang type-import compatibility patch; both baselines jemalloc workaround.",
+      "Frozen campaign final acceptance PASS; frozen initial contract status INCONCLUSIVE is not final verdict.",
+      "Do not mix different-workload 910B3 comparison."
+    ],
+    "cohorts": [
+      {
+        "concurrency": 1,
+        "raw": {
+          "vllm": {
+            "throughput_frames_s": {
+              "trials": [
+                12.296847685489093,
+                12.791066544709883,
+                13.057069443918317
+              ],
+              "mean": 12.714994558039098,
+              "sample_sd": 0.3857777739377112
+            },
+            "ttfa_p50_ms": {
+              "trials": [
+                270.9299558773637,
+                262.4301319010556,
+                257.183822337538
+              ],
+              "mean": 263.5146367053191,
+              "sample_sd": 6.9369416767429355
+            },
+            "ttfa_p95_ms": {
+              "trials": [
+                284.75743043236434,
+                270.6865864805877,
+                264.1751538962126
+              ],
+              "mean": 273.20639026972157,
+              "sample_sd": 10.519961273904757
+            },
+            "rtf_mean": {
+              "trials": [
+                1.021043179537028,
+                0.982175721115547,
+                0.9623095195383553
+              ],
+              "mean": 0.9885094733969768,
+              "sample_sd": 0.02987470531539702
+            }
+          },
+          "sglang": {
+            "throughput_frames_s": {
+              "trials": [
+                4.274688133704026,
+                4.302936586505516,
+                4.358298469907299
+              ],
+              "mean": 4.311974396705613,
+              "sample_sd": 0.042531559928079825
+            },
+            "ttfa_p50_ms": {
+              "trials": [
+                424.1716735996306,
+                436.97735480964184,
+                458.00133189186454
+              ],
+              "mean": 439.7167867670457,
+              "sample_sd": 17.080392578312193
+            },
+            "ttfa_p95_ms": {
+              "trials": [
+                565.9927828237414,
+                555.4488532245159,
+                547.2201238386333
+              ],
+              "mean": 556.2205866289636,
+              "sample_sd": 9.41009355311867
+            },
+            "rtf_mean": {
+              "trials": [
+                2.9568215378457765,
+                2.9240399831467476,
+                2.8841236724395154
+              ],
+              "mean": 2.921661731144013,
+              "sample_sd": 0.03640723788751485
+            }
+          },
+          "candidate": {
+            "throughput_frames_s": {
+              "trials": [
+                61.7224955595445,
+                60.682120504042686,
+                60.96272370181913
+              ],
+              "mean": 61.12244658846877,
+              "sample_sd": 0.5382644465477637
+            },
+            "ttfa_p50_ms": {
+              "trials": [
+                49.981759395450354,
+                50.49669835716486,
+                50.75029004365206
+              ],
+              "mean": 50.409582598755755,
+              "sample_sd": 0.3916014630063679
+            },
+            "ttfa_p95_ms": {
+              "trials": [
+                51.344451354816556,
+                52.066443115472794,
+                52.49612974002957
+              ],
+              "mean": 51.969008070106305,
+              "sample_sd": 0.5819888029772504
+            },
+            "rtf_mean": {
+              "trials": [
+                0.2038573162517171,
+                0.20737589161863382,
+                0.20642477178972177
+              ],
+              "mean": 0.20588599322002424,
+              "sample_sd": 0.0018201112365848048
+            }
+          }
+        },
+        "ratio_vs_vllm": 4.807115434416281,
+        "ratio_vs_sglang": 14.175048589149059
+      },
+      {
+        "concurrency": 64,
+        "raw": {
+          "vllm": {
+            "throughput_frames_s": {
+              "trials": [
+                242.0768702666381,
+                232.5999250066449,
+                209.5460144105348
+              ],
+              "mean": 228.07426989460595,
+              "sample_sd": 16.730968630879858
+            },
+            "ttfa_p50_ms": {
+              "trials": [
+                1395.918546244502,
+                1306.1149627901614,
+                1299.9401721172035
+              ],
+              "mean": 1333.9912270506222,
+              "sample_sd": 53.71942532147206
+            },
+            "ttfa_p95_ms": {
+              "trials": [
+                1793.4304440394044,
+                1688.375543570146,
+                1681.3864248339087
+              ],
+              "mean": 1721.064137481153,
+              "sample_sd": 62.76841314578072
+            },
+            "rtf_mean": {
+              "trials": [
+                2.6148350119770956,
+                2.4016064005608397,
+                2.413214096604622
+              ],
+              "mean": 2.4765518363808523,
+              "sample_sd": 0.11989729830816566
+            }
+          },
+          "sglang": {
+            "throughput_frames_s": {
+              "trials": [
+                66.60674902518353,
+                73.15645962525753,
+                75.04746962716122
+              ],
+              "mean": 71.60355942586743,
+              "sample_sd": 4.429454293940959
+            },
+            "ttfa_p50_ms": {
+              "trials": [
+                3451.91464247182,
+                2727.170815691352,
+                4052.1502871997654
+              ],
+              "mean": 3410.4119151209793,
+              "sample_sd": 663.4640210763862
+            },
+            "ttfa_p95_ms": {
+              "trials": [
+                7305.230406951158,
+                7784.7506483551115,
+                7218.663234869018
+              ],
+              "mean": 7436.214763391763,
+              "sample_sd": 304.92854269642135
+            },
+            "rtf_mean": {
+              "trials": [
+                10.170835155907064,
+                9.182993503081752,
+                8.802787589176743
+              ],
+              "mean": 9.38553874938852,
+              "sample_sd": 0.7061564761512065
+            }
+          },
+          "candidate": {
+            "throughput_frames_s": {
+              "trials": [
+                558.6184803372047,
+                544.321436475226,
+                545.2248569104372
+              ],
+              "mean": 549.3882579076227,
+              "sample_sd": 8.00635976554631
+            },
+            "ttfa_p50_ms": {
+              "trials": [
+                560.6545764021575,
+                590.2568185701966,
+                598.0384587310255
+              ],
+              "mean": 582.9832845677932,
+              "sample_sd": 19.724778507191143
+            },
+            "ttfa_p95_ms": {
+              "trials": [
+                876.810297416523,
+                932.9840525519102,
+                952.4525954388081
+              ],
+              "mean": 920.7489818024137,
+              "sample_sd": 39.27737299905553
+            },
+            "rtf_mean": {
+              "trials": [
+                1.1895322156467878,
+                1.2240149637968836,
+                1.2227187673903868
+              ],
+              "mean": 1.212088648944686,
+              "sample_sd": 0.019545192340392904
+            }
+          }
+        },
+        "ratio_vs_vllm": 2.408812963257527,
+        "ratio_vs_sglang": 7.672638934610718
+      }
+    ]
+  },
+  "drama": {
+    "source": "https://github.com/InferMatrixLab/drama-3-single-b300-engine/blob/58a1882a4d941f8d21bfce6be37d3d5e7c9fde80/docs/current-results.md",
+    "raw_source": "https://github.com/InferMatrixLab/drama-3-single-b300-engine/blob/58a1882a4d941f8d21bfce6be37d3d5e7c9fde80/docs/current-results.json",
+    "hardware": "1× NVIDIA B300",
+    "model": "fishaudio/drama-3",
+    "model_revision": "e0a9218aa48888270f06ef1ed9ea67622c0e17d2",
+    "source_revisions": {
+      "standalone": "33f6d7237196520be9f457d86df161264cbb087e",
+      "vllm": "aa9c9a2d2ce3ff8640f1b4ab8937a6194b0ead4d",
+      "sglang": "2c23b68f4f763c14cfb845eadb4883a5e791b701"
+    },
+    "aggregation": "3-run medians, each1088 English Seed-TTS preencoded-reference requests; vLLM C64 only2 complete runs, third timed out.",
+    "sampling": "temperature1 top_p0.9 top_k30 max500frames; warmupmax(8,C)",
+    "metric": "total returned PCM samples /2048 /full group makespan, frames/s",
+    "qualifications": [
+      "Author-reported descriptive measurements; not independent reproduction.",
+      "C64 ~1.00× vs vLLM-Omni, not a meaningful superiority claim.",
+      "Serving capacities64/128/64, codec precisionBF16/FP16/FP16 for dedicated/vLLM/SGLang.",
+      "SGLang C4-C64 after restart; no identical generated outputs/RNG guarantee.",
+      "At C32 dedicated2652.72 <vLLM2878.10; no all-concurrency winner.",
+      "C64 quality-bound verdict vs vLLM unavailable (incomplete3-run baseline); historical1.5×all-concurrencytargetnotachieved."
+    ],
+    "rows": [
+      {
+        "framework": "standalone",
+        "concurrency": 1,
+        "observed_complete_runs": 3,
+        "formal_three_run_row": true,
+        "source_collection": "rows",
+        "source_labels": [
+          "c1-r0",
+          "c1-r1",
+          "c1-r2"
+        ],
+        "aggregation": "independent_median_of_complete_run_metrics",
+        "metrics": {
+          "throughput_frames_s": 309.16835677667984,
+          "ttfa_p50_ms": 32.82944695092738,
+          "ttfa_p95_ms": 44.677666295319796,
+          "rtf_mean": 0.07022001580418244
+        },
+        "sglang_baseline_throughput_frames_s": 169.79837079777414,
+        "sglang_baseline_complete_runs": 3,
+        "throughput_vs_sglang": 1.8207969565555613
+      },
+      {
+        "framework": "vllm",
+        "concurrency": 1,
+        "observed_complete_runs": 3,
+        "formal_three_run_row": true,
+        "source_collection": "rows",
+        "source_labels": [
+          "c1-r0",
+          "c1-r1",
+          "c1-r2"
+        ],
+        "aggregation": "independent_median_of_complete_run_metrics",
+        "metrics": {
+          "throughput_frames_s": 195.890742291089,
+          "ttfa_p50_ms": 47.285930486395955,
+          "ttfa_p95_ms": 49.76375993574038,
+          "rtf_mean": 0.11056096134451433
+        },
+        "sglang_baseline_throughput_frames_s": 169.79837079777414,
+        "sglang_baseline_complete_runs": 3,
+        "throughput_vs_sglang": 1.1536667953333324
+      },
+      {
+        "framework": "sglang",
+        "concurrency": 1,
+        "observed_complete_runs": 3,
+        "formal_three_run_row": true,
+        "source_collection": "rows",
+        "source_labels": [
+          "c1-r0",
+          "c1-r1",
+          "c1-r2"
+        ],
+        "aggregation": "independent_median_of_complete_run_metrics",
+        "metrics": {
+          "throughput_frames_s": 169.79837079777414,
+          "ttfa_p50_ms": 79.37973999651149,
+          "ttfa_p95_ms": 82.81960497843102,
+          "rtf_mean": 0.12775226072777437
+        },
+        "sglang_baseline_throughput_frames_s": 169.79837079777414,
+        "sglang_baseline_complete_runs": 3,
+        "throughput_vs_sglang": 1
+      },
+      {
+        "framework": "standalone",
+        "concurrency": 64,
+        "observed_complete_runs": 3,
+        "formal_three_run_row": true,
+        "source_collection": "rows",
+        "source_labels": [
+          "c64-r0",
+          "c64-r1",
+          "c64-r2"
+        ],
+        "aggregation": "independent_median_of_complete_run_metrics",
+        "metrics": {
+          "throughput_frames_s": 4662.019643467603,
+          "ttfa_p50_ms": 147.71220093825832,
+          "ttfa_p95_ms": 275.6082287640263,
+          "rtf_mean": 0.2917694151799722
+        },
+        "sglang_baseline_throughput_frames_s": 1886.2224127826892,
+        "sglang_baseline_complete_runs": 3,
+        "throughput_vs_sglang": 2.471617139036038
+      },
+      {
+        "framework": "vllm",
+        "concurrency": 64,
+        "observed_complete_runs": 2,
+        "formal_three_run_row": false,
+        "source_collection": "diagnostic_groups",
+        "source_labels": [
+          "c64-r0",
+          "c64-r1"
+        ],
+        "aggregation": "independent_median_of_complete_run_metrics",
+        "metrics": {
+          "throughput_frames_s": 4640.825329717853,
+          "ttfa_p50_ms": 155.54050452192314,
+          "ttfa_p95_ms": 273.3364778920077,
+          "rtf_mean": 0.28615783289818486
+        },
+        "sglang_baseline_throughput_frames_s": 1886.2224127826892,
+        "sglang_baseline_complete_runs": 3,
+        "throughput_vs_sglang": 2.460380757999465
+      },
+      {
+        "framework": "sglang",
+        "concurrency": 64,
+        "observed_complete_runs": 3,
+        "formal_three_run_row": true,
+        "source_collection": "rows",
+        "source_labels": [
+          "c64-r0",
+          "c64-r1",
+          "c64-r2"
+        ],
+        "aggregation": "independent_median_of_complete_run_metrics",
+        "metrics": {
+          "throughput_frames_s": 1886.2224127826892,
+          "ttfa_p50_ms": 384.35749552445486,
+          "ttfa_p95_ms": 619.2930913530282,
+          "rtf_mean": 0.7058111256194403
+        },
+        "sglang_baseline_throughput_frames_s": 1886.2224127826892,
+        "sglang_baseline_complete_runs": 3,
+        "throughput_vs_sglang": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1690" viewBox="0 0 2000 1690" role="img" aria-labelledby="title desc"><title id="title">vllm-omni-mlx official architecture, vector redraw</title><desc id="desc">Faithful redraw of the official docs/architecture.md Mermaid graph at commit 210cc4e35e208b56d4146e7cc735952cde8ea24e. All original nodes and relationships are retained. The source labels ASR as planned.</desc><defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L12 6 L0 12 Z" fill="#477095"/></marker></defs><style>text{font-family:Arial,'Noto Sans CJK SC',sans-serif;fill:#14314d}.heading{font-size:44px;font-weight:700}.sub{font-size:25px;fill:#57758f}.label{font-size:29px;font-weight:700}.body{font-size:27px}.small{font-size:24px;fill:#3d5f7d}.edge{fill:none;stroke:#477095;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}</style><rect width="2000" height="1690" fill="#ffffff"/>
+<text class="heading" x="60" y="68" text-anchor="start"><tspan x="60" dy="0">vllm-omni-mlx</tspan></text>
+<text class="sub" x="60" y="110" text-anchor="start"><tspan x="60" dy="0">依据官方架构重绘（矢量）</tspan></text>
+<rect x="40" y="300" width="1920" height="1050" rx="24" fill="#f5f9fd" stroke="#b7cee4" stroke-width="2.5"/>
+<text class="label" x="1940" y="110" text-anchor="end"><tspan x="1940" dy="0">vllm-omni-mlx — single process, single model</tspan></text>
+<rect x="60" y="155" width="410" height="82" rx="16" fill="#eaf3ff" stroke="#8cb5e3" stroke-width="2.5"/>
+<text class="label" x="265" y="207" text-anchor="middle"><tspan x="265" dy="0">OpenAI SDK / curl</tspan></text>
+<rect x="550" y="155" width="400" height="82" rx="16" fill="#eaf3ff" stroke="#8cb5e3" stroke-width="2.5"/>
+<text class="label" x="750" y="207" text-anchor="middle"><tspan x="750" dy="0">Anthropic SDK / curl</tspan></text>
+<rect x="1020" y="155" width="400" height="82" rx="16" fill="#eaf3ff" stroke="#8cb5e3" stroke-width="2.5"/>
+<text class="label" x="1220" y="207" text-anchor="middle"><tspan x="1220" dy="0">curl / SDK</tspan></text>
+<rect x="1500" y="135" width="440" height="124" rx="16" fill="#faf7ee" stroke="#cfb87b" stroke-width="2.5"/>
+<text class="small" x="1720" y="175" text-anchor="middle"><tspan x="1720" dy="0">planned · issue #68:</tspan><tspan x="1720" dy="31">/v1/audio/transcriptions</tspan><tspan x="1720" dy="31">decoder-style ASR, born-compiled</tspan></text>
+<path d="M265 237 V390" class="edge"/>
+<path d="M750 237 V390" class="edge"/>
+<path d="M1220 237 V390" class="edge"/>
+<path d="M1720 259 V390" class="edge" stroke-dasharray="10 9"/>
+<rect x="63" y="250" width="404" height="43" rx="0" fill="#ffffff" stroke="#ffffff" stroke-width="2.5"/>
+<text class="small" x="265" y="280" text-anchor="middle"><tspan x="265" dy="0">POST /v1/chat/completions</tspan></text>
+<rect x="553" y="250" width="394" height="43" rx="0" fill="#ffffff" stroke="#ffffff" stroke-width="2.5"/>
+<text class="small" x="750" y="280" text-anchor="middle"><tspan x="750" dy="0">POST /v1/messages</tspan></text>
+<rect x="1017" y="250" width="410" height="62" rx="0" fill="#ffffff" stroke="#ffffff" stroke-width="2.5"/>
+<text class="small" x="1220" y="275" text-anchor="middle"><tspan x="1220" dy="0">POST /v1/audio/speech ·</tspan><tspan x="1220" dy="29">/v1/audio/voices</tspan></text>
+<rect x="105" y="390" width="1790" height="125" rx="16" fill="#dfedfd" stroke="#6c9ece" stroke-width="2.5"/>
+<text class="label" x="1000" y="439" text-anchor="middle"><tspan x="1000" dy="0">API layer — server.py · Starlette + uvicorn</tspan></text>
+<text class="body" x="1000" y="481" text-anchor="middle"><tspan x="1000" dy="0">auth (Bearer / x-api-key) · routing · SSE + chunked PCM streaming</tspan></text>
+<path d="M660 515 V595" class="edge"/>
+<path d="M1620 515 V660" class="edge"/>
+<rect x="110" y="595" width="1110" height="135" rx="16" fill="#ffffff" stroke="#a8bfd8" stroke-width="2.5"/>
+<text class="label" x="665" y="637" text-anchor="middle"><tspan x="665" dy="0">schemas.py</tspan></text>
+<text class="body" x="665" y="676" text-anchor="middle"><tspan x="665" dy="0">both dialects → one UnifiedRequest</tspan><tspan x="665" dy="33">media: data-URL / base64 / http(s) fetch</tspan></text>
+<path d="M665 730 V785" class="edge"/>
+<path d="M665 785 L980 860 L665 935 L350 860 Z" fill="#e7f1fc" stroke="#8cb5e3" stroke-width="2.5"/>
+<text class="body" x="665" y="852" text-anchor="middle"><tspan x="665" dy="0">backend auto-select</tspan><tspan x="665" dy="35">sniffs config.json</tspan></text>
+<path d="M510 897 L375 951 V1010" class="edge"/>
+<path d="M817 899 L975 951 V1010" class="edge"/>
+<text class="small" x="350" y="969" text-anchor="end"><tspan x="350" dy="0">text LLM</tspan></text>
+<text class="small" x="1000" y="969" text-anchor="start"><tspan x="1000" dy="0">vision / audio model</tspan></text>
+<rect x="95" y="1010" width="560" height="180" rx="16" fill="#e5f4f2" stroke="#6ba99e" stroke-width="2.5"/>
+<text class="label" x="375" y="1055" text-anchor="middle"><tspan x="375" dy="0">TextBackend — mlx-lm</tspan></text>
+<text class="body" x="375" y="1097" text-anchor="middle"><tspan x="375" dy="0">chat template · sampler ·</tspan><tspan x="375" dy="33">stream_generate</tspan><tspan x="375" dy="33">single-entry cross-turn prefix cache</tspan></text>
+<rect x="710" y="1010" width="530" height="180" rx="16" fill="#e5f4f2" stroke="#6ba99e" stroke-width="2.5"/>
+<text class="label" x="975" y="1063" text-anchor="middle"><tspan x="975" dy="0">OmniBackend — mlx-vlm</tspan></text>
+<text class="body" x="975" y="1106" text-anchor="middle"><tspan x="975" dy="0">(optional extra)</tspan><tspan x="975" dy="36">image · audio input</tspan></text>
+<rect x="1305" y="660" width="590" height="350" rx="16" fill="#eef0ff" stroke="#9aa5d8" stroke-width="2.5"/>
+<text class="label" x="1600" y="708" text-anchor="middle"><tspan x="1600" dy="0">TTSService — tts/ (mlx-audio)</tspan></text>
+<text class="body" x="1600" y="760" text-anchor="middle"><tspan x="1600" dy="0">Qwen3-TTS:</tspan><tspan x="1600" dy="34">presets · instruct · ICL cloning ·</tspan><tspan x="1600" dy="34">voice design</tspan><tspan x="1600" dy="34"></tspan><tspan x="1600" dy="34">voice-prefix cache +</tspan><tspan x="1600" dy="34">compiled decode +</tspan><tspan x="1600" dy="34">first-chunk fast path</tspan></text>
+<path d="M375 1190 V1230 H745 V1260" class="edge"/>
+<path d="M975 1190 V1260" class="edge"/>
+<path d="M1600 1010 V1230 H1230 V1260" class="edge"/>
+<rect x="575" y="1260" width="850" height="70" rx="32" fill="#dfeefb" stroke="#7ba4ca" stroke-width="2.5"/>
+<text class="label" x="1000" y="1305" text-anchor="middle"><tspan x="1000" dy="0">generation lock · batch-1 · serialized</tspan></text>
+<path d="M1000 1330 V1400" class="edge"/>
+<rect x="620" y="1400" width="760" height="83" rx="16" fill="#e5f4f2" stroke="#6ba99e" stroke-width="2.5"/>
+<text class="label" x="1000" y="1453" text-anchor="middle"><tspan x="1000" dy="0">MLX runtime</tspan></text>
+<path d="M1000 1483 V1540" class="edge"/>
+<rect x="620" y="1540" width="760" height="83" rx="16" fill="#dcecff" stroke="#74a3d0" stroke-width="2.5"/>
+<text class="label" x="1000" y="1593" text-anchor="middle"><tspan x="1000" dy="0">Metal GPU · unified memory</tspan></text>
+<text class="small" x="60" y="1665" text-anchor="start"><tspan x="60" dy="0">Source: ThinkFlowLab/vllm-omni-mlx · docs/architecture.md · 210cc4e</tspan></text>
+</svg>

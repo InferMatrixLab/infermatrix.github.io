@@ -1,0 +1,97 @@
+[
+  {
+    "id": "matrix-game-4",
+    "repo": "vllm-omni",
+    "title": "Matrix-Game-4",
+    "description": {
+      "zh": "世界模型演示",
+      "en": "World model demo"
+    },
+    "duration": 60,
+    "width": 1280,
+    "height": 720,
+    "src": "assets/showcase/matrix-game-4.mp4",
+    "poster": "assets/showcase/matrix-game-4.jpg",
+    "source": "https://github.com/InferMatrixLab/infermatrix-marketing/blob/5e6b91b881b784aa221db021b12bdeb49b8882da/vllm_omni/video/Matrix-Game-4.mp4",
+    "sourceCommit": "5e6b91b881b784aa221db021b12bdeb49b8882da",
+    "originalName": "Matrix-Game-4.mp4",
+    "webOptimized": true,
+    "sizeBytes": 14549965
+  },
+  {
+    "id": "workswarm",
+    "repo": "vllm-omni",
+    "title": "vLLM-Omni × WorkSwarm Design",
+    "description": {
+      "zh": "让故事走向画面",
+      "en": "From stories to visuals"
+    },
+    "duration": 160,
+    "width": 960,
+    "height": 544,
+    "src": "assets/showcase/workswarm.mp4",
+    "poster": "assets/showcase/workswarm.jpg",
+    "source": "https://github.com/InferMatrixLab/infermatrix-marketing/blob/5e6b91b881b784aa221db021b12bdeb49b8882da/vllm_omni/video/vLLM-Omni%20%2B%20WorkSwarm%20Design_%20%E5%BC%BA%E5%8A%B2%E7%9A%84%E6%80%A7%E8%83%BD%EF%BC%8C%E8%AE%A9%E6%95%85%E4%BA%8B%E8%B5%B0%E5%90%91%E7%94%BB%E9%9D%A2%20%5BBV1hFHk6fEix%5D.mp4",
+    "sourceCommit": "5e6b91b881b784aa221db021b12bdeb49b8882da",
+    "originalName": "vLLM-Omni + WorkSwarm Design_ 强劲的性能，让故事走向画面 [BV1hFHk6fEix].mp4",
+    "webOptimized": false,
+    "sizeBytes": 10131930
+  },
+  {
+    "id": "aura",
+    "repo": "vllm-omni",
+    "title": "Aura",
+    "description": {
+      "zh": "全双工演示",
+      "en": "Full-duplex demo"
+    },
+    "duration": 79,
+    "width": 720,
+    "height": 1280,
+    "src": "assets/showcase/aura.mp4",
+    "poster": "assets/showcase/aura.jpg",
+    "source": "https://github.com/InferMatrixLab/infermatrix-marketing/blob/5e6b91b881b784aa221db021b12bdeb49b8882da/vllm_omni/video/%E5%85%A8%E5%8F%8C%E5%B7%A5%E6%BC%94%E7%A4%BA1-Aura.mp4",
+    "sourceCommit": "5e6b91b881b784aa221db021b12bdeb49b8882da",
+    "originalName": "全双工演示1-Aura.mp4",
+    "webOptimized": true,
+    "sizeBytes": 17008968
+  },
+  {
+    "id": "qwen3-omni",
+    "repo": "vllm-omni",
+    "title": "Qwen3-Omni",
+    "description": {
+      "zh": "全双工演示",
+      "en": "Full-duplex demo"
+    },
+    "duration": 99,
+    "width": 930,
+    "height": 720,
+    "src": "assets/showcase/qwen3-omni.mp4",
+    "poster": "assets/showcase/qwen3-omni.jpg",
+    "source": "https://github.com/InferMatrixLab/infermatrix-marketing/blob/5e6b91b881b784aa221db021b12bdeb49b8882da/vllm_omni/video/%E5%85%A8%E5%8F%8C%E5%B7%A5%E6%BC%94%E7%A4%BA2-Qwen3-Omni.mp4",
+    "sourceCommit": "5e6b91b881b784aa221db021b12bdeb49b8882da",
+    "originalName": "全双工演示2-Qwen3-Omni.mp4",
+    "webOptimized": true,
+    "sizeBytes": 2744929
+  },
+  {
+    "id": "personaplex",
+    "repo": "vllm-omni",
+    "title": "PersonaPlex",
+    "description": {
+      "zh": "全双工演示",
+      "en": "Full-duplex demo"
+    },
+    "duration": 92,
+    "width": 1404,
+    "height": 720,
+    "src": "assets/showcase/personaplex.mp4",
+    "poster": "assets/showcase/personaplex.jpg",
+    "source": "https://github.com/InferMatrixLab/infermatrix-marketing/blob/5e6b91b881b784aa221db021b12bdeb49b8882da/vllm_omni/video/%E5%85%A8%E5%8F%8C%E5%B7%A5%E6%BC%94%E7%A4%BA3-personaplex.mp4",
+    "sourceCommit": "5e6b91b881b784aa221db021b12bdeb49b8882da",
+    "originalName": "全双工演示3-personaplex.mp4",
+    "webOptimized": true,
+    "sizeBytes": 3725743
+  }
+]

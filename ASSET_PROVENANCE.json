@@ -109,6 +109,19 @@
       "changes": "SVG wrapper embeds exact supplied logo PNG",
       "sha256": "1e43c9c8b4dc78086790a41fd46369141802e12e592349f08a804107a35fa1a3",
       "bytes": 1176952
+    },
+    {
+      "file": "assets/architecture/inferrsi.svg",
+      "project": "InferRSI",
+      "origin": "brand-styled-documentation-redraw",
+      "sourceUrl": "https://github.com/InferMatrixLab/InferRSI/blob/main/docs/assets/modular-components-en.svg",
+      "width": 1800,
+      "height": 1120,
+      "license": "No new license grant asserted",
+      "changes": "Independent blue/cyan vector diagram following documented user-driven modules and evidence flow",
+      "sha256": "7ea8c123c917e0e53df450180727636cf0351b0e03b80ae9208c84a1c826edf8"
     }
-  ]
+  ],
+  "updatedOn": "2026-10-19",
+  "videoProvenance": "SHOWCASE.md"
 }
