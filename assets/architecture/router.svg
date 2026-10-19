@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1180" viewBox="0 0 1600 1180" role="img" aria-labelledby="title desc">
+<title id="title">vLLM Router: documented request and backend architecture</title>
+<desc id="desc">OpenAI-compatible HTTP requests enter vLLM Router. Native request-level routing or explicitly enabled Program scheduling determines placement. The router manages discovery, health, retries and metrics. A deployment uses a homogeneous HTTP or gRPC worker pool. HTTP proxies OpenAI requests. The gRPC path renders and tokenizes chat, sends token IDs using Inference.GenerateStream, and adapts output to OpenAI JSON or SSE. Diagram redrawn from official documentation.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#4276a8" stroke-width="1.8"/></marker>
+<style>
+text {font-family:Arial,Helvetica,sans-serif;fill:#17344e}
+.title {font-size:46px;font-weight:700}
+.h {font-size:32px;font-weight:700}
+.body {font-size:27px}
+.small {font-size:24px;fill:#4c6b84}
+.arrow {fill:none;stroke:#4276a8;stroke-width:3;marker-end:url(#arrow)}
+.box {fill:#fff;stroke:#88aed4;stroke-width:2}
+.optional {fill:#f5f2ff;stroke:#b49adc;stroke-width:2;stroke-dasharray:9 6}
+</style></defs>
+<rect width="1600" height="1180" fill="#fff"/>
+<text class="title" x="800" y="64" text-anchor="middle">vLLM Router</text>
+<text class="small" x="800" y="106" text-anchor="middle">Documented runtime architecture · October 2026</text>
+<rect class="box" x="390" y="145" width="820" height="88" rx="15" fill="#f1f7fd"/>
+<text class="h" x="800" y="182" text-anchor="middle">Clients / SDKs</text>
+<text class="body" x="800" y="217" text-anchor="middle">OpenAI-compatible HTTP requests</text>
+<path class="arrow" d="M800 233V290"/>
+<rect x="60" y="291" width="1480" height="530" rx="24" fill="#f6f9ff" stroke="#80a9d1" stroke-width="2.5"/>
+<text class="h" x="100" y="338">vLLM Router · HTTP ingress and request forwarding</text>
+<path d="M800 354V375M800 375H420V398M800 375H1180V398" fill="none" stroke="#4276a8" stroke-width="3"/>
+<path class="arrow" d="M420 387V410"/><path class="arrow" d="M1180 387V410"/>
+<rect class="box" x="100" y="410" width="640" height="163" rx="15"/>
+<text class="h" x="420" y="453" text-anchor="middle">Native request-level routing</text>
+<text class="body" x="420" y="496" text-anchor="middle">consistent_hash · cache_aware</text>
+<text class="body" x="420" y="535" text-anchor="middle">power_of_two · round_robin · random</text>
+<rect class="optional" x="780" y="410" width="720" height="163" rx="15"/>
+<text class="h" x="1140" y="453" text-anchor="middle">Program scheduling · optional</text>
+<text class="body" x="1140" y="496" text-anchor="middle">Program placement · RequestPool · Progress-TTL</text>
+<text class="small" x="1140" y="535" text-anchor="middle">Requires enablement + request metadata</text>
+<path class="arrow" d="M420 573V610H800V640"/>
+<path class="arrow" d="M1140 573V610H800V640"/>
+<rect class="box" x="430" y="641" width="740" height="77" rx="12"/>
+<text class="h" x="800" y="689" text-anchor="middle">Selected worker / DP rank</text>
+<text class="small" x="800" y="765" text-anchor="middle">Supporting services: worker discovery · health checks · retries · circuit breakers · metrics</text>
+<text class="small" x="800" y="801" text-anchor="middle">Without configured Program metadata, requests stay on the native routing path.</text>
+<path d="M800 821V839M800 839H410V865M800 839H1190V865" fill="none" stroke="#4276a8" stroke-width="3"/>
+<path class="arrow" d="M410 855V881"/><path class="arrow" d="M1190 855V881"/>
+<rect x="100" y="883" width="620" height="200" rx="16" fill="#effaff" stroke="#59a9c3" stroke-width="2"/>
+<text class="h" x="410" y="930" text-anchor="middle">HTTP worker pool</text>
+<text class="body" x="410" y="975" text-anchor="middle">Transparent OpenAI reverse proxy</text>
+<text class="body" x="410" y="1016" text-anchor="middle">vLLM workers</text>
+<text class="small" x="410" y="1057" text-anchor="middle">Prefill / decode disaggregation supported</text>
+<rect x="760" y="883" width="740" height="200" rx="16" fill="#effaff" stroke="#59a9c3" stroke-width="2"/>
+<text class="h" x="1130" y="930" text-anchor="middle">gRPC worker pool</text>
+<text class="body" x="1130" y="975" text-anchor="middle">Chat rendering + tokenization in the router</text>
+<text class="body" x="1130" y="1016" text-anchor="middle">token_ids → Inference.GenerateStream</text>
+<text class="small" x="1130" y="1057" text-anchor="middle">Outputs adapted to OpenAI JSON / SSE</text>
+<text class="body" x="800" y="1133" text-anchor="middle">Choose one worker-pool type per deployment; mixed HTTP / gRPC pools are not supported.</text>
+<text class="small" x="800" y="1167" text-anchor="middle">Redrawn from official README, load-balancing, Program scheduling and gRPC backend documentation.</text>
+</svg>

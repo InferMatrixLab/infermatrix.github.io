@@ -50,3 +50,6 @@ Source for all four: [the included InferMatrix poster](assets/infermatrix-poster
 ## Machine-readable record
 
 [ASSET_PROVENANCE.json](ASSET_PROVENANCE.json) records the included assets and their hashes. [SHA256SUMS](SHA256SUMS) records this source snapshot. Older, unused diagrams and preview images are not included.
+
+## October 19 additions
+InferRSI architecture is a brand-styled original SVG redraw based on the linked project documentation; it is not the upstream graphic. See INFERRSI.md. Video provenance is recorded in SHOWCASE.md. Benchmark sources and exact revisions are in BENCHMARK_EVIDENCE.json. Existing asset licenses are unchanged.

@@ -1,0 +1,106 @@
+{
+  "assets/infermatrix-poster.png": {
+    "sha256": "79d4c4265b2d7c5635056ab49064469ab48c98dfb326e2e1fcbfbb1c3effe5ad",
+    "bytes": 2655041
+  },
+  "assets/favicon.svg": {
+    "sha256": "1e43c9c8b4dc78086790a41fd46369141802e12e592349f08a804107a35fa1a3",
+    "bytes": 1176952
+  },
+  "assets/infermatrix-logo.png": {
+    "sha256": "7b1b2d9403e7a8b83cd695adc6d5a7c9ff5b697225de3149057c0f708c1fddc5",
+    "bytes": 882601
+  },
+  "assets/showcase/workswarm.mp4": {
+    "sha256": "f1e5d4f2cc41c9c1da69dfb3523c5659012ac8169d06c267b165af5ecd2aa698",
+    "bytes": 10131930
+  },
+  "assets/showcase/personaplex.mp4": {
+    "sha256": "b1f1858d83fb870a1bdb2ff415f91e0bbc7800f3bd1599fec6728851fd242586",
+    "bytes": 3725743
+  },
+  "assets/showcase/aura.mp4": {
+    "sha256": "322de898fa8d2a1223422526e8bd5948f390642f97bd577f60ecedbb3eba5ad4",
+    "bytes": 9895797
+  },
+  "assets/showcase/videos.json": {
+    "sha256": "ca3598fb776abba7c70b96199440da23ef9ba6af9456f594c810e00b9b1761ec",
+    "bytes": 3605
+  },
+  "assets/showcase/personaplex.jpg": {
+    "sha256": "ca0c9a6ac2078689449c8d8bc679ce16ee28e2376bbb7c6dee2fea0da7a4f2df",
+    "bytes": 37360
+  },
+  "assets/showcase/qwen3-omni.jpg": {
+    "sha256": "8f8aacba7485f7b44d0f9e2dbff5b87701c45b3b47cb4e94c2594d5b659fa64b",
+    "bytes": 61459
+  },
+  "assets/showcase/matrix-game-4.jpg": {
+    "sha256": "44803cfc5f8ca92bb799e4f6d6498fd0e89f6b00d0bceaafebb35979a54ddc93",
+    "bytes": 80447
+  },
+  "assets/showcase/matrix-game-4.mp4": {
+    "sha256": "d0e61276da1889d03d1fd454e98e7cd68212c5bbaa5ab0c345b0c58659a81fa0",
+    "bytes": 7902793
+  },
+  "assets/showcase/aura.jpg": {
+    "sha256": "704e49ac22388e963fe53413b36b33782be2dfaa0cec322f7111af40aab8dd6b",
+    "bytes": 132846
+  },
+  "assets/showcase/qwen3-omni.mp4": {
+    "sha256": "1636f6844a39f5d58ef2f86c95029a458ea0464093a8acbd3e3b96bb7bd1b2a5",
+    "bytes": 2744929
+  },
+  "assets/showcase/workswarm.jpg": {
+    "sha256": "8e7e0bdd2bbe622dd85b5c06ba508293ab9bb3ae8f4f530c4104ed89af5bd536",
+    "bytes": 41092
+  },
+  "assets/architecture/afd.svg.license": {
+    "sha256": "c2d920840043570ad8b25f1f43f87a2afe72c7e7bbac5a7309b599929032bd45",
+    "bytes": 469
+  },
+  "assets/architecture/agent-poster.svg": {
+    "sha256": "afd5498f57126b4d5d94ad57a413690e741f6a8fe16becbf8657af55df22ba88",
+    "bytes": 7686
+  },
+  "assets/architecture/omni.png": {
+    "sha256": "ae0a52e430db46ca989b63eb679b13db0a6b90516fc70f3269172bd1c5fc2ff6",
+    "bytes": 1132831
+  },
+  "assets/architecture/inferrsi.svg": {
+    "sha256": "7ea8c123c917e0e53df450180727636cf0351b0e03b80ae9208c84a1c826edf8",
+    "bytes": 4973
+  },
+  "assets/architecture/rlt-poster.svg": {
+    "sha256": "9699db2e0fd79309702d52c467fa09b318ae8bb30a8c29ecf8da0b04c5167cf3",
+    "bytes": 6257
+  },
+  "assets/architecture/afd.svg": {
+    "sha256": "53cf5937ee480102fbabd8e26a52adf1e936a49c2c24d0fc1948465982466017",
+    "bytes": 28858
+  },
+  "assets/architecture/router-poster.svg": {
+    "sha256": "5c35d3277b107940d1cf501b5344d5e3a06f68f60cda6b34dfa274b0defdd731",
+    "bytes": 6824
+  },
+  "assets/architecture/mlx.svg": {
+    "sha256": "a5550bbdfda86ed343008589656ed73de93eb9ee07ef84f16db31a716e054ca6",
+    "bytes": 7523
+  },
+  "assets/architecture/router.svg": {
+    "sha256": "cc3545981d0ec428efe6dd61d35901b0fc3f8beb50f696616f5eb30a1689faae",
+    "bytes": 4951
+  },
+  "assets/architecture/rlt.png": {
+    "sha256": "2972f105042a61cb960d2923dd2916d3c6e0644f27cfe73f55fedf42eeed781b",
+    "bytes": 127348
+  },
+  "assets/architecture/agent.png": {
+    "sha256": "bd2c640901e64806fd2e4d7d2914d0ca90ecd0b43207eab6361bbd9e1abeb2ee",
+    "bytes": 609129
+  },
+  "assets/architecture/mlx-poster.svg": {
+    "sha256": "fb38f9521354fb072a4e6078cdc5f5867b54cd6264b8e18cd460a4e3dc55868b",
+    "bytes": 4243
+  }
+}

@@ -2,9 +2,9 @@
 
 **Open to Infer. Built to Evolve.**
 
-InferMatrix 开源推理生态展示网站。当前版本提供中文/英文切换、六个项目的分类筛选、架构图缩放查看、生态方向探索，以及原始海报下载。
+InferMatrix 开源推理生态展示网站。当前版本提供中文/英文切换、七个项目的分类筛选、架构图缩放查看、生态方向探索，以及原始海报下载。
 
-A bilingual, buildless website showcasing six open-source inference projects: vLLM-Omni, afd-plugin, vLLM Router, agent-infer, vllm-rlt, and vllm-omni-mlx.
+A bilingual, buildless website showcasing seven open-source inference projects: vLLM-Omni, afd-plugin, vLLM Router, agent-infer, vllm-rlt, vllm-omni-mlx, and InferRSI.
 
 ## 本地运行 / Run locally
 
@@ -48,7 +48,15 @@ node qa-interactions.cjs
 
 The current canonical website remains [infermatrix.cwqdavid6.chatgpt.site](https://infermatrix.cwqdavid6.chatgpt.site). Its canonical, Open Graph, robots, and sitemap URLs are preserved in this source snapshot.
 
-This repository does not itself configure GitHub Pages or a custom domain. If GitHub Pages is later enabled for `JiusiServe/infermatrix.github.io`, the default project-site URL is `https://jiusiserve.github.io/infermatrix.github.io/`. An organization-root site instead requires a repository named `JiusiServe.github.io`. See [GitHub Pages site types](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages). Update the canonical URL, `og:url`, `og:image`, `robots.txt`, and `sitemap.xml` together only when the intended public address changes.
+The canonical brand website is public and does not require sign-in. The Recipes catalog is also public: https://infermatrix-recipes.cwqdavid6.chatgpt.site . This repository does not configure GitHub Pages or a custom domain.
+
+## Latest additions
+
+- A repo-grouped video showcase with five vLLM-Omni videos, local poster previews, click-to-play and fullscreen controls.
+- InferRSI as a seventh project and an evidence-driven optimization direction, with a brand-styled, scalable architecture SVG.
+- Qwen3-TTS and Drama 3 dedicated-engine examples with pinned, workload-specific C1/C64 audio-throughput comparisons. See `INFERRSI.md` and `BENCHMARK_EVIDENCE.json`; these are author-reported results, not independently rerun benchmarks.
+- Infer RSI in the focus strip and a fifth bilingual autonomous-inference-optimization explorer direction.
+- Public Recipes catalog links in the navigation and InferRSI section.
 
 ## 素材与许可 / Assets and licensing
 

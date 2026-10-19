@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1120" viewBox="0 0 1800 1120" role="img" aria-labelledby="title desc"><title id="title">InferRSI — evidence-driven inference optimization</title><desc id="desc">User and coding agent supply code changes and benchmark commands. Immutable run specification feeds the experiment harness, composed with model contracts and execution infrastructure. Performance and quality gates produce evidence and reusable knowledge. Automatic planning is not claimed.</desc><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0a1931"/><stop offset="1" stop-color="#060d1c"/></linearGradient><linearGradient id="accent"><stop stop-color="#277af8"/><stop offset="1" stop-color="#3fdde8"/></linearGradient><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M60 0H0V60" fill="none" stroke="#264663" stroke-opacity=".24"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" stroke="#50bedf" stroke-width="1.5"/></marker></defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#f4f7fe}.k{font-family:Consolas,monospace;font-size:23px;letter-spacing:2px;fill:#74cde8}.h{font-size:36px;font-weight:700}.b{font-size:27px;fill:#b7c9df}.s{font-size:24px;fill:#96aec9}.flow{fill:none;stroke:#50bedf;stroke-width:3;marker-end:url(#arrow)}</style><rect width="1800" height="1120" rx="24" fill="url(#bg)"/><rect width="1800" height="1120" rx="24" fill="url(#grid)"/><rect x="64" y="62" width="6" height="65" rx="3" fill="url(#accent)"/><text x="96" y="87" class="k">INFERRSI / OPTIMIZATION WORKBENCH</text><text x="96" y="135" font-size="43" font-weight="700">Measure. Verify. Learn. Repeat.</text>
+<rect x="64" y="190" width="780" height="194" rx="16" fill="#0d1c32" stroke="#277af8" stroke-opacity=".7" stroke-width="2"/><text x="92" y="229" class="k">01 / USER + CODING AGENT</text><text x="92" y="278" class="h">Profile &amp; propose</text>
+<text x="92" y="321" class="b">Code changes + benchmark / validation commands</text>
+<rect x="914" y="190" width="822" height="194" rx="16" fill="#0d1c32" stroke="#277af8" stroke-opacity=".7" stroke-width="2"/><text x="942" y="229" class="k">02 / CLI + KNOWLEDGE</text><text x="942" y="278" class="h">Immutable RunSpec</text>
+<text x="942" y="321" class="b">Source fingerprints + cited tuning context</text>
+<path class="flow" d="M844 287H902"/><path class="flow" d="M1325 384V424H900V457"/>
+<rect x="64" y="472" width="510" height="247" rx="16" fill="#0d1c32" stroke="#3fdde8" stroke-opacity=".7" stroke-width="2"/><text x="92" y="511" class="k">MODEL / CONTRACTS</text><text x="92" y="560" class="h">Protocols + validators</text>
+<text x="92" y="603" class="b">Payloads and metrics</text>
+<text x="92" y="641" class="b">Quality checks + gates</text>
+<text x="92" y="679" class="b">Model-specific adapters</text>
+<rect x="644" y="472" width="512" height="247" rx="16" fill="#0d1c32" stroke="#277af8" stroke-opacity=".7" stroke-width="2"/><text x="672" y="511" class="k">HARNESS / ORCHESTRATION</text><text x="672" y="560" class="h">Experiment loop</text>
+<text x="672" y="603" class="b">Repeated AB/BA trials</text>
+<text x="672" y="641" class="b">Warmups + seed ordering</text>
+<text x="672" y="679" class="b">Deadlines + evidence capture</text>
+<rect x="1226" y="472" width="510" height="247" rx="16" fill="#0d1c32" stroke="#3fdde8" stroke-opacity=".7" stroke-width="2"/><text x="1254" y="511" class="k">INFRA / EXECUTION</text><text x="1254" y="560" class="h">Targets + processes</text>
+<text x="1254" y="603" class="b">Device qualification</text>
+<text x="1254" y="641" class="b">Subprocess lifetime</text>
+<text x="1254" y="679" class="b">HTTP timing + artifacts</text>
+<path class="flow" d="M644 595H586"/><path class="flow" d="M1156 595H1214"/><path class="flow" d="M900 719V754H454V784"/>
+<rect x="64" y="796" width="780" height="205" rx="16" fill="#0d1c32" stroke="#277af8" stroke-opacity=".7" stroke-width="2"/><text x="92" y="835" class="k">03 / EVALUATE + REPORT</text><text x="92" y="884" class="h">PASS / FAIL / INCONCLUSIVE</text>
+<text x="92" y="927" class="b">Performance + quality evidence</text>
+<text x="92" y="965" class="b">JSON records + HTML reports</text>
+<rect x="914" y="796" width="822" height="205" rx="16" fill="#0d1c32" stroke="#3fdde8" stroke-opacity=".7" stroke-width="2"/><text x="942" y="835" class="k">04 / KNOWLEDGE + REUSE</text><text x="942" y="884" class="h">Keep every useful lesson</text>
+<text x="942" y="927" class="b">Successful and rejected directions</text>
+<text x="942" y="965" class="b">Cited context for the next experiment</text>
+<path class="flow" d="M844 900H902"/><path class="flow" stroke-dasharray="9 9" d="M1760 899V420H1355V396"/><text x="64" y="1071" class="s">User-driven workflow · Shared modules + frozen historical validators · No autonomous planning implied</text></svg>
