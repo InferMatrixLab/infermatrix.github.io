@@ -10,7 +10,7 @@ Sources read for this update:
 
 InferRSI is positioned as a user-driven CLI optimization workbench, not an autonomous optimization system. Engine examples are scoped to their models and hardware; author-reported campaign acceptance does not imply production readiness or generic superiority. Drama 3's original all-concurrency target remains unmet and optimization is paused. No new performance experiment was run for this website update.
 
-Recipes entry: https://infermatrix-recipes.pages.dev . Website content and audiences are managed separately; preserve the existing brand site's audience.
+Recipes entry: https://recipes.infermatrix.si . Website content and audiences are managed separately; preserve the existing brand site's audience.
 
 The prior v9 video showcase, original logo and six original architecture assets are retained. Historical poster artwork still contains six projects and is not rewritten.
 

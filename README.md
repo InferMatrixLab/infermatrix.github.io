@@ -46,9 +46,9 @@ node qa-interactions.cjs
 
 ## 网站地址 / Site address
 
-Live Cloudflare Pages URLs: https://infermatrix.pages.dev and https://infermatrix-recipes.pages.dev. The brand site links to the live Recipes URL while custom-domain DNS activation is pending.
+Live websites: https://infermatrix.si for the brand website and https://recipes.infermatrix.si for the Recipes catalog. All three Recipes entries on the brand site link to the Recipes subdomain.
 
-Deployment targets: https://infermatrix.si for the brand website and https://recipes.infermatrix.si for the Recipes catalog, using Cloudflare Pages Free.
+Both sites use Cloudflare Pages Free with GitHub automatic deployments. The Pages addresses remain available at https://infermatrix.pages.dev and https://infermatrix-recipes.pages.dev.
 
 For the brand site, select framework `None`, leave the build command empty, and use the repository root (`.`) as the build output directory. For `InferMatrixLab/recipe`, use `pnpm build`, output directory `out`, Node.js 24, and pnpm 11.25.0. Leave `NEXT_PUBLIC_BASE_PATH` unset for the Recipes subdomain.
 
