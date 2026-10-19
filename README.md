@@ -46,9 +46,11 @@ node qa-interactions.cjs
 
 ## 网站地址 / Site address
 
-The current canonical website remains [infermatrix.cwqdavid6.chatgpt.site](https://infermatrix.cwqdavid6.chatgpt.site). Its canonical, Open Graph, robots, and sitemap URLs are preserved in this source snapshot.
+Deployment targets: https://infermatrix.si for the brand website and https://recipes.infermatrix.si for the Recipes catalog, using Cloudflare Pages Free.
 
-The canonical brand website is public and does not require sign-in. The Recipes catalog is also public: https://infermatrix-recipes.cwqdavid6.chatgpt.site . This repository does not configure GitHub Pages or a custom domain.
+For the brand site, select framework `None`, leave the build command empty, and use the repository root (`.`) as the build output directory. For `InferMatrixLab/recipe`, use `pnpm build`, output directory `out`, Node.js 24, and pnpm 11.25.0. Leave `NEXT_PUBLIC_BASE_PATH` unset for the Recipes subdomain.
+
+Bind each custom domain in its Pages project. The registrar must delegate `infermatrix.si` to the Cloudflare nameservers assigned to the zone before the custom domains can become active. Both sites are public and require no sign-in.
 
 ## Latest additions
 
