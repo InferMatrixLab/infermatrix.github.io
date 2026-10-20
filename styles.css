@@ -268,3 +268,5 @@ html[lang=zh-CN] .hero-description{font-size:20px;max-width:550px;line-height:1.
 .constellation[data-mode=optimization] [data-node=optimization]{color:#acdfff}
 .constellation[data-mode=optimization] [data-node=optimization] .node-symbol{color:#6acbf8;border-color:#3a88b8;box-shadow:0 0 24px #158fda22;background:#10304a}
 @media(max-width:680px){.explorer-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.explorer-tab:last-child{grid-column:1/-1}.node-rsi{top:2%}.capability-strip{overflow-x:auto}}
+
+@media(min-width:1200px){.rsi-examples{grid-template-columns:repeat(3,minmax(0,1fr))}}

@@ -420,5 +420,293 @@
         "throughput_vs_sglang": 1
       }
     ]
+  },
+  "minicpm": {
+    "checked_at": "2026-10-20",
+    "source": "https://github.com/InferMatrixLab/minicpm-o-4.5-single-gpu-engine/blob/a4f4778f312791c2d190b48e521141887ed160c8/docs/current-results.md",
+    "raw_source": "https://github.com/InferMatrixLab/minicpm-o-4.5-single-gpu-engine/blob/a4f4778f312791c2d190b48e521141887ed160c8/docs/current-results.json",
+    "architecture_source": "https://github.com/InferMatrixLab/minicpm-o-4.5-single-gpu-engine/blob/a4f4778f312791c2d190b48e521141887ed160c8/docs/architecture.md",
+    "hardware": "1× NVIDIA L20X, 143 GB; reported memory use about 95 GB",
+    "driver_reported": "570.133.20",
+    "model": "openbmb/MiniCPM-o-4_5",
+    "model_revision": "503e754207c94da6bb26850b4469f367c9ea3582",
+    "deployment_revision": "a4f4778f312791c2d190b48e521141887ed160c8",
+    "vllm_omni_revision": "2ec5f265c69520cdd5e5f0a19db485d38885843e",
+    "sglang_omni_revision": "22d4ace88f9547777b819a69d7691204bb9ce847",
+    "aggregation": "5-run arithmetic means; warmup and discarded run 0; fresh server per measured run; Seed-TTS English voice-cloning eval, 320 requests/run at C1 and 640 at C32",
+    "metric": "25 × delivered audio seconds / wall time, codec frames/s; TTFA in seconds in raw cells",
+    "qualifications": [
+      "Author-reported development measurements; hardware experiments NOT rerun for this website.",
+      "Measured track_s_fast_r11 differs from the README default track_s_fast; no transfer of performance claims to that default.",
+      "All-metric/all-concurrency 2× target unmet; planned H200 K=10 acceptance not run.",
+      "r11 HiFT + batched setup fails 1 of 190 chunks: 1.06e-2 against 1e-2; exact-profile speech-quality gates not run.",
+      "Baseline configs selected on separate tuning requests. SGLang-Omni returns a whole waveform; its TTFA is E2E latency.",
+      "No vLLM evaluation rows at C4/C8; no interpolation. Displayed comparisons use C1/C32, where both baselines were evaluated.",
+      "Deployment source pin identifies the published documentation/runtime snapshot, not a newly qualified campaign revision.",
+      "The card targets H200, but every displayed numeric comparison remains explicitly attributed to the original L20X measurements; no H200 performance claim is made."
+    ],
+    "cohorts": [
+      {
+        "concurrency": 1,
+        "raw": {
+          "candidate": {
+            "dir": "engine_track_s_fast_r11-r11c_70eb3bdf32df_c1",
+            "config": "track_s_fast_r11",
+            "mps": "on",
+            "k": 5,
+            "n_requests": 320,
+            "throughput_frames_s": 397.4252789874404,
+            "ttfa_p50_s": 0.1262109462171793,
+            "ttfa_p95_s": 0.13323536198586225,
+            "rtf_mean": 0.06349649332404557,
+            "runs": {
+              "throughput_frames_s": [
+                399.9937361646157,
+                397.46995768023004,
+                398.04933060403715,
+                396.67071837939886,
+                394.9426521089201
+              ],
+              "ttfa_p50_s": [
+                0.12548709101974964,
+                0.12606392987072468,
+                0.12584754452109337,
+                0.12645298801362514,
+                0.12720317766070366
+              ],
+              "ttfa_p95_s": [
+                0.13077983241528274,
+                0.1343657486140728,
+                0.13373162392526866,
+                0.13310118187218906,
+                0.13419842310249805
+              ],
+              "rtf_mean": [
+                0.06304459151058636,
+                0.06357929732430481,
+                0.06341905781518593,
+                0.06356896600268012,
+                0.06387055396747063
+              ]
+            }
+          },
+          "vllm": {
+            "dir": "vllm-omni_minicpmo_4_5_turn_mps-mps-on_9901f000524d_c1",
+            "config": "/workspace/cgzheng/cgzheng/qwen3_omni/configs/vllm/minicpmo_4_5_turn_mps.yaml",
+            "mps": "on",
+            "k": 5,
+            "n_requests": 320,
+            "throughput_frames_s": 187.51560042896784,
+            "ttfa_p50_s": 0.2952865157276392,
+            "ttfa_p95_s": 0.3398829966038466,
+            "rtf_mean": 0.1354067730692546,
+            "runs": {
+              "throughput_frames_s": [
+                196.20867274051798,
+                198.83092476212107,
+                199.0754678510571,
+                166.83865470535966,
+                176.6242820857835
+              ],
+              "ttfa_p50_s": [
+                0.2967927511781454,
+                0.2941445726901293,
+                0.29313448444008827,
+                0.29476328380405903,
+                0.297597486525774
+              ],
+              "ttfa_p95_s": [
+                0.34479507226496936,
+                0.3295951422303915,
+                0.33007922042161225,
+                0.34036806765943767,
+                0.35457748044282206
+              ],
+              "rtf_mean": [
+                0.1291991447595263,
+                0.12746286386822192,
+                0.12732539897204825,
+                0.14821531660401846,
+                0.14483114114245818
+              ]
+            }
+          },
+          "sglang": {
+            "dir": "sglang-omni_speech-mm32k_4ebf4e2bdd31_c1",
+            "config": "speech",
+            "mps": "off",
+            "k": 5,
+            "n_requests": 320,
+            "throughput_frames_s": 278.71533791333485,
+            "ttfa_p50_s": 0.38123043850064275,
+            "ttfa_p95_s": 0.5029099271446467,
+            "rtf_mean": 0.09308256678702204,
+            "runs": {
+              "throughput_frames_s": [
+                278.3916780630104,
+                280.23274747519457,
+                279.6310062124516,
+                278.21723439430065,
+                277.104023421717
+              ],
+              "ttfa_p50_s": [
+                0.3809645529836416,
+                0.38016208820044994,
+                0.37845273688435555,
+                0.3816960081458092,
+                0.3848768062889576
+              ],
+              "ttfa_p95_s": [
+                0.5052621325477957,
+                0.49867294151335956,
+                0.5016239237040282,
+                0.5054695811122656,
+                0.5035210568457842
+              ],
+              "rtf_mean": [
+                0.0931911802716289,
+                0.09261226561907919,
+                0.0927682374613952,
+                0.0932395917528368,
+                0.0936015588301701
+              ]
+            }
+          }
+        },
+        "ratio_vs_vllm": 2.119425146911911,
+        "ratio_vs_sglang": 1.4259182216624828
+      },
+      {
+        "concurrency": 32,
+        "raw": {
+          "candidate": {
+            "dir": "engine_track_s_fast_r11-r11c_70eb3bdf32df_c32",
+            "config": "track_s_fast_r11",
+            "mps": "on",
+            "k": 5,
+            "n_requests": 640,
+            "throughput_frames_s": 2437.0958186358357,
+            "ttfa_p50_s": 0.6546327464282513,
+            "ttfa_p95_s": 0.7946371833235025,
+            "rtf_mean": 0.3345381904725761,
+            "runs": {
+              "throughput_frames_s": [
+                2410.6340925649674,
+                2452.8613135120627,
+                2451.815987984444,
+                2418.5352283503053,
+                2451.632470767401
+              ],
+              "ttfa_p50_s": [
+                0.6585528310388327,
+                0.6628166362643242,
+                0.6489658262580633,
+                0.6558287814259529,
+                0.6469996571540833
+              ],
+              "ttfa_p95_s": [
+                0.80618580840528,
+                0.8052370959892868,
+                0.778430201485753,
+                0.8056201675906777,
+                0.7777126431465149
+              ],
+              "rtf_mean": [
+                0.33800384394352606,
+                0.33208435389141255,
+                0.3335406899424192,
+                0.33682124910609695,
+                0.3322408154794258
+              ]
+            }
+          },
+          "vllm": {
+            "dir": "vllm-omni_minicpmo_4_5_turn_mrv2_h200_mps-mps-on_ecae2534b6b1_c32",
+            "config": "/workspace/cgzheng/cgzheng/qwen3_omni/configs/vllm/minicpmo_4_5_turn_mrv2_h200_mps.yaml",
+            "mps": "on",
+            "k": 5,
+            "n_requests": 640,
+            "throughput_frames_s": 407.68107291032186,
+            "ttfa_p50_s": 1.0410863805562258,
+            "ttfa_p95_s": 1.9656105696782469,
+            "rtf_mean": 2.034443626457778,
+            "runs": {
+              "throughput_frames_s": [
+                408.43443038394963,
+                409.6669672663946,
+                404.5111490450964,
+                407.7863676604857,
+                408.0064501956831
+              ],
+              "ttfa_p50_s": [
+                1.117506930604577,
+                1.0188717246055603,
+                1.016414325684309,
+                1.0093425307422876,
+                1.0432963911443949
+              ],
+              "ttfa_p95_s": [
+                2.1330699997022746,
+                1.9020884899422525,
+                1.9573040045797823,
+                1.9203702796250581,
+                1.9152200745418666
+              ],
+              "rtf_mean": [
+                2.036206334412576,
+                2.062793848861591,
+                2.0379108781707087,
+                1.973637810223634,
+                2.0616692606203797
+              ]
+            }
+          },
+          "sglang": {
+            "dir": "sglang-omni_speech-mps-off_748941674fb6_c32",
+            "config": "speech",
+            "mps": "off",
+            "k": 5,
+            "n_requests": 640,
+            "throughput_frames_s": 1996.6719635795175,
+            "ttfa_p50_s": 1.6130268029868602,
+            "ttfa_p95_s": 2.3743047797679897,
+            "rtf_mean": 0.4136867628125952,
+            "runs": {
+              "throughput_frames_s": [
+                2019.5231524910112,
+                2018.4169400562953,
+                1969.8960716517506,
+                1990.6163767321193,
+                1984.9072769664115
+              ],
+              "ttfa_p50_s": [
+                1.5902826711535454,
+                1.6109522674232721,
+                1.672284359112382,
+                1.6240491662174463,
+                1.5675655510276556
+              ],
+              "ttfa_p95_s": [
+                2.36636241171509,
+                2.350142526067792,
+                2.3822435243055224,
+                2.293555890582501,
+                2.4792195461690425
+              ],
+              "rtf_mean": [
+                0.4068735256175101,
+                0.4110060112122341,
+                0.4186310475616602,
+                0.4160034136987417,
+                0.4159198159728298
+              ]
+            }
+          }
+        },
+        "ratio_vs_vllm": 5.977946931011749,
+        "ratio_vs_sglang": 1.2205789749592877
+      }
+    ],
+    "presentation_target_hardware": "1× NVIDIA H200 (user-requested target, not validated)"
   }
 }
