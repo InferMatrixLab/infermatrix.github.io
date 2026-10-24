@@ -1,0 +1,16 @@
+.star-all-entry { margin: 20px 0; cursor: pointer; }
+.star-all-dialog { width: min(600px, calc(100vw - 32px)); max-height: calc(100dvh - 40px); padding: 30px; border: 1px solid #45627c; border-radius: 20px; background: #0a172b; color: #edf6ff; overflow: auto; }
+.star-all-dialog::backdrop { background: #020812cc; backdrop-filter: blur(4px); }
+.star-all-dialog h2 { font-size: 23px; padding-right: 26px; }
+.star-all-close { float: right; width: 40px; height: 40px; border: 0; border-radius: 8px; background: #20334a; color: inherit; cursor: pointer; font-size: 25px; }
+.star-all-description,.star-all-status,.star-all-auth { font-size: 14px; line-height: 1.8; color: #b8cce0; }
+.star-all-list { padding: 0; list-style: none; margin: 20px 0; }
+.star-all-list li { display: flex; flex-wrap: wrap; gap: 4px 14px; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #23384d; font: 12px/1.7 var(--mono); overflow-wrap: anywhere; }
+.star-all-list a { color: #9fdae4; }
+.star-all-list span { font-family: var(--font); }
+.star-ok { color: #8be5be; }.star-error { color: #f1c58f; }
+.star-all-auth { padding: 15px; border: 1px solid #45627c; border-radius: 10px; margin-bottom: 18px; }
+.star-all-code { display: block; font: 26px/2 var(--mono); letter-spacing: 3px; color: #fff; user-select: all; }
+.star-all-submit { cursor: pointer; white-space: normal; }.star-all-submit:disabled { opacity: .55; cursor: default; }
+.star-all-dialog :focus-visible { outline: 2px solid #8de5ed; outline-offset: 3px; }
+@media(max-width: 480px) { .star-all-dialog { padding: 20px; } }

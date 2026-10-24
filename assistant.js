@@ -180,7 +180,7 @@
   function syncMotion(){document.body.classList.toggle('mira-paused',motion.matches || $('#motion-toggle')?.getAttribute('aria-pressed')==='true');}
   new MutationObserver(syncMotion).observe($('#motion-toggle'),{attributes:true,attributeFilter:['aria-pressed']});motion.addEventListener('change',syncMotion);mobile.addEventListener('change',syncMobile);
   function syncDialogs(){const blocked=!!document.querySelector('dialog[open]') || !!document.fullscreenElement;document.body.classList.toggle('mira-modal-blocked',blocked);if(blocked && isOpen)closePanel(false);}
-  document.querySelectorAll('dialog').forEach(d=>new MutationObserver(syncDialogs).observe(d,{attributes:true,attributeFilter:['open']}));document.addEventListener('fullscreenchange',syncDialogs);
+  new MutationObserver(syncDialogs).observe(document.body,{subtree:true,attributes:true,attributeFilter:['open']});document.addEventListener('fullscreenchange',syncDialogs);
   if(hidden)document.body.classList.add('mira-hidden');
   translate();syncMotion();syncDialogs();syncLaunchers();dataReady.then(()=>{if(conversation.length)renderThread();});
 })();
