@@ -1,0 +1,422 @@
+/* 小矩 · local assistant preview. Kept independent from the original homepage. */
+:root {
+  --mira-ink: #edf6ff;
+  --mira-muted: #99afc8;
+  --mira-cyan: #72e5eb;
+  --mira-line: rgba(114, 173, 218, .24);
+  --mira-panel: #0a172b;
+}
+
+.mira-launcher[hidden], .mira-panel[hidden],
+.mira-backdrop[hidden], .mira-restore[hidden],
+.mira-panel [hidden] { display: none !important; }
+
+.mira-launcher {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 3px;
+  min-height: 44px;
+  border: 1px solid #558bad50;
+  border-radius: 50%;
+  background: #0d1d30;
+  box-shadow: none;
+  text-align: left;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+.mira-launcher:hover {
+  border-color: #80dbe0;
+  background: #142b42;
+}
+.mira-avatar {
+  flex: 0 0 auto;
+  position: relative;
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #64b4ce80;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 65%, #285373, #102137);
+}
+.mira-avatar img {
+  position: absolute;
+  width: 245%;
+  max-width: none;
+  height: auto;
+  left: -72%;
+  top: -38%;
+}
+.mira-launcher .mira-avatar { width: 38px; height: 38px; }
+.mira-floating-widget {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 25;
+  padding-top: 32px;
+}
+.mira-floating-widget[hidden] { display: none !important; }
+.mira-floating {
+  position: relative;
+  width: 84px;
+  height: 120px;
+  min-height: 120px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.mira-floating:hover { background: transparent; box-shadow: none; }
+.mira-floating .mira-avatar { width: 100%; height: 100%; overflow: visible; border: 0; border-radius: 0; background: transparent; }
+.mira-floating .mira-avatar img { position: static; display: block; width: 100%; height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 2px 3px #0003); }
+.mira-sticker-dismiss {
+  position: absolute;
+  right: -2px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid #45627c;
+  border-radius: 50%;
+  background: #0a172b;
+  color: #a9bfd3;
+  font: 18px/1 var(--font);
+  opacity: 0;
+  pointer-events: none;
+}
+.mira-floating-widget:hover .mira-sticker-dismiss,
+.mira-floating:focus-visible + .mira-sticker-dismiss,
+.mira-sticker-dismiss:focus-visible { opacity: 1; pointer-events: auto; }
+.mira-sticker-dismiss:hover { color: #f4f7fe; border-color: #88a9c6; }
+.mira-sticker-dismiss:focus-visible { outline: 2px solid #8de5ed; outline-offset: 3px; }
+@media (hover: none), (pointer: coarse) {
+  .mira-floating-widget { padding-top: 48px; }
+  .mira-sticker-dismiss { width: 44px; height: 44px; opacity: 1; pointer-events: auto; }
+}
+.mira-launcher-label, .mira-launcher > span:last-child { display: none; }
+.mira-hidden .mira-floating-widget,
+.mira-hidden .mira-launcher { display: none !important; }
+
+.mira-panel {
+  position: fixed;
+  right: 24px;
+  top: 104px;
+  width: 418px;
+  height: 720px;
+  max-height: calc(100dvh - 120px);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--mira-ink);
+  background: linear-gradient(145deg, #0e2137, var(--mira-panel) 40%);
+  border: 1px solid #50779788;
+  border-radius: 22px;
+  box-shadow: 0 25px 100px #0009, 0 0 45px #0a4c7220, inset 0 1px #bceaff10;
+  animation: mira-enter .22s ease-out;
+}
+.mira-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 30px;
+  right: 30px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #7de5ee90, transparent);
+  pointer-events: none;
+}
+.mira-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 18px 16px 14px 20px;
+  flex: 0 0 auto;
+}
+.mira-heading { min-width: 0; flex: 1; }
+.mira-heading h2, .mira-heading h3 { font-size: 17px; font-weight: 650; line-height: 1.5; margin: 0; letter-spacing: .01em; }
+.mira-heading p, .mira-heading small { display: block; margin: 1px 0 0; color: #9bb6ce; font: 10px/1.5 var(--mono); letter-spacing: .08em; }
+.mira-tools { display: flex; align-items: center; flex: 0 0 auto; gap: 2px; }
+.mira-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 37px;
+  height: 40px;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  color: #9eb6cd;
+  background: none;
+  font: 22px/1 var(--font);
+  padding: 0;
+  transition: background .2s, color .2s;
+}
+.mira-icon-button svg { width: 18px; height: 18px; }
+.mira-icon-button:hover { color: #e9faff; background: #73b4d511; border-color: #5b85a436; }
+.mira-clear, .mira-hide { font-size: 12px; }
+.mira-mode {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 20px;
+  padding: 10px 12px;
+  border: 1px solid #416f7c4d;
+  border-radius: 9px;
+  background: #1d465027;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #aacbd7;
+}
+.mira-mode::before { content: ''; width: 5px; height: 5px; flex: 0 0 auto; background: #70cbd6; border-radius: 50%; }
+.mira-context {
+  flex: 0 0 auto;
+  margin: 11px 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #b0cde4;
+}
+.mira-context > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mira-context button { border: 0; background: none; color: #94b4ce; font-size: 12px; min-height: 30px; padding: 3px 5px; }
+.mira-thread {
+  flex: 1 1 auto;
+  min-height: 90px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #365774 transparent;
+  padding: 20px 20px 8px;
+  scroll-behavior: smooth;
+}
+.mira-message { position: relative; margin: 0 0 19px; }
+.mira-message-label { display: block; font: 10px/1.5 var(--mono); letter-spacing: .08em; color: #8faec9; margin: 0 0 7px 1px; }
+.mira-message-content {
+  padding: 14px 15px;
+  color: #c7d7e9;
+  background: #152a414d;
+  border: 1px solid #3a587344;
+  border-radius: 4px 15px 15px;
+  font-size: 14px;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.mira-message-content p { margin: 0 0 10px; }
+.mira-message-content p:last-child { margin-bottom: 0; }
+.mira-message-content strong { color: #edf7ff; font-weight: 600; }
+.mira-message-content ul { padding-left: 18px; margin: 8px 0; }
+.mira-message-user { margin-left: 32px; }
+.mira-message-user .mira-message-label { text-align: right; }
+.mira-message-user .mira-message-content { background: #19466d6b; border-color: #447a9d5e; border-radius: 15px 4px 15px 15px; color: #d7ebfc; }
+.mira-sources { display: flex; flex-wrap: wrap; gap: 7px; margin: 10px 0 0; }
+.mira-sources a {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  min-height: 33px;
+  padding: 6px 10px;
+  border: 1px solid #36648066;
+  border-radius: 7px;
+  background: #0e273c;
+  color: #9ecfe8;
+  font-size: 11px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.mira-sources a::after { color: #78d0e6; }
+.mira-sources a:hover { color: #dbfbff; border-color: #68b3c4; }
+.mira-message-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 35px;
+  border: 1px solid #448c9d75;
+  border-radius: 7px;
+  margin-top: 10px;
+  padding: 7px 11px;
+  color: #a4e8ef;
+  background: #1b485433;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.mira-message-action:hover { border-color: #7ce0e8; background: #22506266; }
+.mira-topics { flex: 0 0 auto; display: flex; flex-wrap: wrap; gap: 7px; padding: 10px 20px 13px; }
+.mira-topics button {
+  border: 1px solid #3d597350;
+  border-radius: 8px;
+  background: #18314a35;
+  color: #a9c1d8;
+  font-size: 12px;
+  line-height: 1.5;
+  min-height: 33px;
+  padding: 6px 10px;
+  transition: color .2s, background .2s, border-color .2s;
+}
+.mira-topics button:hover { color: #e0f7ff; background: #1e3d55; border-color: #74bdd091; }
+.mira-compose {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 9px;
+  background: #061225;
+  border: 1px solid #4b6c897a;
+  border-radius: 13px;
+  margin: 0 20px;
+  padding: 9px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.mira-compose > label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.mira-compose:focus-within { border-color: #71bbc9; box-shadow: 0 0 0 3px #69c8d00c; }
+.mira-compose textarea {
+  flex: 1;
+  resize: none;
+  min-width: 0;
+  width: 100%;
+  min-height: 43px;
+  max-height: 104px;
+  border: 0;
+  outline: none;
+  color: #e4f1ff;
+  padding: 10px 4px 6px 5px;
+  background: none;
+  font: 14px/1.6 var(--font);
+  scrollbar-width: thin;
+}
+.mira-compose textarea::placeholder { color: #6d89a6; }
+.mira-send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 40px;
+  min-height: 41px;
+  border: 1px solid #85def035;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #368cca, #3079b7);
+  color: #edfbff;
+  font: 20px/1 var(--font);
+  transition: background .2s, opacity .2s;
+}
+.mira-send svg { width: 18px; height: 18px; }
+.mira-send:hover { background: #429bd4; }
+.mira-send:disabled { opacity: .35; cursor: default; }
+.mira-footnote { flex: 0 0 auto; margin: 0; padding: 10px 20px 15px; color: #7792ac; font-size: 10px; line-height: 1.65; text-align: center; }
+.mira-backdrop { display: none; }
+.mira-restore {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 6px 0;
+  color: #a1d9df;
+  background: none;
+  border: 0;
+  font: 13px/1.5 var(--font);
+}
+.mira-restore:hover { color: #d4fcff; }
+.mira-project-ask {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 23px;
+  min-height: 42px;
+  border: 0;
+  border-top: 1px solid #24425870;
+  background: #132e3d40;
+  color: #8fccdb;
+  font-size: 13px;
+  text-align: left;
+}
+.mira-project-ask:hover { color: #c9faff; background: #1c405866; }
+.mira-panel :focus-visible, .mira-launcher:focus-visible,
+.mira-restore:focus-visible {
+  outline: 2px solid #8de5ed;
+  outline-offset: 3px;
+}
+.mira-modal-blocked .mira-panel,
+.mira-modal-blocked .mira-floating-widget,
+.mira-modal-blocked .mira-launcher,
+.mira-modal-blocked .mira-backdrop { visibility: hidden !important; pointer-events: none !important; }
+
+@media (max-width: 900px) {
+  .mira-panel { right: 18px; top: 92px; max-height: calc(100dvh - 108px); }
+}
+@media (min-width: 681px) and (max-width: 1100px) {
+  .site-header { gap: 12px; padding-left: 20px; padding-right: 20px; }
+  .site-header .brand { width: 170px; }
+  .main-nav { gap: 14px; padding-left: 0; }
+  .header-actions { gap: 12px; }
+  .header-actions .header-cta { display: none; }
+}
+@media (max-width: 680px) {
+  body.mira-modal { overflow: hidden; }
+  .site-header { gap: 10px; }
+  .site-header .brand { width: clamp(100px, calc(100vw - 232px), 176px); }
+  .header-actions { gap: 12px; }
+  .mira-launcher .mira-avatar { width: 36px; height: 36px; }
+  .mira-floating { width: 70px; height: 100px; min-height: 100px; }
+  .mira-floating .mira-avatar { width: 100%; height: 100%; }
+  .mira-launcher-label { font-size: 12px; }
+  .mira-backdrop { display: block; position: fixed; inset: 0; z-index: 38; background: #020812aa; backdrop-filter: blur(5px); }
+  .mira-panel {
+    inset: max(8px, env(safe-area-inset-top)) 8px max(8px, env(safe-area-inset-bottom));
+    width: auto;
+    height: auto;
+    max-height: calc(100dvh - 16px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    border-radius: 18px;
+    z-index: 40;
+  }
+  .mira-panel-head { padding: 14px 13px 12px 16px; gap: 10px; }
+  .mira-panel-head .mira-avatar { width: 42px; height: 42px; }
+  .mira-heading h2, .mira-heading h3 { font-size: 17px; }
+  .mira-icon-button { min-width: 40px; min-height: 44px; }
+  .mira-mode { margin: 0 15px; padding: 8px 10px; font-size: 11px; }
+  .mira-context { margin: 10px 15px 0; }
+  .mira-thread { padding: 18px 15px 5px; }
+  .mira-message-content { font-size: 14px; padding: 12px 13px; }
+  .mira-topics { padding: 8px 15px 11px; gap: 6px; }
+  .mira-topics button { min-height: 38px; font-size: 12px; padding: 7px 9px; }
+  .mira-sources a, .mira-message-action { min-height: 38px; }
+  .mira-compose { margin: 0 15px; }
+  .mira-compose textarea { font-size: 16px; }
+  .mira-send { min-width: 44px; min-height: 44px; }
+  .mira-footnote { padding: 9px 15px 12px; }
+}
+@media (max-width: 380px) {
+  .site-header { gap: 10px; }
+  .mira-panel-head { gap: 7px; padding-left: 12px; padding-right: 9px; }
+  .mira-panel-head .mira-avatar { width: 38px; height: 38px; }
+  .mira-heading h2, .mira-heading h3 { font-size: 15px; }
+  .mira-heading p, .mira-heading small { font-size: 9px; }
+  .mira-icon-button { width: 35px; min-width: 35px; }
+}
+@media (max-height: 650px) {
+  .mira-panel { overflow-y: auto; }
+  .mira-panel-head { padding-top: 10px; padding-bottom: 10px; }
+  .mira-mode { font-size: 11px; padding-top: 6px; padding-bottom: 6px; }
+  .mira-thread { padding-top: 12px; }
+  .mira-topics { padding-top: 6px; padding-bottom: 8px; }
+  .mira-footnote { padding-top: 7px; padding-bottom: 8px; }
+}
+@keyframes mira-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.mira-paused .mira-panel,
+.mira-paused .mira-launcher { animation: none; transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .mira-launcher, .mira-panel, .mira-send,
+  .mira-icon-button, .mira-topics button { animation: none; transition: none; }
+  .mira-thread { scroll-behavior: auto; }
+  .mira-launcher:hover { transform: none; }
+}

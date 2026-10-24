@@ -120,8 +120,38 @@
       "license": "No new license grant asserted",
       "changes": "Independent blue/cyan vector diagram following documented user-driven modules and evidence flow",
       "sha256": "7ea8c123c917e0e53df450180727636cf0351b0e03b80ae9208c84a1c826edf8"
+    },
+    {
+      "file": "assets/mira/mira-guide.png",
+      "project": "InferMatrix MIRA / 小矩",
+      "origin": "built-in-image_gen-original-character-reference",
+      "recordedOn": "2026-10-23",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2362008,
+      "sha256": "685b45235e16302a8e57eeefdadec604682a19463b2965916962fc45c1bec500",
+      "reference": "Prior project-original MIRA concept in parent workspace: output/mascot/infermatrix-mira-concept-v1.png",
+      "promptFile": "assets/mira/mira-guide-prompt.txt",
+      "usage": "Local homepage visual and interaction concept prototype only",
+      "license": "No new license grant asserted",
+      "changes": "New isolated half-body illustration generated from the original character reference; generated PNG bytes preserved"
+    },
+    {
+      "file": "assets/mira/mira-sticker-v1.png",
+      "project": "InferMatrix MIRA / 小矩",
+      "origin": "built-in-image_gen-original-character-reference",
+      "recordedOn": "2026-10-24",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1805303,
+      "sha256": "6b9e50fc955051b12a0e0325a439462280c2b711ad9b3d8a08441d844b3f68cf",
+      "reference": "Project-original MIRA character concept: output/mascot/infermatrix-mira-concept-v1.png in the parent workspace",
+      "promptFile": "assets/mira/mira-sticker-v1-prompt.txt",
+      "usage": "Small transparent full-body floating assistant launcher in the local homepage prototype",
+      "license": "No new license grant asserted",
+      "changes": "New full-body chibi illustration; generated transparent PNG bytes preserved"
     }
   ],
-  "updatedOn": "2026-10-19",
+  "updatedOn": "2026-10-24",
   "videoProvenance": "SHOWCASE.md"
 }

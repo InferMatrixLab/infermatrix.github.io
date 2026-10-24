@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('fs'),vm=require('vm'),assert=require('assert');
-const fixture=JSON.parse(fs.readFileSync('/workspace/shared/infermatrix-site/dom-fixture.json'));
+const fixture=JSON.parse(fs.readFileSync(__dirname+'/dom-fixture.json'));
 let doc;
 class Element {
  constructor(tag,attrs={},text=''){this.tagName=tag;this.attrs={...attrs};this._text=text;this.children=[];this.parentNode=null;this.listeners={};this.scrollLeft=0;this.scrollTop=0;this.styles={};this.style={setProperty:(k,v)=>this.styles[k]=v,removeProperty:k=>delete this.styles[k]};this.classList={contains:c=>this.classes.includes(c),add:c=>this.setClass([...new Set([...this.classes,c])]),remove:c=>this.setClass(this.classes.filter(x=>x!==c)),toggle:(c,v)=>{let on=v===undefined?!this.classes.includes(c):v;on?this.classList.add(c):this.classList.remove(c);return on;}};}
@@ -38,7 +38,7 @@ function build(f){const e=new Element(f.tag,f.attrs,f.text);e.children=f.childre
 function run({storageFail=false,reduced=false}={}){
  const root=build(fixture);doc={documentElement:root,body:root.querySelector('body'),activeElement:null,querySelector:s=>root.matches(s)?root:root.querySelector(s),querySelectorAll:s=>root.querySelectorAll(s),contains:e=>root.contains(e),listeners:{},addEventListener(n,f){(this.listeners[n]??=[]).push(f)}};
  const storage={};const media={matches:reduced,addEventListener(){}};
- const ctx={document:doc,window:{matchMedia:()=>media},localStorage:{getItem:k=>{if(storageFail)throw Error('blocked');return storage[k]??null},setItem:(k,v)=>{if(storageFail)throw Error('blocked');storage[k]=v}},requestAnimationFrame:f=>{f();return 1},cancelAnimationFrame(){},console};vm.createContext(ctx);vm.runInContext(fs.readFileSync('/workspace/shared/infermatrix-site/dist/app.js','utf8'),ctx);return {ctx,doc,root,storage};
+ const ctx={document:doc,window:{matchMedia:()=>media},localStorage:{getItem:k=>{if(storageFail)throw Error('blocked');return storage[k]??null},setItem:(k,v)=>{if(storageFail)throw Error('blocked');storage[k]=v}},requestAnimationFrame:f=>{f();return 1},cancelAnimationFrame(){},console};vm.createContext(ctx);vm.runInContext(fs.readFileSync(__dirname+'/app.js','utf8'),ctx);return {ctx,doc,root,storage};
 }
 const {ctx}=run();const q=s=>doc.querySelector(s),qa=s=>doc.querySelectorAll(s),exec=s=>vm.runInContext(s,ctx);
 assert.equal(doc.documentElement.lang,'zh-CN');assert.equal(qa('.project-card').length,7);assert.equal(qa('.project-card').filter(e=>!e.hidden).length,7);
@@ -66,7 +66,7 @@ for(const project of ['omni','afd','router','agent','rlt','mlx','inferrsi']){
  assert.ok(viewer&&img,project+' has a scrollable image viewer');
  assert.equal(img.getAttribute('src'),assetMap[project].src);
  assert.ok(!img.getAttribute('src').includes('infermatrix-poster.png'));
- assert.ok(fs.existsSync('/workspace/shared/infermatrix-site/dist/'+assetMap[project].src));
+ assert.ok(fs.existsSync(__dirname+'/'+assetMap[project].src));
  const initial=parseFloat(img.style.width);assert.ok(initial>0&&initial<=952);
  q('#project-dialog-content').dispatch('click',{target:q('[data-zoom="in"]')});
  assert.ok(parseFloat(img.style.width)>initial,'Zoom increases the real image width');
