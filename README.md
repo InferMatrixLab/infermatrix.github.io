@@ -63,6 +63,19 @@ Bind each custom domain in its Pages project. The registrar must delegate `infer
 - Infer RSI in the focus strip and a fifth bilingual autonomous-inference-optimization explorer direction.
 - Public Recipes catalog links in the navigation and InferRSI section.
 
+## MIRA assistant guide
+
+The header avatar and a small full-body floating sticker open the same bilingual
+project guide. The floating sticker appears after the header leaves the viewport;
+its dismiss control appears on mouse hover or keyboard focus and remains available
+on touch devices. Dismissal is remembered, and opening the guide from the header
+or footer restores the sticker.
+
+This is an explicitly labeled **local-content navigation demo**, not a connected
+AI model. Replies use preset project material and source links. No model endpoint,
+API key, or chat logging service is configured. See [LOCAL_PREVIEW.md](LOCAL_PREVIEW.md)
+for the optional dependency-free Node preview and interaction checklist.
+
 ## 素材与许可 / Assets and licensing
 
 See [ATTRIBUTION.md](ATTRIBUTION.md) for asset-specific sources and [licenses/](licenses/) for the retained upstream licenses. The two official upstream diagrams retain their Apache-2.0 terms. The logo, poster, and poster-based vector redraws are not assigned an open-source license by this repository. No blanket license is asserted for all website code and branding.

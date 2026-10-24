@@ -53,3 +53,16 @@ Source for all four: [the included InferMatrix poster](assets/infermatrix-poster
 
 ## October 19 additions
 InferRSI architecture is a brand-styled original SVG redraw based on the linked project documentation; it is not the upstream graphic. See INFERRSI.md. Video provenance is recorded in SHOWCASE.md. Benchmark sources and exact revisions are in BENCHMARK_EVIDENCE.json. Existing asset licenses are unchanged.
+
+## Local MIRA assistant prototype — 2026-10-23
+
+- `assets/mira/mira-guide.png`: generated with the built-in `image_gen` tool for this local homepage concept prototype; 1024 × 1536 RGBA PNG with transparency.
+- Identity reference: the project's original MIRA / 小矩 character concept created in the preceding design round, `output/mascot/infermatrix-mira-concept-v1.png` in the parent workspace. This asset is a new half-body illustration following that character design.
+- Intended use: local visual and interaction testing of the homepage assistant. The demo does not connect to a real model service.
+- The generation prompt is retained in `assets/mira/mira-guide-prompt.txt`. No additional asset license or trademark permission is asserted by this record.
+
+## Full-body MIRA floating sticker — 2026-10-24
+
+- `assets/mira/mira-sticker-v1.png`: a full-body chibi version of the project-original MIRA character, generated using built-in `image_gen` with a transparent background. The original generated PNG is preserved at 1024 × 1536.
+- Used only for the small floating assistant launcher after the navigation scrolls out of view. The header and conversation avatars retain the existing asset.
+- The prompt is retained in `assets/mira/mira-sticker-v1-prompt.txt`; dimensions, bytes and hash are recorded in `ASSET_PROVENANCE.json`. No additional asset license is asserted.

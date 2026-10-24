@@ -6,3 +6,5 @@ __pycache__/
 .openai/
 .env
 .env.*
+preview.*.log
+preview.pid
