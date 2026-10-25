@@ -4,7 +4,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = __dirname;
 const {createStarService}=require('./star-service.cjs');
-const starService=createStarService({clientId:process.env.GITHUB_STAR_CLIENT_ID,origin:process.env.STAR_PUBLIC_ORIGIN || `http://127.0.0.1:${process.env.MIRA_PREVIEW_PORT || 4173}`});
+const starDemo=process.argv.includes('--star-demo') || process.env.STAR_LOCAL_DEMO==='1';
+const starService=createStarService({clientId:process.env.GITHUB_STAR_CLIENT_ID,clientSecret:process.env.GITHUB_STAR_CLIENT_SECRET,demo:starDemo,origin:process.env.STAR_PUBLIC_ORIGIN || `http://127.0.0.1:${process.env.MIRA_PREVIEW_PORT || 4173}`});
 const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.jpg':'image/jpeg','.jpeg':'image/jpeg','.mp4':'video/mp4','.txt':'text/plain; charset=utf-8'};
 const server = http.createServer((req,res)=>{
   if(req.url.startsWith('/api/stars/')){starService(req,res).catch(()=>{if(!res.headersSent)res.writeHead(500);res.end();});return;}
@@ -20,4 +21,4 @@ const server = http.createServer((req,res)=>{
   });
 });
 server.on('error',error=>{console.error(error.message);process.exit(1);});
-server.listen(Number(process.env.MIRA_PREVIEW_PORT || 4173),'127.0.0.1',()=>console.log(`MIRA local preview: http://127.0.0.1:${server.address().port}`));
+server.listen(Number(process.env.MIRA_PREVIEW_PORT || 4173),'127.0.0.1',()=>console.log(`MIRA local preview: http://127.0.0.1:${server.address().port}${starDemo?' (local Star simulation, no GitHub requests)':''}`));

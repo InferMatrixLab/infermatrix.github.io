@@ -9,8 +9,9 @@
 .star-all-list a { color: #9fdae4; }
 .star-all-list span { font-family: var(--font); }
 .star-ok { color: #8be5be; }.star-error { color: #f1c58f; }
-.star-all-auth { padding: 15px; border: 1px solid #45627c; border-radius: 10px; margin-bottom: 18px; }
-.star-all-code { display: block; font: 26px/2 var(--mono); letter-spacing: 3px; color: #fff; user-select: all; }
+.star-all-dialog summary { cursor: pointer; color: #9fdae4; padding: 10px 0; }
+.star-demo-banner { position: sticky; top: 0; z-index: 50; padding: 8px 18px; background: #503816; color: #ffe2b3; font-size: 13px; text-align: center; }
+.star-demo-banner[hidden] { display: none; }
 .star-all-submit { cursor: pointer; white-space: normal; }.star-all-submit:disabled { opacity: .55; cursor: default; }
 .star-all-dialog :focus-visible { outline: 2px solid #8de5ed; outline-offset: 3px; }
 @media(max-width: 480px) { .star-all-dialog { padding: 20px; } }
