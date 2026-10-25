@@ -1,0 +1,13 @@
+[
+  "vllm-project/vllm-omni",
+  "vllm-project/afd-plugin",
+  "vllm-project/router",
+  "openJiuwen-ai/agent-infer",
+  "ThinkFlowLab/vllm-rlt",
+  "ThinkFlowLab/vllm-omni-mlx",
+  "InferMatrixLab/InferRSI",
+  "InferMatrixLab/qwen3-tts-engine",
+  "InferMatrixLab/drama-3-single-b300-engine",
+  "InferMatrixLab/minicpm-o-4.5-single-gpu-engine",
+  "InferMatrixLab/infermatrix-marketing"
+]
