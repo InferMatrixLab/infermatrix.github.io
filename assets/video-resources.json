@@ -1,0 +1,229 @@
+[
+  {
+    "id": "omni-efficient-inference-framework-talk",
+    "project": "omni",
+    "type": "talk",
+    "title": {
+      "zh": "vLLM-Omni：全模态模型的高效推理框架",
+      "en": "vLLM-Omni: A Framework for Efficient Omni-Modality Inference"
+    },
+    "description": {
+      "zh": "vLLM-Omni 项目介绍，聚焦全模态模型的高效推理。",
+      "en": "An introduction to vLLM-Omni focused on efficient inference for omni-modality models."
+    },
+    "url": "https://www.bilibili.com/video/BV1uwDjB9ESb/",
+    "platform": "Bilibili",
+    "duration": "33:45",
+    "originalTitle": "vLLM-13 vLLM-Omni：A framework for efficient model inference with omni-modality m",
+    "sourceCid": 37328847919,
+    "sourceUrl": "https://api.bilibili.com/x/player/pagelist?bvid=BV1uwDjB9ESb",
+    "sourceNote": "User-supplied video, verified against Bilibili's official pagelist API (HTTP 200, code 0). The sole part identifies the title prefix, cid and 2025-second duration. The returned title ends at 'm'; the editorial display title summarizes the verified topic without reconstructing the missing ending. Speaker, publisher and upload date are not exposed by this endpoint and are omitted. The view endpoint returned HTTP 412; playback was not verified.",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "omni-listen-and-speak-classroom",
+    "project": "omni",
+    "type": "tutorial",
+    "title": {
+      "zh": "SI 的下一个拐点：vLLM-Omni 如何让模型边听边说",
+      "en": "The Next Inflection Point for SI: How vLLM-Omni Lets Models Listen and Speak"
+    },
+    "description": {
+      "zh": "vLLM 小课堂第 20 期，学习 vLLM-Omni 的边听边说能力，了解实时语音交互。",
+      "en": "vLLM Classroom #20 explores how vLLM-Omni lets models listen and speak at the same time, introducing real-time voice interaction."
+    },
+    "url": "https://www.bilibili.com/video/BV1zRpg6REeh/",
+    "platform": "Bilibili",
+    "duration": "1:26:57",
+    "originalTitle": "vLLM小课堂（二十）：SI的下一个拐点，vLLM-Omni如何让模型边听边说",
+    "sourceCid": 42622258816,
+    "sourceUrl": "https://api.bilibili.com/x/player/pagelist?bvid=BV1zRpg6REeh",
+    "sourceNote": "User-supplied video, verified against Bilibili's official pagelist API (HTTP 200, code 0). The sole part identifies the original title, cid and 5217-second duration. SI is retained exactly as supplied by the source title. Speaker, publisher and upload date are not exposed by this endpoint and are omitted. The view endpoint returned HTTP 412; playback was not verified.",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "omni-shanghai-architecture-2026",
+    "project": "omni",
+    "type": "talk",
+    "title": {
+      "zh": "当模型开始全模态：vLLM-Omni 的架构演化之路",
+      "en": "When Models Go Omni-Modal: The Evolution of vLLM-Omni Architecture"
+    },
+    "description": {
+      "zh": "vLLM 上海 Meetup 分享，介绍 vLLM-Omni 面向全模态模型服务的架构演进。链接直达合集第 9 个视频。",
+      "en": "A vLLM Shanghai Meetup talk on the evolution of vLLM-Omni for omni-modal model serving. Opens part 9 of the event recording."
+    },
+    "url": "https://www.bilibili.com/video/BV1KXKw6TEqS?p=9",
+    "platform": "Bilibili",
+    "publisher": "vllm_project",
+    "speaker": "汪志鹏 / Zhipeng Wang",
+    "publishedAt": "2026-07-18",
+    "eventDate": "2026-07-16",
+    "sourceUrl": "https://www.bilibili.com/video/BV1KXKw6TEqS?p=2",
+    "sourceNote": "The indexed original event playlist lists this talk as item 009 and identifies the publisher, speaker and upload date. Direct playback was not verified.",
+    "verifiedAt": "2026-10-28"
+  },
+  {
+    "id": "omni-office-hours-intro",
+    "project": "omni",
+    "type": "talk",
+    "title": {
+      "zh": "vLLM-Omni 入门：vLLM Office Hours",
+      "en": "Intro to vLLM-Omni"
+    },
+    "description": {
+      "zh": "vLLM 官方 Office Hours 第 46 期，介绍全模态理解与生成、AR 与 Diffusion 架构，以及项目的使用入口。",
+      "en": "Official vLLM Office Hours #46 introduces omni-modal understanding and generation, autoregressive and diffusion architectures, and ways to get started."
+    },
+    "url": "https://www.youtube.com/watch?v=t5pyT1OxPhQ",
+    "platform": "YouTube",
+    "publisher": "vLLM",
+    "speaker": "Gao Han",
+    "eventDate": "2026-04-09",
+    "sourceUrl": "https://vllm.ai/office-hours",
+    "sourceNote": "The official Office Hours archive links this exact recording. eventDate is the session date; an upload date and exact duration are not asserted.",
+    "verifiedAt": "2026-10-28"
+  },
+  {
+    "id": "omni-office-hours-update",
+    "project": "omni",
+    "type": "talk",
+    "title": {
+      "zh": "vLLM-Omni 项目进展与实践演示",
+      "en": "vLLM Omni Project Update & Demos"
+    },
+    "description": {
+      "zh": "vLLM 官方 Office Hours 第 57 期，讲解音频、图像和视频模型的分阶段流水线，并展示实时语音与视频生成。",
+      "en": "Official vLLM Office Hours #57 covers stage-based serving for audio, image and video models, with real-time voice and video-generation examples."
+    },
+    "url": "https://www.youtube.com/watch?v=dYgb-kTY9nY",
+    "platform": "YouTube",
+    "publisher": "vLLM",
+    "speaker": "Alex Brooks, Ricardo Noriega, Nick Cao",
+    "publishedAt": "2026-09-09",
+    "eventDate": "2026-09-03",
+    "sourceUrl": "https://vllm.ai/office-hours",
+    "sourceNote": "The official archive identifies the recording and speakers. The video upload date differs from the session date.",
+    "verifiedAt": "2026-10-28"
+  },
+  {
+    "id": "omni-conf42-diffusion-to-production",
+    "project": "omni",
+    "type": "talk",
+    "title": {
+      "zh": "从 Diffusion 到生产：vLLM-Omni 如何统一多模态推理",
+      "en": "From Diffusion to Production: How vLLM-Omni Unifies Multimodal Inference"
+    },
+    "description": {
+      "zh": "Conf42 LLMs 2026 演讲，从 Diffusion 基础讲到 AR / DiT 阶段、请求分发与统一的多模态服务接口。",
+      "en": "A Conf42 LLMs 2026 talk connecting diffusion fundamentals with AR/DiT stages, request dispatch and unified multimodal serving APIs."
+    },
+    "url": "https://www.youtube.com/watch?v=Z_pGSa7umwU",
+    "platform": "YouTube",
+    "publisher": "Conf42",
+    "speaker": "Kosseila Haddalene",
+    "eventDate": "2026-06-18",
+    "sourceUrl": "https://www.conf42.com/Large_Language_Models_LLMs_2026_Kosseila_Haddalene_multimodal_inference_vllm",
+    "sourceNote": "The conference talk page and event program link this exact video. eventDate is the conference date, not a separately verified upload date.",
+    "verifiedAt": "2026-10-28"
+  },
+  {
+    "id": "omni-redhat-qwen3-architecture",
+    "project": "omni",
+    "type": "tutorial",
+    "title": {
+      "zh": "走进 vLLM-Omni 架构：服务 Qwen3-Omni",
+      "en": "Inside the vLLM-Omni Architecture: Serving Qwen3-Omni"
+    },
+    "description": {
+      "zh": "Red Hat Developer 配套视频，通过 Qwen3-Omni 应用案例观察多阶段服务与执行流水线，辅助理解引擎架构。",
+      "en": "A Red Hat Developer companion video using a Qwen3-Omni application to illustrate staged serving and pipeline execution."
+    },
+    "url": "https://www.youtube.com/watch?v=A1x0s_GsOUQ",
+    "platform": "YouTube",
+    "publisher": "Red Hat Developer",
+    "sourceUrl": "https://developers.redhat.com/articles/2026/07/01/inside-vllm-omni-architecture-serving-qwen3-omni",
+    "sourceNote": "The official technical article embeds this exact video. Its article date and byline are not used as the video upload date or speaker.",
+    "verifiedAt": "2026-10-28"
+  },
+  {
+    "id": "omni-diffusion-continuous-batching-pid",
+    "project": "omni",
+    "type": "tutorial",
+    "title": {
+      "zh": "vLLM-Omni：Diffusion Continuous Batching 与 PiD",
+      "en": "vLLM-Omni: Diffusion Continuous Batching and PiD"
+    },
+    "description": {
+      "zh": "vLLM 小课堂专题，学习 Diffusion 异步调度、动态批处理和 PiD，适合关注多模态推理性能的开发者。",
+      "en": "A vLLM Classroom session on diffusion scheduling, dynamic batching and PiD for developers exploring multimodal inference performance."
+    },
+    "url": "https://www.bilibili.com/video/BV189816ZE9C/",
+    "platform": "Bilibili",
+    "publisher": "vLLM 小课堂",
+    "sourceUrl": "https://princepride.github.io/live-streaming-tools/vllm_omni_diffusion_continuous_batching/final/blog/",
+    "sourceNote": "The maintained video/slides index and companion lesson link this exact video. Conflicting episode numbers are omitted. Bilibili returned HTTP 412, so playback was not verified.",
+    "verifiedAt": "2026-10-28"
+  },
+  {
+    "id": "afd-attention-ffn-jiangchenzhou",
+    "project": "afd",
+    "type": "talk",
+    "title": {
+      "zh": "AFD 插件：Attention 与 FFN 分离",
+      "en": "AFD Plugin: Attention–FFN Disaggregation"
+    },
+    "description": {
+      "zh": "江晨舟介绍 AFD 插件及 Attention / FFN 分离。链接直达合集第 4 个视频。",
+      "en": "A talk by 江晨舟 on the AFD plugin and Attention/FFN disaggregation. Opens part 4 of the collection."
+    },
+    "url": "https://www.bilibili.com/video/BV14vnz65E6Z/?p=4",
+    "platform": "Bilibili",
+    "speaker": "江晨舟",
+    "duration": "26:06",
+    "originalTitle": "04 AFD插件 Attention与FFN分离 江晨舟",
+    "sourceCid": 42919005666,
+    "sourceUrl": "https://api.bilibili.com/x/player/pagelist?bvid=BV14vnz65E6Z",
+    "sourceNote": "User-supplied collection link, verified against Bilibili's official pagelist API (HTTP 200, code 0). Part 4 identifies the topic, speaker, cid and 1566-second duration. The display title is lightly normalized. Publisher and upload date are not exposed by this endpoint and are omitted; playback was not verified.",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "afd-fastafd-classroom",
+    "project": "afd",
+    "type": "tutorial",
+    "title": {
+      "zh": "AFD 与 FastAFD：大模型推理的内存与计算解耦",
+      "en": "AFD and FastAFD: Disaggregating Memory and Compute for LLM Inference"
+    },
+    "description": {
+      "zh": "vLLM 小课堂，围绕 Attention / FFN 分离、运行时角色划分、通信计算重叠与 FastAFD 展开讲解，配有 AFD Plugin 课件。",
+      "en": "A vLLM Classroom lesson on Attention/FFN disaggregation, runtime roles and communication/computation overlap, with companion AFD Plugin and FastAFD slides."
+    },
+    "url": "https://www.bilibili.com/video/BV14Jgg6iEhN/",
+    "platform": "Bilibili",
+    "publisher": "vLLM 小课堂",
+    "sourceUrl": "https://princepride.github.io/live-streaming-tools/fastafd_vllm_plugin/final/blog/",
+    "sourceNote": "The maintained lesson index links this exact recording and AFD Plugin/FastAFD slides. Bilibili returned HTTP 412, so playback was not verified.",
+    "verifiedAt": "2026-10-28"
+  },
+  {
+    "id": "router-kv-cache-pd-community",
+    "project": "router",
+    "type": "tutorial",
+    "title": {
+      "zh": "vLLM Router：让 KV Cache 与 PD 分离更懂大模型推理",
+      "en": "vLLM Router: KV Cache-Aware Routing and Prefill/Decode Disaggregation"
+    },
+    "description": {
+      "zh": "LLM讲师发布的社区讲解，围绕 vLLM Router、KV Cache 和 Prefill / Decode 分离展开，适合了解推理请求路由。",
+      "en": "A community lesson published by LLM讲师 about vLLM Router, KV cache and prefill/decode disaggregation."
+    },
+    "url": "https://www.bilibili.com/video/BV1BxBKBVEZd/",
+    "platform": "Bilibili",
+    "publisher": "LLM讲师",
+    "publishedAt": "2025-12-23",
+    "sourceUrl": "https://www.bilibili.com/video/BV1BxBKBVEZd/",
+    "sourceNote": "The indexed original Bilibili page verifies the exact vLLM Router title, publisher and upload date. This is a community lesson, not a project-official recording. Direct playback was not verified.",
+    "verifiedAt": "2026-10-28"
+  }
+]

@@ -2,7 +2,7 @@
 
 **Open to Infer. Built to Evolve.**
 
-InferMatrix 开源推理生态展示网站。当前版本提供中文/英文切换、七个项目的分类筛选、架构图缩放查看、生态方向探索，以及原始海报下载。
+InferMatrix 开源推理生态展示网站。当前版本提供中文/英文切换、七个项目的分类筛选、架构图缩放查看、生态方向探索、视频资源专栏，以及原始海报下载。
 
 A bilingual, buildless website showcasing seven open-source inference projects: vLLM-Omni, afd-plugin, vLLM Router, agent-infer, vllm-rlt, vllm-omni-mlx, and InferRSI.
 
@@ -14,7 +14,7 @@ A bilingual, buildless website showcasing seven open-source inference projects: 
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open [http://localhost:8000](http://localhost:8000). The deployable files are already at the repository root: `index.html`, `styles.css`, `app.js`, `robots.txt`, `sitemap.xml`, and `assets/`.
+Open [http://localhost:8000](http://localhost:8000). The deployable files are already at the repository root: `index.html`, `styles.css`, `assistant.css`, `app.js`, `showcase.js`, `inferrsi.js`, `assistant.js`, `video-resources.js`, `robots.txt`, `sitemap.xml`, and `assets/`.
 
 The stylesheet requests DM Sans and Manrope from Google Fonts. System-font fallbacks remain available when the external font service cannot be reached.
 
@@ -26,6 +26,7 @@ Optional maintenance checks use Node.js 18+ built-in modules only:
 
 ```sh
 node --check app.js
+node --check video-resources.js
 node --check prepare-initial-content.cjs
 node --check qa-interactions.cjs
 node qa-interactions.cjs
@@ -56,6 +57,7 @@ Bind each custom domain in its Pages project. The registrar must delegate `infer
 
 ## Latest additions
 
+- A bilingual Video resources column for external learning tutorials and project talks, with project/type filters and search. Eleven links cover vLLM-Omni, afd-plugin and vLLM Router, with available publisher information and verification sources retained.
 - A repo-grouped video showcase with five vLLM-Omni videos, local poster previews, click-to-play and fullscreen controls.
 - InferRSI as a seventh project and an evidence-driven optimization direction, with a brand-styled, scalable architecture SVG.
 - Qwen3-TTS and Drama 3 dedicated-engine examples with pinned, workload-specific C1/C64 audio-throughput comparisons. See `INFERRSI.md` and `BENCHMARK_EVIDENCE.json`; these are author-reported results, not independently rerun benchmarks.
@@ -75,6 +77,36 @@ This is an explicitly labeled **local-content navigation demo**, not a connected
 AI model. Replies use preset project material and source links. No model endpoint,
 API key, or chat logging service is configured. See [LOCAL_PREVIEW.md](LOCAL_PREVIEW.md)
 for the optional dependency-free Node preview and interaction checklist.
+
+## 视频资源 / Video resources
+
+首页导航的「视频资源」指向 `#video-resources`，与「演示展示」分别维护。专栏收录学习教程、技术分享和宣讲回放的外部链接，点击后在新窗口打开原发布平台，不嵌入或下载视频。
+
+资源清单集中在 `assets/video-resources.json`。当前收录 11 条：vLLM-Omni 8 条、afd-plugin 2 条、vLLM Router 1 条；其他四个项目暂未找到可核实的教程或宣讲回放。用户指定合集分集时保留 `p` 参数，并移除分享链接中的跟踪参数；可用 B 站官方分页元数据核实分集标题、讲者（标题明确标注时）与时长。每添加一条资源，填写以下格式；示例仅说明字段，不是已收录的视频：
+
+```json
+{
+  "id": "unique-video-id",
+  "project": "omni",
+  "type": "tutorial",
+  "title": {"zh": "视频中文标题", "en": "Video title"},
+  "description": {"zh": "介绍视频内容与适合的观众。", "en": "Describe the content and intended audience."},
+  "url": "https://www.youtube.com/watch?v=REPLACE_WITH_VIDEO_ID",
+  "platform": "YouTube",
+  "publisher": "发布者或活动主办方",
+  "speaker": "讲者姓名",
+  "publishedAt": "2026-10-28",
+  "duration": "35:20"
+}
+```
+
+项目 ID：`omni`（vLLM-Omni）、`afd`（afd-plugin）、`router`（vLLM Router）、`agent`（agent-infer）、`rlt`（vllm-rlt）、`mlx`（vllm-omni-mlx）、`inferrsi`（InferRSI）。类型为 `tutorial`（学习教程）或 `talk`（技术分享 / 宣讲）。`publisher`、`speaker`、`publishedAt`、`duration` 可省略；链接必须使用 HTTPS。标题与简介提供中英文，列表按清单顺序显示。发布前核实链接、项目归属和视频内容，清单中不要保留示例占位链接。
+
+每条已收录资源还保留 `sourceUrl`、`verifiedAt` 和 `sourceNote`，供维护者核对来源、核实日期及证据范围；有依据时记录 `eventDate`。这些维护字段不显示在视频卡片上。`publishedAt` 只填写已确认的视频上传日期，不能用会议日期或配套文章日期代替。中英文标题是便于浏览的编辑文案；原始标题与信息请以来源页面为准。首批资料来源包括 vLLM 官方 Office Hours、Conf42、Red Hat Developer、B 站原视频页面以及 vLLM 小课堂的原视频与课件索引。B 站的部分页面/API 会对自动抓取返回 412；其链接由原始页面索引或配套资料交叉核对，未逐条验证实际播放。
+
+The library is rendered by `video-resources.js`. Project counts reflect the full catalog; results combine project, content-type, and text filters. Results are paginated at 6 videos per page, with bilingual previous/next controls and the current visible range. Changing a filter or search resets to page one; changing language preserves the current page and filters. Pagination is hidden for a single page, empty results, loading and errors. Search covers both languages, project names, platforms, publishers, and speakers. Empty catalogs, no matches, and failed requests have distinct states; failed requests can be retried.
+
+The catalog is fetched with `cache: 'no-store'` and a fresh request parameter so edits to the JSON appear on the next page reload, even when the document or previous JSON response was cached. Changing only the page URL's query string does not invalidate a separately fetched resource. The script entry also carries a version parameter to refresh older copies of the loader.
 
 ## 素材与许可 / Assets and licensing
 
