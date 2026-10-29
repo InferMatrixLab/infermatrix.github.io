@@ -96,3 +96,32 @@ assert.ok(q('#project-dialog-content').innerHTML.includes('Open original'));
 console.log('PASS: six standalone asset files; viewer actual-layout zoom, keyboard shortcuts, original size, fit reset, limits, source/download links, bilingual labels, and close focus return.');
 
 const finalRun=run();vm.runInContext("setCapability('optimization')",finalRun.ctx);assert.equal(q('#capability-counter').textContent,'探索方向 05 / 05');q('#capability-link').dispatch('click');assert.equal(qa('.project-card').filter(e=>!e.hidden).length,1);assert.ok(q('#capability-description').textContent.includes('失败方向'));vm.runInContext("setLanguage('en')",finalRun.ctx);assert.equal(q('#tab-optimization [data-i18n]').innerHTML,'Autonomous inference optimization');console.log('PASS: fifth RSI direction, related InferRSI filter, bilingual text, counter 05/05.');
+
+// Dedicated-engine content must survive both language directions without losing evidence qualifiers.
+{
+ const html=fs.readFileSync(__dirname+'/index.html','utf8');
+ const card=html.match(/<article class="rsi-example" id="h3-metal">([\s\S]*?)<\/article>/)?.[1];
+ assert(card, 'h3-metal example exists in no-JavaScript HTML');
+ assert.equal((html.match(/<article class="rsi-example"/g)||[]).length,4);
+ const nodes=[...card.matchAll(/<[^>]+data-rsi-i18n="([^"]+)"[^>]*>([^<]*)<\//g)].map(([,key,text])=>({dataset:{rsiI18n:key},textContent:text}));
+ let observer;
+ const document={documentElement:{lang:'zh-CN'},querySelectorAll:()=>nodes};
+ const context={document,MutationObserver:class{constructor(fn){observer=fn}observe(){}}};
+ vm.runInNewContext(fs.readFileSync(__dirname+'/inferrsi.js','utf8'),context);
+ const text=()=>nodes.map(n=>n.textContent).join(' ');
+ assert(text().includes('未独立重跑'));
+ document.documentElement.lang='en';observer();
+ assert(text().includes('Author-reported'));
+ assert(text().includes('Different checkpoint / steps'));
+ assert(text().includes('Not independently rerun'));
+ assert(text().includes('remains on the roadmap'));
+ document.documentElement.lang='zh-CN';observer();
+ assert(text().includes('未独立重跑'));
+ const evidence=JSON.parse(fs.readFileSync(__dirname+'/BENCHMARK_EVIDENCE.json','utf8')).h3_metal;
+ for(const row of evidence.rows.slice(2)){
+  assert.equal(Number((73.3/row.warm_s).toFixed(2)),row.warm_speedup_vs_h3c);
+  assert.equal(Number((134.6/row.warm_s).toFixed(2)),row.warm_speedup_vs_mlx);
+ }
+ assert(card.includes(evidence.source));
+ console.log('PASS: h3-metal static content, EN/ZH round trip, evidence qualifiers, pinned source and ratios.');
+}

@@ -40,3 +40,16 @@ the new Chinese/English card, desktop three-column layout and 390 px mobile layo
 no page overflow or console warnings/errors. Source JSON arithmetic was checked; no
 hardware inference was run. Remote follow-up: H200 startup and memory, exact-profile
 speech quality, numerical parity and the documented acceptance protocol.
+
+## h3-metal addition — 2026-10-29
+
+Adds a fourth bilingual example with balanced two-column desktop cards. Source:
+[the pinned h3-metal README](https://github.com/zuiho-kai/h3-metal/blob/4ba47a3eabdbebf801ac6664b31f8ec168bc57a8/README.md#performance),
+corroborated by [InferRSI's standalone video/audio section](https://github.com/InferMatrixLab/InferRSI/blob/a4ed530923fe59e9e5b0e9f44e1bf3fd303b84c5/README.md#standalone-videoaudio-engines).
+
+Original H3 at 20 steps reports 29.89 s warm (2.45× vs h3.c); FastH3 at 4 steps reports
+18.20 s (4.03× vs h3.c at 20 steps). The latter changes checkpoint, step count and attention
+sparsity, so it is not presented as equal-quality, engine-only acceleration. The card preserves
+M5 Max hardware, workload, cold values and warm aggregation. Full reference rows and limitations
+are in `BENCHMARK_EVIDENCE.json`. Neither hardware nor output quality was rerun for this update.
+InferRSI's role is the controlled-experiment method; unattended model-backed search remains planned.

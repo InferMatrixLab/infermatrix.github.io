@@ -62,6 +62,7 @@ Bind each custom domain in its Pages project. The registrar must delegate `infer
 - InferRSI as a seventh project and an evidence-driven optimization direction, with a brand-styled, scalable architecture SVG.
 - Qwen3-TTS and Drama 3 dedicated-engine examples with pinned, workload-specific C1/C64 audio-throughput comparisons. See `INFERRSI.md` and `BENCHMARK_EVIDENCE.json`; these are author-reported results, not independently rerun benchmarks.
 - MiniCPM-o 4.5 single-GPU streaming speech: H200 target configuration with explicitly labelled L20X source C1/C32 measurements and reproduction links. The all-metric 2× target is unmet; the measured r11 profile has a HiFT numerical failure and pending speech-quality gates.
+- h3-metal as a fourth dedicated-engine example: original H3 and distilled FastH3 on Apple M5 Max, with separate cold/warm measurements, pinned evidence and explicit checkpoint/quality limitations.
 - Infer RSI in the focus strip and a fifth bilingual autonomous-inference-optimization explorer direction.
 - Public Recipes catalog links in the navigation and InferRSI section.
 

@@ -708,5 +708,55 @@
       }
     ],
     "presentation_target_hardware": "1× NVIDIA H200 (user-requested target, not validated)"
+  },
+  "h3_metal": {
+    "checked_at": "2026-10-29",
+    "source": "https://github.com/zuiho-kai/h3-metal/blob/4ba47a3eabdbebf801ac6664b31f8ec168bc57a8/README.md#performance",
+    "source_revision": "4ba47a3eabdbebf801ac6664b31f8ec168bc57a8",
+    "inferrsi_source": "https://github.com/InferMatrixLab/InferRSI/blob/a4ed530923fe59e9e5b0e9f44e1bf3fd303b84c5/README.md#standalone-videoaudio-engines",
+    "hardware": "Apple M5 Max, 40-core GPU, 128 GB unified memory, macOS 27",
+    "workload": "768x448, 49 frames, seed 0, real weights, one engine at a time",
+    "metric": "seconds per clip; cold includes weight loading, text encoding and preparation; warm reuses weights and prepared state",
+    "rows": [
+      {
+        "engine": "PipeNetwork/minimax-h3-mlx",
+        "steps": 20,
+        "precision": "4-bit",
+        "cold_s": 153.1,
+        "warm_s": 134.6
+      },
+      {
+        "engine": "antirez/h3.c",
+        "steps": 20,
+        "configuration": "default preset",
+        "cold_s": 67.6,
+        "warm_s": 73.3
+      },
+      {
+        "engine": "h3-metal original H3",
+        "steps": 20,
+        "cold_s": 54.29,
+        "warm_s": 29.89,
+        "warm_speedup_vs_h3c": 2.45,
+        "warm_speedup_vs_mlx": 4.5
+      },
+      {
+        "engine": "h3-metal FastH3 + block-sparse attention",
+        "steps": 4,
+        "checkpoint": "FastVideo/FastVideo-FastH3-4-step-Preview-v1-VSA-DataFree",
+        "cold_s": 48.23,
+        "warm_s": 18.2,
+        "warm_speedup_vs_h3c": 4.03,
+        "warm_speedup_vs_mlx": 7.4
+      }
+    ],
+    "aggregation": "20-step warm rows: mean of clips 2–4. FastH3 warm: mean of two A/B/B/A warm runs.",
+    "qualifications": [
+      "Author-reported; no model, quality or performance experiment rerun for this website update.",
+      "FastH3 uses distilled weights, four rather than twenty steps, and block-sparse attention; ratios are not equal-model/equal-quality engine-only gains.",
+      "Source README pin is a documentation snapshot, not a claim all experiments ran at this revision; baseline revisions are not given in this source table.",
+      "InferRSI provides the experiment workbench/method. Unattended model-backed search remains planned.",
+      "No production-readiness or cross-hardware performance claim."
+    ]
   }
 }
