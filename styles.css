@@ -272,10 +272,10 @@ html[lang=zh-CN] .hero-description{font-size:20px;max-width:550px;line-height:1.
 /* Four dedicated-engine examples retain balanced two-column cards on desktop. */
 
 /* Curated links for learning and project talks. */
-.video-resources{padding-top:96px;padding-bottom:100px;border-top:1px solid var(--line);scroll-margin-top:24px}
-.video-resources .section-heading{align-items:flex-start}
-.video-resources .section-heading h2{max-width:650px;font-size:clamp(34px,4vw,52px);line-height:1.3;letter-spacing:-.04em;text-wrap:balance}
-.video-resources .section-heading>p{max-width:340px;margin-top:5px}
+.learning-resources{padding-top:96px;padding-bottom:100px;border-top:1px solid var(--line);scroll-margin-top:24px}
+.learning-resources .section-heading{align-items:flex-start}
+.learning-resources .section-heading h2{max-width:650px;font-size:clamp(34px,4vw,52px);line-height:1.3;letter-spacing:-.04em;text-wrap:balance}
+.learning-resources .section-heading>p{max-width:340px;margin-top:5px}
 .resource-library{border:1px solid #29415b;border-radius:14px;background:linear-gradient(135deg,#0f1d32,#091426);overflow:hidden}
 .resource-library-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:23px 28px;border-bottom:1px solid var(--line)}
 .resource-library-heading>span{font:12px/1.6 var(--mono);letter-spacing:.09em;color:#7db8d7}
@@ -319,6 +319,16 @@ html[lang=zh-CN] .hero-description{font-size:20px;max-width:550px;line-height:1.
 .resource-tools>.resource-reset{min-height:48px;flex:none}
 .resource-reset:hover{background:#1b405f}.resource-reset[hidden],.resource-empty[hidden]{display:none}
 .resource-note{color:#8fa6c1;font-size:14px;line-height:1.8;margin:22px 0 0}.resource-note a{color:#9ad8ff;text-decoration:underline;text-underline-offset:4px}
-@media(max-width:900px){.video-resources .section-heading{flex-direction:column;gap:22px}.video-resources .section-heading>p{max-width:620px}.resource-results{grid-template-columns:1fr}}
-@media(max-width:680px){.video-resources{padding-top:64px;padding-bottom:64px}.video-resources .section-heading h2{font-size:35px;max-width:430px;line-height:1.35}.resource-library-heading{padding:19px 20px;flex-wrap:wrap;gap:8px}.resource-library-heading>span{font-size:11px}.resource-library-heading p{font-size:13px}.resource-project-filters{padding:20px 18px 0;gap:8px}.resource-project-button{font-size:13px;padding:9px 11px}.resource-tools{padding:20px 18px;flex-direction:column;align-items:stretch;gap:16px}.resource-type-field{width:100%}.resource-empty{padding:36px 22px;gap:22px;flex-direction:column;text-align:center}.resource-empty-art{width:78px;height:78px;border-radius:20px}.resource-empty-art svg{width:52px;height:52px}.resource-empty-copy h3{font-size:21px}.resource-empty-copy p{font-size:15px}.resource-empty-actions{justify-content:center}.resource-results{padding:18px;gap:16px}.resource-card{padding:22px}.resource-card h3{font-size:21px}}
+@media(max-width:900px){.learning-resources .section-heading{flex-direction:column;gap:22px}.learning-resources .section-heading>p{max-width:620px}.resource-results{grid-template-columns:1fr}}
+@media(max-width:680px){.learning-resources{padding-top:64px;padding-bottom:64px}.learning-resources .section-heading h2{font-size:35px;max-width:430px;line-height:1.35}.resource-library-heading{padding:19px 20px;flex-wrap:wrap;gap:8px}.resource-library-heading>span{font-size:11px}.resource-library-heading p{font-size:13px}.resource-project-filters{padding:20px 18px 0;gap:8px}.resource-project-button{font-size:13px;padding:9px 11px}.resource-tools{padding:20px 18px;flex-direction:column;align-items:stretch;gap:16px}.resource-type-field{width:100%}.resource-empty{padding:36px 22px;gap:22px;flex-direction:column;text-align:center}.resource-empty-art{width:78px;height:78px;border-radius:20px}.resource-empty-art svg{width:52px;height:52px}.resource-empty-copy h3{font-size:21px}.resource-empty-copy p{font-size:15px}.resource-empty-actions{justify-content:center}.resource-results{padding:18px;gap:16px}.resource-card{padding:22px}.resource-card h3{font-size:21px}}
 @media(prefers-reduced-motion:reduce){.resource-project-button{transition:none}}
+
+.resource-tabs{display:flex;gap:8px;margin:0 0 28px;padding:6px;width:fit-content;max-width:100%;border:1px solid #2a4562;border-radius:10px;background:#0a172a}
+.resource-tabs[hidden],.resource-panel[hidden]{display:none}
+.resource-tabs button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;min-width:170px;padding:12px 24px;border:1px solid transparent;border-radius:6px;background:transparent;color:#98afca;font-size:16px;line-height:1.4;transition:background .2s,color .2s,border-color .2s}
+.resource-tabs button>span:first-child{font-size:14px;color:#759bbb}
+.resource-tabs button:hover{color:#e2f3ff;background:#142b44}
+.resource-tabs button[aria-selected=true]{border-color:#3b8d9e;background:#123541;color:#c2f2f7}
+.resource-tabs button[aria-selected=true]>span:first-child{color:#82d7e4}
+@media(max-width:680px){.resource-tabs{width:100%;gap:4px;margin-bottom:22px}.resource-tabs button{flex:1;min-width:0;padding:12px 14px;font-size:15px;gap:9px}}
+@media(prefers-reduced-motion:reduce){.resource-tabs button{transition:none}}

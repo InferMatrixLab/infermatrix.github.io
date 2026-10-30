@@ -1,0 +1,275 @@
+[
+  {
+    "id": "omni-announcement",
+    "project": "omni",
+    "type": "technical",
+    "title": {
+      "zh": "vLLM-Omni 发布：简单、高效的全模态模型服务",
+      "en": "Announcing vLLM-Omni: Easy, Fast, and Cheap Omni-Modality Model Serving"
+    },
+    "description": {
+      "zh": "官方介绍全模态服务的目标、异构模型流水线和分阶段资源配置，并提供入门入口。",
+      "en": "The official introduction to omni-modal serving, heterogeneous model pipelines and stage-level resource allocation, with links to get started."
+    },
+    "url": "https://vllm.ai/blog/2025-11-30-vllm-omni",
+    "platform": "vLLM Blog",
+    "author": "vLLM-Omni Team",
+    "publishedAt": "2025-11-30",
+    "sourceUrl": "https://vllm.ai/blog/2025-11-30-vllm-omni",
+    "sourceNote": "Title, byline, publication date and technical scope verified on the original official article. Covers motivation, architecture, key features and getting started; roadmap items are not asserted as completed features.",
+    "verifiedAt": "2026-10-30"
+  },
+  {
+    "id": "omni-redhat-qwen3-architecture",
+    "project": "omni",
+    "type": "technical",
+    "title": {
+      "zh": "走进 vLLM-Omni 架构：服务 Qwen3-Omni",
+      "en": "Inside the vLLM-Omni Architecture: Serving Qwen3-Omni"
+    },
+    "description": {
+      "zh": "通过保险理赔演示理解 Thinker、Talker、Code2Wav 三阶段服务、OmniConnector 和流式流水线。",
+      "en": "An insurance-claim demo explains the Thinker, Talker and Code2Wav stages, OmniConnector transport and streaming pipeline execution."
+    },
+    "url": "https://developers.redhat.com/articles/2026/07/01/inside-vllm-omni-architecture-serving-qwen3-omni",
+    "platform": "Red Hat Developer",
+    "author": "Isaac Tigges",
+    "publishedAt": "2026-07-01",
+    "sourceUrl": "https://developers.redhat.com/articles/2026/07/01/inside-vllm-omni-architecture-serving-qwen3-omni",
+    "sourceNote": "Title, byline, publication date and technical scope verified on the original Red Hat Developer article. This is a complete written architecture walkthrough with a companion video; the article date and byline describe the article.",
+    "verifiedAt": "2026-10-30"
+  },
+  {
+    "id": "omni-qwen3-multistage-optimization",
+    "project": "omni",
+    "type": "technical",
+    "title": {
+      "zh": "Qwen3-Omni 多阶段服务：实践经验与性能优化",
+      "en": "Experience and Lessons Learned from Serving Multi-Stage Qwen3-Omni in vLLM-Omni"
+    },
+    "description": {
+      "zh": "逐阶段讲解批处理、CUDA Graph、异步分块、异步输出和副本扩容，并提供受控测试结果。",
+      "en": "A stage-by-stage walkthrough of batching, CUDA Graphs, async chunking, async output and replica scaling, supported by controlled benchmarks."
+    },
+    "url": "https://vllm.ai/blog/2026-07-01-qwen3-omni-optimization",
+    "platform": "vLLM Blog",
+    "author": "vLLM-Omni Team and Ant Group SCT Team",
+    "publishedAt": "2026-07-01",
+    "sourceUrl": "https://vllm.ai/blog/2026-07-01-qwen3-omni-optimization",
+    "sourceNote": "Title, byline, publication date and optimization chapters verified on the original official article. The summary describes mechanisms and controlled validation without generalizing measured speedups across configurations.",
+    "verifiedAt": "2026-10-30"
+  },
+  {
+    "id": "omni-official-quickstart",
+    "project": "omni",
+    "type": "tutorial",
+    "title": {
+      "zh": "vLLM-Omni 快速入门：离线推理与在线服务",
+      "en": "vLLM-Omni Quickstart: Offline Inference and Online Serving"
+    },
+    "description": {
+      "zh": "从环境与安装开始，运行离线图像生成，并通过 OpenAI 兼容接口启动在线服务。",
+      "en": "Set up the environment, run offline image generation and launch online serving through an OpenAI-compatible API."
+    },
+    "url": "https://docs.vllm.ai/projects/vllm-omni/en/latest/getting_started/quickstart/",
+    "platform": "vLLM-Omni Docs",
+    "originalTitle": "Quickstart",
+    "sourceUrl": "https://docs.vllm.ai/projects/vllm-omni/en/latest/getting_started/quickstart/",
+    "sourceNote": "Topic, installation steps, offline image-generation examples and online-serving examples verified on the project-maintained guide. This is a continuously updated latest document; no publication date or individual author is asserted.",
+    "verifiedAt": "2026-10-30"
+  },
+  {
+    "id": "afd-plugin-announcement",
+    "project": "afd",
+    "type": "technical",
+    "title": {
+      "zh": "vLLM AFD Plugin 发布：分离 Attention 与 FFN",
+      "en": "Announcing vLLM AFD Plugin: Disaggregating Attention and FFN for Flexible MoE Serving"
+    },
+    "description": {
+      "zh": "介绍实验性 AFD 插件的 Attention / FFN 服务划分、Connector 接口、GPU / NPU 支持与部署方式。",
+      "en": "An introduction to the experimental AFD plugin, its Attention and FFN services, connector interface, GPU/NPU support and deployment recipes."
+    },
+    "url": "https://vllm.ai/blog/2026-07-23-vllm-afd-plugin",
+    "platform": "vLLM Blog",
+    "author": "AFD Plugin Contributors",
+    "publishedAt": "2026-07-23",
+    "sourceUrl": "https://vllm.ai/blog/2026-07-23-vllm-afd-plugin",
+    "sourceNote": "Title, byline, publication date, architecture and deployment sections verified on the original official article. The article explicitly calls the plugin experimental and limits support claims to validated configurations.",
+    "verifiedAt": "2026-10-30"
+  },
+  {
+    "id": "afd-fastafd-technical-walkthrough",
+    "project": "afd",
+    "type": "technical",
+    "title": {
+      "zh": "大模型推理的内存与计算解耦：AFD 与 FastAFD",
+      "en": "Memory–Compute Disaggregation with AFD and FastAFD"
+    },
+    "description": {
+      "zh": "社区技术解读，拆解 Attention / FFN 分离、服务角色、双微批流水线和 FastAFD 优化及其适用边界。",
+      "en": "A community walkthrough of Attention/FFN disaggregation, runtime roles, dual-microbatch pipelines and FastAFD optimizations and their limits."
+    },
+    "url": "https://princepride.github.io/live-streaming-tools/fastafd_vllm_plugin/final/blog/",
+    "platform": "vLLM 小课堂技术博客",
+    "originalTitle": "大模型推理的内存与计算解耦：AFD 架构解析与性能验证",
+    "sourceUrl": "https://princepride.github.io/live-streaming-tools/fastafd_vllm_plugin/final/blog/",
+    "sourceNote": "Verified as a complete community technical article with companion lesson materials. The display title follows the article's navigation title; originalTitle retains its H1. No individual author or publication date is asserted, and it is not labeled as a project-official announcement.",
+    "verifiedAt": "2026-10-30"
+  },
+  {
+    "id": "router-official-announcement",
+    "project": "router",
+    "type": "technical",
+    "title": {
+      "zh": "vLLM Router：面向大规模服务的高性能 P/D 感知负载均衡",
+      "en": "vLLM Router: A High-Performance and Prefill/Decode Aware Load Balancer for Large-scale Serving"
+    },
+    "description": {
+      "zh": "官方介绍请求路由、会话亲和、Prefill / Decode 分离，以及服务发现、容错和监控能力。",
+      "en": "The official introduction to request routing, session affinity, prefill/decode disaggregation, service discovery, reliability and observability."
+    },
+    "url": "https://vllm.ai/blog/2025-12-13-vllm-router-release",
+    "platform": "vLLM Blog",
+    "author": "vLLM Team",
+    "publishedAt": "2025-12-13",
+    "sourceUrl": "https://vllm.ai/blog/2025-12-13-vllm-router-release",
+    "sourceNote": "Title, byline, publication date and technical scope verified on the original official article. Its repository link identifies vllm-project/router, distinct from vLLM Semantic Router. No benchmark numbers are generalized in the catalog summary.",
+    "verifiedAt": "2026-10-30"
+  },
+  {
+    "id": "router-load-balancing-guide",
+    "project": "router",
+    "type": "tutorial",
+    "title": {
+      "zh": "vLLM Router 负载均衡策略指南",
+      "en": "vLLM Router Load Balancing Policies"
+    },
+    "description": {
+      "zh": "比较一致性哈希、二选一、缓存感知和 KV 感知等策略，学习会话亲和与路由配置。",
+      "en": "Compare consistent hashing, power-of-two, cache-aware and KV-aware policies, with examples for session affinity and routing configuration."
+    },
+    "url": "https://github.com/vllm-project/router/blob/main/docs/load_balancing/README.md",
+    "platform": "vLLM Router Docs",
+    "originalTitle": "Load Balancing Policies",
+    "sourceUrl": "https://github.com/vllm-project/router/blob/main/docs/load_balancing/README.md",
+    "sourceNote": "Verified as the complete project-maintained load-balancing guide, including six routing policies, session-affinity key priorities and configuration examples. This README is a dedicated docs/load_balancing topic, not the repository homepage or a directory listing. No publication date or individual author is asserted.",
+    "verifiedAt": "2026-10-30"
+  },
+  {
+    "id": "omni-diffusion-continuous-batching-pid-article",
+    "project": "omni",
+    "type": "technical",
+    "title": {
+      "zh": "vLLM-Omni：Diffusion 动态批处理与 PiD",
+      "en": "vLLM-Omni: Diffusion Continuous Batching and PiD"
+    },
+    "description": {
+      "zh": "社区技术解读，学习按降噪步调度、动态组批与异构分辨率处理，理解 PiD 的机制及性能边界。",
+      "en": "A community walkthrough of step-level scheduling, dynamic batching, mixed-resolution execution and the mechanisms and limits of PiD."
+    },
+    "url": "https://princepride.github.io/live-streaming-tools/vllm_omni_diffusion_continuous_batching/final/blog/",
+    "platform": "vLLM 小课堂技术博客",
+    "originalTitle": "vLLM-Omni 核心解析：Diffusion 异步批处理与 PiD 架构实践",
+    "sourceUrl": "https://princepride.github.io/live-streaming-tools/vllm_omni_diffusion_continuous_batching/final/blog/",
+    "sourceNote": "Verified as a complete community technical article covering step-level scheduling, dynamic batching, heterogeneous resolutions and PiD, with companion lesson materials. No individual author or publication date is asserted, and it is not labeled as a project-official announcement.",
+    "verifiedAt": "2026-10-30"
+  },
+  {
+    "id": "agentinfer-quick-start",
+    "project": "agent",
+    "type": "tutorial",
+    "title": {
+      "zh": "AgentInfer 快速入门：安装与启用智能体感知调度",
+      "en": "AgentInfer Quick Start: Installation and Agent-Aware Scheduling"
+    },
+    "description": {
+      "zh": "从准备 vLLM 环境、安装 AgentInfer 到启用调度器和验证服务，完成第一次部署。",
+      "en": "Prepare vLLM, install AgentInfer, enable its scheduler, and verify the running service."
+    },
+    "url": "https://github.com/openJiuwen-ai/agent-infer/blob/main/docs/en/tutorial/01-quick-start.md",
+    "platform": "GitHub Docs",
+    "publisher": "openJiuwen / AgentInfer",
+    "sourceUrl": "https://github.com/openJiuwen-ai/agent-infer/blob/main/docs/en/tutorial/01-quick-start.md",
+    "sourceNote": "Verified as the official quick-start guide covering the vLLM environment, installation, --agentinfer startup and models-endpoint validation. The API modification timestamp is not used as a publication date; no individual author is asserted.",
+    "verifiedAt": "2026-10-30"
+  },
+  {
+    "id": "rlt-installation-first-request",
+    "project": "rlt",
+    "type": "tutorial",
+    "title": {
+      "zh": "vllm-rlt 用户指南：从安装到第一次推理请求",
+      "en": "vllm-rlt User Guide: From Installation to the First Request"
+    },
+    "description": {
+      "zh": "按照逐步指南在 NVIDIA GPU 上启动 Ouro-1.4B，发送普通和流式请求，并了解 CLI 与 Python API。",
+      "en": "Serve Ouro-1.4B on an NVIDIA GPU, send regular and streaming requests, and explore the CLI and Python API."
+    },
+    "url": "https://github.com/InferMatrixLab/vllm-rlt/blob/main/docs/launching.md",
+    "platform": "GitHub Docs",
+    "publisher": "InferMatrixLab",
+    "sourceUrl": "https://github.com/InferMatrixLab/vllm-rlt/blob/main/docs/launching.md",
+    "sourceNote": "Verified as the official step-by-step user guide covering prerequisites, model download, serving, generation requests and shutdown. Uses the canonical InferMatrixLab repository after its migration from ThinkFlowLab. The API modification timestamp is not used as a publication date; no individual author is asserted.",
+    "verifiedAt": "2026-10-30"
+  },
+  {
+    "id": "mlx-speech-tts-guide",
+    "project": "mlx",
+    "type": "tutorial",
+    "title": {
+      "zh": "vllm-omni-mlx 语音合成指南：音色、流式输出与声音克隆",
+      "en": "vllm-omni-mlx Speech Guide: Voices, Streaming, and Voice Cloning"
+    },
+    "description": {
+      "zh": "学习 TTS 接口的音色选择、风格指令、声音克隆和流式参数，并了解不同模型的使用差异。",
+      "en": "Learn TTS voice selection, style instructions, cloning, and streaming controls, with differences between model checkpoints."
+    },
+    "url": "https://github.com/InferMatrixLab/vllm-omni-mlx/blob/main/docs/speech.md",
+    "platform": "GitHub Docs",
+    "publisher": "InferMatrixLab",
+    "originalTitle": "Speech (TTS) Usage",
+    "sourceUrl": "https://github.com/InferMatrixLab/vllm-omni-mlx/blob/main/docs/speech.md",
+    "sourceNote": "Verified as the official Speech (TTS) Usage guide with API examples and model-specific differences. Uses the canonical InferMatrixLab repository after its migration from ThinkFlowLab. The API modification timestamp is not used as a publication date; no individual author is asserted.",
+    "verifiedAt": "2026-10-30"
+  },
+  {
+    "id": "inferrsi-quickstart",
+    "project": "inferrsi",
+    "type": "tutorial",
+    "title": {
+      "zh": "InferRSI 快速入门：基准对比、质量验证与证据报告",
+      "en": "InferRSI Quickstart: Benchmarks, Quality Checks, and Evidence Reports"
+    },
+    "description": {
+      "zh": "了解安装与环境检查、基准和质量命令约定，以及如何读取实验报告和导出引用上下文。",
+      "en": "Install and inspect the workbench, define benchmark and quality commands, read experiment reports, and export cited context."
+    },
+    "url": "https://github.com/InferMatrixLab/InferRSI/blob/main/docs/quickstart.md",
+    "platform": "GitHub Docs",
+    "publisher": "InferMatrixLab",
+    "originalTitle": "Quickstart",
+    "sourceUrl": "https://github.com/InferMatrixLab/InferRSI/blob/main/docs/quickstart.md",
+    "sourceNote": "Verified as the official quickstart for a workbench environment with the target engine already prepared; it does not install the target model or GPU environment. The API modification timestamp is not used as a publication date; no individual author is asserted.",
+    "verifiedAt": "2026-10-30"
+  },
+  {
+    "id": "inferrsi-qwen-image-b300-case",
+    "project": "inferrsi",
+    "type": "technical",
+    "title": {
+      "zh": "InferRSI 优化案例：Qwen-Image-2.1-Turbo 在 B300 上的验证过程",
+      "en": "InferRSI Case Study: Validating Qwen-Image-2.1-Turbo Optimizations on B300"
+    },
+    "description": {
+      "zh": "阅读固定工作负载下的优化记录、交替 A/B 实验、图像质量验证与复现步骤，理解结果的适用范围。",
+      "en": "Follow the optimization ledger, alternating A/B trials, image validation, and reproduction steps for a fixed workload."
+    },
+    "url": "https://github.com/InferMatrixLab/InferRSI/blob/main/docs/qwen-image-2.1-turbo-b300.md",
+    "platform": "GitHub Docs",
+    "publisher": "InferMatrixLab",
+    "sourceUrl": "https://github.com/InferMatrixLab/InferRSI/blob/main/docs/qwen-image-2.1-turbo-b300.md",
+    "sourceNote": "Verified as an official experiment report with a fixed workload, optimization ledger, alternating A/B trials, image validation and reproduction instructions. Its historical acceptance limits are retained; the summary does not generalize its results into universal performance claims. The API modification timestamp is not used as a publication date; no individual author is asserted.",
+    "verifiedAt": "2026-10-30"
+  }
+]
