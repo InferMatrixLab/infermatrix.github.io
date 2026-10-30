@@ -14,7 +14,7 @@ A bilingual, buildless website showcasing seven open-source inference projects: 
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open [http://localhost:8000](http://localhost:8000). The deployable files are already at the repository root: `index.html`, `styles.css`, `assistant.css`, `app.js`, `showcase.js`, `inferrsi.js`, `assistant.js`, `video-resources.js`, `robots.txt`, `sitemap.xml`, and `assets/`.
+Open [http://localhost:8000](http://localhost:8000). The deployable files are already at the repository root: `index.html`, `styles.css`, `assistant.css`, `app.js`, `showcase.js`, `inferrsi.js`, `assistant.js`, `resource-library.js`, `robots.txt`, `sitemap.xml`, and `assets/`.
 
 The stylesheet requests DM Sans and Manrope from Google Fonts. System-font fallbacks remain available when the external font service cannot be reached.
 
@@ -26,10 +26,11 @@ Optional maintenance checks use Node.js 18+ built-in modules only:
 
 ```sh
 node --check app.js
-node --check video-resources.js
+node --check resource-library.js
 node --check prepare-initial-content.cjs
 node --check qa-interactions.cjs
 node qa-interactions.cjs
+node qa-resources.cjs
 ```
 
 The interaction suite reads the current `index.html` and runs `app.js` in a simulated DOM using Node's VM. It covers filtering, bilingual content, keyboard navigation, project/poster dialogs, focus return, motion preferences, blocked storage, and all six architecture viewers. This is a logic regression check; it does not replace real-browser visual or accessibility testing.
@@ -56,6 +57,8 @@ For the brand site, select framework `None`, leave the build command empty, and 
 Bind each custom domain in its Pages project. The registrar must delegate `infermatrix.si` to the Cloudflare nameservers assigned to the zone before the custom domains can become active. Both sites are public and require no sign-in.
 
 ## Latest additions
+
+- A bilingual Articles column with 14 verified technical articles and practical guides covering all seven projects, separate filters and search, and six entries per page.
 
 - A bilingual Video resources column for external learning tutorials and project talks, with project/type filters and search. Eleven links cover vLLM-Omni, afd-plugin and vLLM Router, with available publisher information and verification sources retained.
 - A repo-grouped video showcase with five vLLM-Omni videos and two InferRSI English demos, local poster previews, click-to-play and fullscreen controls.
@@ -105,9 +108,17 @@ for the optional dependency-free Node preview and interaction checklist.
 
 每条已收录资源还保留 `sourceUrl`、`verifiedAt` 和 `sourceNote`，供维护者核对来源、核实日期及证据范围；有依据时记录 `eventDate`。这些维护字段不显示在视频卡片上。`publishedAt` 只填写已确认的视频上传日期，不能用会议日期或配套文章日期代替。中英文标题是便于浏览的编辑文案；原始标题与信息请以来源页面为准。首批资料来源包括 vLLM 官方 Office Hours、Conf42、Red Hat Developer、B 站原视频页面以及 vLLM 小课堂的原视频与课件索引。B 站的部分页面/API 会对自动抓取返回 412；其链接由原始页面索引或配套资料交叉核对，未逐条验证实际播放。
 
-The library is rendered by `video-resources.js`. Project counts reflect the full catalog; results combine project, content-type, and text filters. Results are paginated at 6 videos per page, with bilingual previous/next controls and the current visible range. Changing a filter or search resets to page one; changing language preserves the current page and filters. Pagination is hidden for a single page, empty results, loading and errors. Search covers both languages, project names, platforms, publishers, and speakers. Empty catalogs, no matches, and failed requests have distinct states; failed requests can be retried.
+The library is rendered by `resource-library.js`. Project counts reflect the full catalog; results combine project, content-type, and text filters. Results are paginated at 6 videos per page, with bilingual previous/next controls and the current visible range. Changing a filter or search resets to page one; changing language preserves the current page and filters. Pagination is hidden for a single page, empty results, loading and errors. Search covers both languages, project names, platforms, publishers, and speakers. Empty catalogs, no matches, and failed requests have distinct states; failed requests can be retried.
 
 The catalog is fetched with `cache: 'no-store'` and a fresh request parameter so edits to the JSON appear on the next page reload, even when the document or previous JSON response was cached. Changing only the page URL's query string does not invalidate a separately fetched resource. The script entry also carries a version parameter to refresh older copies of the loader.
+
+## 文章专栏 / Articles
+
+首页导航的「文章专栏」指向 `#article-resources`。首批收录 14 篇官方博客、社区技术解读与项目实践指南，覆盖七个项目。点击「阅读原文」前往原发布平台；中英文标题和简介为本站编辑文案，正文以原文为准。
+
+文章清单位于 `assets/article-resources.json`，与视频分开维护。字段沿用视频资源结构；类型为 `tutorial`（学习教程）或 `technical`（技术解读），可选作者字段为 `author`，无需填写 `speaker` 或 `duration`。每条记录保留 `sourceUrl`、`sourceNote` 和 `verifiedAt`，核实日期使用 `YYYY-MM-DD`。只有来源明确提供发布日期时才填写 `publishedAt`；持续更新的项目文档不使用仓库修改时间代替发布日期。
+
+`resource-library.js` initializes the video and article libraries independently using the same rendering and filtering logic. Each keeps its own project/type filters, search, page, loading and retry state. Both show at most six entries per page and preserve state on language changes. Article search includes authors; links and text use the same HTTPS validation and escaping as videos. `qa-resources.cjs` exercises both libraries together, including isolated fetch failures, invalid entries, pagination and language changes.
 
 ## 素材与许可 / Assets and licensing
 
