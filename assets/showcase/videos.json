@@ -93,5 +93,43 @@
     "originalName": "全双工演示3-personaplex.mp4",
     "webOptimized": true,
     "sizeBytes": 3725743
+  },
+  {
+    "id": "h3-metal-inferrsi-en",
+    "repo": "inferrsi",
+    "title": "h3-metal × InferRSI",
+    "description": {
+      "zh": "h3-metal × InferRSI 英文宣传视频",
+      "en": "h3-metal × InferRSI · English promotional video"
+    },
+    "duration": 41,
+    "width": 1280,
+    "height": 720,
+    "src": "assets/showcase/h3-metal-inferrsi-en.mp4",
+    "poster": "assets/showcase/h3-metal-inferrsi-en.jpg",
+    "source": "https://github.com/InferMatrixLab/infermatrix-marketing/blob/1232260447532898a8079a31718eda19e7ade8e7/infer_rsi/video/h3-metal%20x%20InferRSI%20%E8%8B%B1%E6%96%87%E5%AE%A3%E4%BC%A0.mp4",
+    "sourceCommit": "1232260447532898a8079a31718eda19e7ade8e7",
+    "originalName": "h3-metal x InferRSI 英文宣传.mp4",
+    "webOptimized": true,
+    "sizeBytes": 8638837
+  },
+  {
+    "id": "inferrsi-en",
+    "repo": "inferrsi",
+    "title": "InferRSI",
+    "description": {
+      "zh": "InferRSI 英文宣传视频",
+      "en": "InferRSI · English promotional video"
+    },
+    "duration": 45,
+    "width": 1280,
+    "height": 720,
+    "src": "assets/showcase/inferrsi-en.mp4",
+    "poster": "assets/showcase/inferrsi-en.jpg",
+    "source": "https://github.com/InferMatrixLab/infermatrix-marketing/blob/1232260447532898a8079a31718eda19e7ade8e7/infer_rsi/video/InferRSI%20%E8%8B%B1%E6%96%87%E5%AE%A3%E4%BC%A0.mp4",
+    "sourceCommit": "1232260447532898a8079a31718eda19e7ade8e7",
+    "originalName": "InferRSI 英文宣传.mp4",
+    "webOptimized": true,
+    "sizeBytes": 11396590
   }
 ]

@@ -24,8 +24,8 @@
     "bytes": 9895797
   },
   "assets/showcase/videos.json": {
-    "sha256": "ca3598fb776abba7c70b96199440da23ef9ba6af9456f594c810e00b9b1761ec",
-    "bytes": 3605
+    "sha256": "572a95840b7d521d61a56a942003bdbc62d4607a894c7c85083c01947a5ff8c2",
+    "bytes": 5115
   },
   "assets/showcase/personaplex.jpg": {
     "sha256": "ca0c9a6ac2078689449c8d8bc679ce16ee28e2376bbb7c6dee2fea0da7a4f2df",
@@ -102,5 +102,21 @@
   "assets/architecture/mlx-poster.svg": {
     "sha256": "fb38f9521354fb072a4e6078cdc5f5867b54cd6264b8e18cd460a4e3dc55868b",
     "bytes": 4243
+  },
+  "assets/showcase/h3-metal-inferrsi-en.mp4": {
+    "sha256": "605472dc1ba9b7658bf70044d963d3831919d63cad8b0274233281c9aca80d09",
+    "bytes": 8638837
+  },
+  "assets/showcase/h3-metal-inferrsi-en.jpg": {
+    "sha256": "a79254d225e189caa3a3fd15065b7e7f680731cf62cc4dc64d9f89278813224c",
+    "bytes": 105995
+  },
+  "assets/showcase/inferrsi-en.mp4": {
+    "sha256": "51a6b5bfd5223782f9fdc32c0e8a8ca25eebff31b84be10d8bc5d92a8834014f",
+    "bytes": 11396590
+  },
+  "assets/showcase/inferrsi-en.jpg": {
+    "sha256": "35565864561852e8955756bdc8e3b3190d04b4257d060a6e637ca8f6680070fd",
+    "bytes": 95191
   }
 }
