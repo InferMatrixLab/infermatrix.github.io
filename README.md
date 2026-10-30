@@ -84,7 +84,7 @@ for the optional dependency-free Node preview and interaction checklist.
 
 ## 视频资源 / Video resources
 
-首页导航的「视频资源」指向 `#video-resources`，与「演示展示」分别维护。专栏收录学习教程、技术分享和宣讲回放的外部链接，点击后在新窗口打开原发布平台，不嵌入或下载视频。
+首页导航的「视频专栏」指向 `#video-resources`，与「演示展示」分别维护。专栏收录学习教程、技术分享和宣讲回放的外部链接，点击后在新窗口打开原发布平台，不嵌入或下载视频。
 
 资源清单集中在 `assets/video-resources.json`。当前收录 11 条：vLLM-Omni 8 条、afd-plugin 2 条、vLLM Router 1 条；其他四个项目暂未找到可核实的教程或宣讲回放。用户指定合集分集时保留 `p` 参数，并移除分享链接中的跟踪参数；可用 B 站官方分页元数据核实分集标题、讲者（标题明确标注时）与时长。每添加一条资源，填写以下格式；示例仅说明字段，不是已收录的视频：
 
@@ -118,7 +118,9 @@ The catalog is fetched with `cache: 'no-store'` and a fresh request parameter so
 
 文章清单位于 `assets/article-resources.json`，与视频分开维护。字段沿用视频资源结构；类型为 `tutorial`（学习教程）或 `technical`（技术解读），可选作者字段为 `author`，无需填写 `speaker` 或 `duration`。每条记录保留 `sourceUrl`、`sourceNote` 和 `verifiedAt`，核实日期使用 `YYYY-MM-DD`。只有来源明确提供发布日期时才填写 `publishedAt`；持续更新的项目文档不使用仓库修改时间代替发布日期。
 
-`resource-library.js` initializes the video and article libraries independently using the same rendering and filtering logic. Each keeps its own project/type filters, search, page, loading and retry state. Both show at most six entries per page and preserve state on language changes. Article search includes authors; links and text use the same HTTPS validation and escaping as videos. `qa-resources.cjs` exercises both libraries together, including isolated fetch failures, invalid entries, pagination and language changes.
+视频与文章在同一个 `#learning-resources` 区域，通过「视频专栏 / 文章专栏」页签切换，一次显示一个栏目。普通访问默认选择视频；`#video-resources` 与 `#article-resources` 深链接、首页对应导航仍可直达指定栏目。页签支持左右方向键循环切换及 Home / End；无 JavaScript 时保留两个资源清单的访问入口。
+
+`resource-library.js` initializes the video and article libraries independently using the same rendering and filtering logic. Each keeps its own project/type filters, search, page, loading and retry state across tab and language changes. Both show at most six entries per page. Article search includes authors; links and text use the same HTTPS validation and escaping as videos. `qa-resources.cjs` exercises both libraries together, including accessible tab navigation, deep links, isolated fetch failures, invalid entries, pagination and language changes.
 
 ## 素材与许可 / Assets and licensing
 

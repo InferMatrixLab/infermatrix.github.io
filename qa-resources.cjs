@@ -31,7 +31,7 @@ function record(kind, index, overrides = {}) {
   };
 }
 
-function harness({onlySection} = {}) {
+function harness({onlySection, hash = ''} = {}) {
   const helperContext = vm.createContext({});
   const helpers = vm.runInContext(`${domHelpers}\n({parseMarkup, setDocument(value) {doc = value;}})`, helperContext);
   const root = helpers.parseMarkup(markup).find(element => element.tagName === 'html');
@@ -43,17 +43,33 @@ function harness({onlySection} = {}) {
   }
   for (const input of root.querySelectorAll('input')) input.value = '';
   for (const select of root.querySelectorAll('select')) select.value = 'all';
+  const eventListeners = new Map();
+  const location = {hash, pathname: '/', search: ''};
+  const window = {
+    location,
+    addEventListener(name, callback) {
+      if (!eventListeners.has(name)) eventListeners.set(name, []);
+      eventListeners.get(name).push(callback);
+    }
+  };
+  const history = {
+    replaceState(_state, _unused, url) {location.hash = new URL(url, 'http://127.0.0.1:8080/').hash;},
+    pushState(_state, _unused, url) {location.hash = new URL(url, 'http://127.0.0.1:8080/').hash;}
+  };
+  window.history = history;
   const document = {
     documentElement: root,
+    location,
     activeElement: null,
     querySelector: selector => root.querySelector(selector),
     querySelectorAll: selector => root.querySelectorAll(selector),
-    getElementById: id => root.querySelector(`#${id}`)
+    getElementById: id => root.querySelector(`#${id}`),
+    addEventListener(name, callback) {window.addEventListener(`document:${name}`, callback);}
   };
   helpers.setDocument(document);
   const requests = [], observers = [];
   const context = vm.createContext({
-    document, URL,
+    document, window, location, history, URL,
     MutationObserver: class {
       constructor(callback) {observers.push(callback);}
       observe() {}
@@ -76,6 +92,23 @@ function harness({onlySection} = {}) {
   const search = (kind, query) => {control(kind, 'search').value = query; control(kind, 'search').dispatch('input');};
   const type = (kind, value) => {control(kind, 'type').value = value; control(kind, 'type').dispatch('change');};
   const language = lang => {root.lang = lang; observers.forEach(callback => callback());};
+  const setHash = hash => {
+    location.hash = hash;
+    for (const callback of eventListeners.get('hashchange') || []) callback({type: 'hashchange'});
+  };
+  const key = (element, name) => {
+    const event = {target: element, key: name, defaultPrevented: false,
+      preventDefault() {this.defaultPrevented = true;}};
+    for (let current = element; current; current = current.parentNode) current.dispatch('keydown', event);
+    return event;
+  };
+  const activate = element => {
+    const event = {target: element, defaultPrevented: false,
+      preventDefault() {this.defaultPrevented = true;}};
+    for (let current = element; current; current = current.parentNode) current.dispatch('click', event);
+    for (const callback of eventListeners.get('document:click') || []) callback(event);
+    return event;
+  };
   async function respond(kind, records, {status = 200, reject = false, jsonError = false} = {}) {
     const request = requests.find(item => !item.handled && item.url.startsWith(`assets/${kind}-resources.json?`));
     assert(request, `Pending ${kind} request exists`);
@@ -87,7 +120,8 @@ function harness({onlySection} = {}) {
     }});
     await flush();
   }
-  return {root, document, requests, q, control, cards, ids, click, project, search, type, language, respond};
+  return {root, document, location, requests, q, control, cards, ids, click, project, search, type,
+    language, respond, setHash, key, activate};
 }
 
 async function testIndependentLibraries() {
@@ -280,11 +314,124 @@ async function testMarkupAndSingleLibrary() {
   }
 }
 
+async function testResourceTabs() {
+  const h = harness();
+  const videoTab = h.q('#resource-tab-video');
+  const articleTab = h.q('#resource-tab-article');
+  const videoPanel = h.q('#video-resources');
+  const articlePanel = h.q('#article-resources');
+  assert.equal(h.q('#resource-tabs').hidden, false, 'JavaScript enables the tab controls');
+  const tabIndex = element => element.tabIndex ?? Number(element.getAttribute('tabindex') || 0);
+  function selected(kind, {focused = false} = {}) {
+    const video = kind === 'video';
+    assert.equal(videoPanel.hidden, !video);
+    assert.equal(articlePanel.hidden, video);
+    assert.equal(videoTab.getAttribute('aria-selected'), String(video));
+    assert.equal(articleTab.getAttribute('aria-selected'), String(!video));
+    assert.equal(tabIndex(videoTab), video ? 0 : -1);
+    assert.equal(tabIndex(articleTab), video ? -1 : 0);
+    if (focused) assert.equal(h.document.activeElement, video ? videoTab : articleTab);
+  }
+  selected('video');
+  const outer = h.q('#learning-resources');
+  assert(outer.contains(videoPanel) && outer.contains(articlePanel), 'Both libraries live in one resource section');
+  assert.equal(videoTab.getAttribute('role'), 'tab');
+  assert.equal(articleTab.getAttribute('role'), 'tab');
+  for (const [tab, panel] of [[videoTab, videoPanel], [articleTab, articlePanel]]) {
+    assert.equal(tab.getAttribute('aria-controls'), panel.id);
+    assert.equal(panel.getAttribute('role'), 'tabpanel');
+    assert.equal(panel.getAttribute('aria-labelledby'), tab.id);
+    assert.equal(tab.closest('[role="tablist"]'), videoTab.closest('[role="tablist"]'));
+  }
+
+  h.activate(articleTab);
+  selected('article');
+  h.activate(videoTab);
+  selected('video');
+  assert.equal(h.key(videoTab, 'ArrowRight').defaultPrevented, true);
+  selected('article', {focused: true});
+  h.key(articleTab, 'ArrowRight');
+  selected('video', {focused: true});
+  h.key(videoTab, 'ArrowLeft');
+  selected('article', {focused: true});
+  h.key(articleTab, 'Home');
+  selected('video', {focused: true});
+  h.key(videoTab, 'End');
+  selected('article', {focused: true});
+  assert.equal(h.key(articleTab, 'Escape').defaultPrevented, false, 'Unrelated keys are left to the browser');
+  selected('article');
+
+  await h.respond('video', Array.from({length: 11}, (_, index) => record('video', index)));
+  await h.respond('article', Array.from({length: 14}, (_, index) => record('article', index)));
+  h.activate(videoTab);
+  h.search('video', 'Speaker');
+  h.project('video', 'omni');
+  h.click('video', 'next-page');
+  const videoIds = [...h.ids('video')];
+  h.activate(articleTab);
+  h.search('article', 'Author');
+  h.project('article', 'omni');
+  h.click('article', 'next-page');
+  const articleIds = [...h.ids('article')];
+  h.activate(videoTab);
+  selected('video');
+  assert.equal(h.control('video', 'search').value, 'Speaker');
+  assert.deepEqual([...h.ids('video')], videoIds);
+  assert.match(h.control('video', 'page-status').textContent, /第 2 \/ 2/);
+  h.activate(articleTab);
+  selected('article');
+  assert.equal(h.control('article', 'search').value, 'Author');
+  assert.deepEqual([...h.ids('article')], articleIds);
+  assert.match(h.control('article', 'page-status').textContent, /第 2 \/ 2/);
+  h.language('en');
+  selected('article');
+  assert.match(h.control('article', 'page-status').textContent, /Page 2 of 2/);
+  assert.equal(articleTab.querySelector('[data-learning-i18n="articles"]').textContent, 'Articles');
+  assert.equal(videoTab.querySelector('[data-learning-i18n="videos"]').textContent, 'Videos');
+
+  h.setHash('#video-resources');
+  selected('video');
+  h.setHash('#article-resources');
+  selected('article');
+  h.setHash('#projects');
+  selected('article');
+  h.setHash('#learning-resources');
+  selected('video');
+  h.activate(videoTab);
+  h.activate(h.q('#main-nav a[href="#article-resources"]'));
+  selected('article');
+  h.activate(h.q('#main-nav a[href="#video-resources"]'));
+  selected('video');
+
+  const direct = harness({hash: '#article-resources'});
+  assert.equal(direct.q('#article-resources').hidden, false, 'An article deep link opens the article tab on first load');
+  assert.equal(direct.q('#video-resources').hidden, true);
+  const unrelated = harness({hash: '#projects'});
+  assert.equal(unrelated.q('#video-resources').hidden, false, 'Ordinary navigation starts with videos');
+  assert.equal(unrelated.q('#article-resources').hidden, true);
+}
+
+function testNoScriptFallback() {
+  const helperContext = vm.createContext({});
+  const parse = vm.runInContext(`${domHelpers}\nparseMarkup`, helperContext);
+  const staticRoot = parse(markup).find(element => element.tagName === 'html');
+  assert.equal(staticRoot.querySelector('#resource-tabs').hidden, true, 'Nonfunctional tab buttons are hidden without JavaScript');
+  for (const kind of ['video', 'article']) {
+    const panel = staticRoot.querySelector(`#${kind}-resources`);
+    assert(panel, `${kind} resources exist in static HTML`);
+    assert.equal(panel.hidden, false, `${kind} fallback is not hidden before JavaScript initializes tabs`);
+    const fallback = panel.querySelector('noscript');
+    assert(fallback?.querySelector(`a[href="assets/${kind}-resources.json"]`), `${kind} catalog remains reachable without JavaScript`);
+  }
+}
+
 (async () => {
   await testIndependentLibraries();
   await testIndependentRecovery();
   await testValidationAndEscaping();
   await testMarkupAndSingleLibrary();
-  console.log('PASS: independent video/article catalogs, six-item pagination, bilingual state, combined filters and author search, reset/focus, loading/error/retry isolation, invalid records, HTTPS/XSS escaping, and unique accessible controls.');
+  await testResourceTabs();
+  testNoScriptFallback();
+  console.log('PASS: independent video/article catalogs, six-item pagination, bilingual state, combined filters and author search, reset/focus, loading/error/retry isolation, invalid records, HTTPS/XSS escaping, accessible tabs and keyboard switching, deep links, preserved library state, and no-JavaScript catalog fallbacks.');
   console.log('Verification uses the existing VM DOM helper and current HTML; rendered layout remains a browser check.');
 })().catch(error => {console.error(error); process.exitCode = 1;});

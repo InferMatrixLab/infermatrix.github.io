@@ -14,11 +14,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://infermatrix.si">
   <link rel="icon" href="assets/favicon.svg?v=exact-logo" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261030-articles">
+  <link rel="stylesheet" href="styles.css?v=20261030-resource-tabs">
   <link rel="stylesheet" href="assistant.css">
   <script src="app.js" defer></script>
   <script src="showcase.js?v=20261030-inferrsi" defer></script>
-  <script src="resource-library.js?v=20261030-articles" defer></script>
+  <script src="resource-library.js?v=20261030-resource-tabs" defer></script>
   <script src="inferrsi.js?v=20261029-h3" defer></script>
   <script src="assistant.js" defer></script>
 </head>
@@ -33,7 +33,7 @@
       <a href="#vision" data-i18n="navVision">品牌愿景</a>
       <a href="#projects" data-i18n="navProjects">开源项目</a>
       <a href="#showcase" data-showcase-i18n="nav">演示展示</a>
-      <a href="#video-resources" data-resource-i18n="nav">视频资源</a>
+      <a href="#video-resources" data-resource-i18n="nav">视频专栏</a>
       <a href="#article-resources" data-article-i18n="nav">文章专栏</a>
       <a href="#inferrsi">InferRSI</a>
       <a href="https://recipes.infermatrix.si" data-rsi-i18n="navRecipe">Recipes ↗</a>
@@ -133,10 +133,14 @@
       <p class="showcase-note" data-showcase-i18n="note">视频由项目素材库提供；展示内容与适用条件以原始说明为准。点击后才加载视频，不自动播放。</p>
       <noscript><p>请启用 JavaScript 使用站内播放器，或前往素材库观看：<a href="https://github.com/InferMatrixLab/infermatrix-marketing/tree/main/vllm_omni/video">vLLM-Omni ↗</a> · <a href="https://github.com/InferMatrixLab/infermatrix-marketing/tree/main/infer_rsi/video">InferRSI ↗</a>。</p></noscript>
     </section>
-    <section class="video-resources learning-resources section-shell" id="video-resources" aria-labelledby="resource-title">
-      <div class="section-kicker"><span class="section-index">LEARN /</span><span data-resource-i18n="kicker">学习与分享</span><span class="kicker-line"></span></div>
-      <div class="section-heading"><h2 id="resource-title" data-resource-i18n="title">从了解项目，到动手实践。</h2><p data-resource-i18n="intro">汇集 InferMatrix 各项目的学习教程、技术分享与宣讲回放。找到感兴趣的项目，前往原平台观看。</p></div>
-      <a class="resource-other-library" href="#article-resources" data-resource-i18n="otherLibrary">阅读项目文章 ↗</a>
+    <section class="learning-resources section-shell" id="learning-resources" aria-labelledby="learning-title">
+      <div class="section-kicker"><span class="section-index">LEARN /</span><span data-learning-i18n="kicker">学习与分享</span><span class="kicker-line"></span></div>
+      <div class="section-heading"><h2 id="learning-title" data-learning-i18n="title">从了解项目，到动手实践。</h2><p data-learning-i18n="intro">汇集各项目的学习视频、技术文章与实践指南。按项目查找，选择适合你的学习方式。</p></div>
+      <div class="resource-tabs" id="resource-tabs" role="tablist" aria-label="学习资源栏目" hidden>
+        <button type="button" id="resource-tab-video" role="tab" aria-controls="video-resources" aria-selected="true"><span aria-hidden="true">▶</span><span data-learning-i18n="videos">视频专栏</span></button>
+        <button type="button" id="resource-tab-article" role="tab" aria-controls="article-resources" aria-selected="false" tabindex="-1"><span aria-hidden="true">≡</span><span data-learning-i18n="articles">文章专栏</span></button>
+      </div>
+      <div class="resource-panel" id="video-resources">
       <div class="resource-library">
         <div class="resource-library-heading"><span>INFERMATRIX / VIDEO LIBRARY</span><p id="resource-count" role="status" aria-live="polite" aria-atomic="true">已收录 0 个视频</p></div>
         <div class="resource-project-filters" id="resource-project-filters" role="group" aria-label="按项目筛选">
@@ -167,11 +171,8 @@
       </div>
       <p class="resource-note" data-resource-i18n="note">视频链接将前往原发布平台；内容持续整理更新。</p>
       <noscript><style>#video-resources .resource-project-filters,#video-resources .resource-tools,#resource-empty,#resource-count{display:none}</style><p class="resource-note">本栏目收录各项目的学习教程与宣讲回放。启用 JavaScript 后可加载最新资源并使用筛选；也可以<a href="assets/video-resources.json">查看视频链接清单 ↗</a>。</p></noscript>
-    </section>
-    <section class="article-resources learning-resources section-shell" id="article-resources" aria-labelledby="article-title">
-      <div class="section-kicker"><span class="section-index">READ /</span><span data-article-i18n="kicker">阅读与实践</span><span class="kicker-line"></span></div>
-      <div class="section-heading"><h2 id="article-title" data-article-i18n="title">读懂技术，走近实现。</h2><p data-article-i18n="intro">从官方博客、技术解读到实践指南，按项目探索 InferMatrix 的文章与文档。</p></div>
-      <a class="resource-other-library" href="#video-resources" data-article-i18n="otherLibrary">观看学习视频 ↗</a>
+      </div>
+      <div class="resource-panel" id="article-resources">
       <div class="resource-library">
         <div class="resource-library-heading"><span>INFERMATRIX / ARTICLE LIBRARY</span><p id="article-count" role="status" aria-live="polite" aria-atomic="true">已收录 0 篇文章</p></div>
         <div class="resource-project-filters" id="article-project-filters" role="group" aria-label="按项目筛选">
@@ -202,6 +203,7 @@
       </div>
       <p class="resource-note" data-article-i18n="note">文章链接将前往原发布平台；文档内容以项目当前版本为准。</p>
       <noscript><style>#article-resources .resource-project-filters,#article-resources .resource-tools,#article-empty,#article-count{display:none}</style><p class="resource-note">本栏目收录各项目的技术解读与实践指南。启用 JavaScript 后可加载最新资源并使用筛选；也可以<a href="assets/article-resources.json">查看文章链接清单 ↗</a>。</p></noscript>
+      </div>
     </section>
     <section class="explore section-shell" id="explore" aria-labelledby="explore-title">
       <div class="section-kicker"><span class="section-index">03 /</span><span data-i18n="exploreKicker">连接更多可能</span><span class="kicker-line"></span></div>

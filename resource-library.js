@@ -6,8 +6,7 @@
   };
   const videoCopy = {
     zh: {
-      nav: '视频资源', otherLibrary: '阅读项目文章 ↗', noun: '个视频', kicker: '学习与分享', title: '从了解项目，到动手实践。',
-      intro: '汇集 InferMatrix 各项目的学习教程、技术分享与宣讲回放。找到感兴趣的项目，前往原平台观看。',
+      nav: '视频专栏', noun: '个视频',
       searchLabel: '搜索视频', searchPlaceholder: '搜索标题、讲者或关键词', typeLabel: '内容类型',
       allTypes: '全部类型', tutorial: '学习教程', talk: '技术分享 / 宣讲', allProjects: '全部项目',
       projectLabel: '按项目筛选', reset: '重置筛选', retry: '重新加载',
@@ -23,8 +22,7 @@
       previousPage: '上一页', nextPage: '下一页', paginationLabel: '视频资源分页', resultsLabel: '视频资源列表'
     },
     en: {
-      nav: 'Videos', otherLibrary: 'Read project articles ↗', noun: 'videos', kicker: 'LEARN & SHARE', title: 'Get to know a project. Start building.',
-      intro: 'Explore tutorials, technical talks and presentation recordings from the InferMatrix ecosystem. Find your project and watch on the original platform.',
+      nav: 'Videos', noun: 'videos',
       searchLabel: 'Search videos', searchPlaceholder: 'Search titles, speakers or keywords', typeLabel: 'Content type',
       allTypes: 'All types', tutorial: 'Tutorial', talk: 'Talk / Presentation', allProjects: 'All projects',
       projectLabel: 'Filter by project', reset: 'Reset filters', retry: 'Try again',
@@ -43,9 +41,7 @@
   const articleCopy = {
     zh: {
       ...videoCopy.zh,
-      nav: '文章专栏', otherLibrary: '观看学习视频 ↗', noun: '篇文章', kicker: '阅读与实践',
-      title: '读懂技术，走近实现。',
-      intro: '从官方博客、技术解读到实践指南，按项目探索 InferMatrix 的文章与文档。',
+      nav: '文章专栏', noun: '篇文章',
       searchLabel: '搜索文章', searchPlaceholder: '搜索标题、作者或关键词',
       technical: '技术解读', note: '文章链接将前往原发布平台；文档内容以项目当前版本为准。',
       loading: '正在加载文章…', loadingDescription: '正在读取技术文章与实践指南。',
@@ -57,9 +53,7 @@
     },
     en: {
       ...videoCopy.en,
-      nav: 'Articles', otherLibrary: 'Watch learning videos ↗', noun: 'articles', kicker: 'READ & BUILD',
-      title: 'Understand the ideas. Explore the implementation.',
-      intro: 'Explore official blogs, technical explainers and practical guides from across the InferMatrix projects.',
+      nav: 'Articles', noun: 'articles',
       searchLabel: 'Search articles', searchPlaceholder: 'Search titles, authors or keywords',
       technical: 'Technical article', note: 'Articles open on their original platforms. Check project documentation for the current version.',
       loading: 'Loading articles…', loadingDescription: 'Fetching technical articles and practical guides.',
@@ -284,6 +278,77 @@
     load();
   }
 
+  function initLibraryTabs() {
+    const container = document.getElementById('learning-resources');
+    const tablist = document.getElementById('resource-tabs');
+    const tabs = [document.getElementById('resource-tab-video'), document.getElementById('resource-tab-article')];
+    const panels = [document.getElementById('video-resources'), document.getElementById('article-resources')];
+    if (!container || !tablist || tabs.some(tab => !tab) || panels.some(panel => !panel)) return;
+    const copy = {
+      zh: {kicker: '学习与分享', title: '从了解项目，到动手实践。',
+        intro: '汇集各项目的学习视频、技术文章与实践指南。按项目查找，选择适合你的学习方式。',
+        videos: '视频专栏', articles: '文章专栏', label: '学习资源栏目'},
+      en: {kicker: 'LEARN & SHARE', title: 'Get to know a project. Start building.',
+        intro: 'Explore project videos, technical articles and practical guides. Find your project and choose how you learn.',
+        videos: 'Videos', articles: 'Articles', label: 'Learning resource libraries'}
+    };
+    const indexFromHash = () => panels.findIndex(panel => `#${panel.id}` === window.location.hash);
+    function activate(index, {focus = false, updateHash = false} = {}) {
+      tabs.forEach((tab, i) => {
+        tab.setAttribute('aria-selected', String(i === index));
+        tab.setAttribute('tabindex', i === index ? '0' : '-1');
+        panels[i].hidden = i !== index;
+      });
+      if (focus) tabs[index].focus({preventScroll: true});
+      if (updateHash) window.history.replaceState(null, '', `#${panels[index].id}`);
+    }
+    function translateTabs() {
+      const t = copy[document.documentElement.lang.startsWith('zh') ? 'zh' : 'en'];
+      container.querySelectorAll('[data-learning-i18n]').forEach(element => {
+        element.textContent = t[element.dataset.learningI18n];
+      });
+      tablist.setAttribute('aria-label', t.label);
+    }
+    panels.forEach((panel, i) => {
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('aria-labelledby', tabs[i].id);
+      panel.setAttribute('tabindex', '0');
+    });
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activate(index, {updateHash: true}));
+      tab.addEventListener('keydown', event => {
+        const keys = {ArrowRight: (index + 1) % tabs.length, ArrowLeft: (index + tabs.length - 1) % tabs.length,
+          Home: 0, End: tabs.length - 1};
+        if (!Object.hasOwn(keys, event.key)) return;
+        event.preventDefault();
+        activate(keys[event.key], {focus: true, updateHash: true});
+      });
+    });
+    // Keep existing video/article links useful, including repeated clicks on the current hash.
+    panels.forEach((panel, index) => {
+      document.querySelectorAll(`a[href="#${panel.id}"]`).forEach(link => {
+        link.addEventListener('click', event => {
+          event.preventDefault();
+          activate(index, {focus: true, updateHash: true});
+          container.scrollIntoView({block: 'start', behavior: 'instant'});
+        });
+      });
+    });
+    window.addEventListener('hashchange', () => {
+      const index = indexFromHash();
+      if (index < 0 && window.location.hash !== '#learning-resources') return;
+      activate(Math.max(0, index));
+      container.scrollIntoView({block: 'start', behavior: 'instant'});
+    });
+    const initialIndex = indexFromHash();
+    activate(Math.max(0, initialIndex));
+    tablist.hidden = false;
+    translateTabs();
+    new MutationObserver(translateTabs).observe(document.documentElement, {attributes: true, attributeFilter: ['lang']});
+    if (initialIndex >= 0) container.scrollIntoView({block: 'start', behavior: 'instant'});
+  }
+
+  initLibraryTabs();
   initLibrary({sectionId: 'video-resources', prefix: 'resource', copy: videoCopy,
     types: ['tutorial', 'talk'], catalog: 'assets/video-resources.json'});
   initLibrary({sectionId: 'article-resources', prefix: 'article', copy: articleCopy,
