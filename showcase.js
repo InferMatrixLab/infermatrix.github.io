@@ -44,7 +44,7 @@
     stage.replaceChildren(video); video.focus({preventScroll:true});
     const pending=video.play(); if(pending)pending.catch(()=>{if(video.isConnected && video.getAttribute('src'))showError(video.error?'error':'retry');});
   }
-  fetch('assets/showcase/videos.json?v=20261030-inferrsi').then(response=>{if(!response.ok)throw new Error('Video list unavailable');return response.json();}).then(items=>{
+  fetch('assets/showcase/videos.json?v=20261109-opendirector').then(response=>{if(!response.ok)throw new Error('Video list unavailable');return response.json();}).then(items=>{
     videos=items;
     section.querySelectorAll('.showcase-grid').forEach(grid => {
       grid.innerHTML=videos.filter(item=>item.repo===grid.dataset.repo).map(item=>`<article class="video-card" data-video="${esc(item.id)}"><div class="video-stage"><button type="button" class="video-preview" aria-label="播放 ${esc(item.title)}"><img src="${esc(item.poster)}" alt="${esc(item.title)} 视频预览" width="960" height="540" loading="lazy" decoding="async"><span class="video-play-icon" aria-hidden="true">▶</span><span class="video-duration">${Math.floor(item.duration/60)}:${String(item.duration%60).padStart(2,'0')}</span></button></div><div class="video-info"><h4>${esc(item.title)}</h4><p class="video-description"></p><a class="video-source" href="${esc(item.source)}" target="_blank" rel="noopener noreferrer"></a></div></article>`).join('');

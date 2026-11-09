@@ -1,6 +1,6 @@
 # Repository showcase
 
-The `#showcase` section includes five vLLM-Omni videos and two InferRSI videos, grouped by project. Metadata lives in `assets/showcase/videos.json`; each record declares a repository, title, bilingual description, poster, local video URL, and pinned original source.
+The `#showcase` section includes seven vLLM-Omni videos and two InferRSI videos, grouped by project. Metadata lives in `assets/showcase/videos.json`; each record declares a repository, title, bilingual description, poster, local video URL, and pinned original source.
 
 Source: InferMatrixLab/infermatrix-marketing at commit `5e6b91b881b784aa221db021b12bdeb49b8882da`, `vllm_omni/video/` (2026-10-19).
 
@@ -26,3 +26,11 @@ Source: InferMatrixLab/infermatrix-marketing at commit `1232260447532898a8079a31
 - `InferRSI 英文宣传.mp4` → `assets/showcase/inferrsi-en.mp4` (45 seconds).
 - Both web copies retain 1280 × 720 resolution and the original AAC-LC audio. Video uses H.264 CRF 21 with a 1,800 kb/s rate cap and fast-start metadata, keeping each asset below the hosting file-size limit. The full-resolution source files remain linked at the pinned commit.
 - The 960 × 540 JPEG previews are actual frames at 4 seconds. The InferRSI group shares the existing player, including stopping and unloading videos across both project groups.
+
+## OpenDirector × vLLM-Omni demos — 2026-11-09
+
+Source: InferMatrixLab/infermatrix-marketing at commit `d30dfaaba946f5de0f977dd875748d176f7685ab`, `vllm_omni/video/`.
+
+- `OpenDirector_x_vLLM-Omni.mp4` → `assets/showcase/opendirector-vllm-omni.mp4` (45 seconds). The web copy retains 1920 × 1080 resolution and the original audio; video uses H.264 CRF 22 with a 2,400 kb/s rate cap and fast-start metadata.
+- `OpenDirector_x_vLLM-Omni_v3_AppRender.mp4` → `assets/showcase/opendirector-vllm-omni-app-render.mp4` (120 seconds). Original video and audio streams are preserved, remuxed for fast-start playback.
+- Both web assets remain below the hosting file-size limit. Their 960 × 540 JPEG previews are actual frames at 4 seconds, and the original video links are pinned to the source commit above.

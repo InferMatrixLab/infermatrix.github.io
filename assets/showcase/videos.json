@@ -95,6 +95,44 @@
     "sizeBytes": 3725743
   },
   {
+    "id": "opendirector-vllm-omni",
+    "repo": "vllm-omni",
+    "title": "OpenDirector × vLLM-Omni",
+    "description": {
+      "zh": "OpenDirector 与 vLLM-Omni 联合演示",
+      "en": "OpenDirector and vLLM-Omni demo"
+    },
+    "duration": 45,
+    "width": 1920,
+    "height": 1080,
+    "src": "assets/showcase/opendirector-vllm-omni.mp4",
+    "poster": "assets/showcase/opendirector-vllm-omni.jpg",
+    "source": "https://github.com/InferMatrixLab/infermatrix-marketing/blob/d30dfaaba946f5de0f977dd875748d176f7685ab/vllm_omni/video/OpenDirector_x_vLLM-Omni.mp4",
+    "sourceCommit": "d30dfaaba946f5de0f977dd875748d176f7685ab",
+    "originalName": "OpenDirector_x_vLLM-Omni.mp4",
+    "webOptimized": true,
+    "sizeBytes": 12559735
+  },
+  {
+    "id": "opendirector-vllm-omni-app-render",
+    "repo": "vllm-omni",
+    "title": "OpenDirector × vLLM-Omni · App Render",
+    "description": {
+      "zh": "App Render 版本演示",
+      "en": "App Render edition"
+    },
+    "duration": 120,
+    "width": 1920,
+    "height": 1080,
+    "src": "assets/showcase/opendirector-vllm-omni-app-render.mp4",
+    "poster": "assets/showcase/opendirector-vllm-omni-app-render.jpg",
+    "source": "https://github.com/InferMatrixLab/infermatrix-marketing/blob/d30dfaaba946f5de0f977dd875748d176f7685ab/vllm_omni/video/OpenDirector_x_vLLM-Omni_v3_AppRender.mp4",
+    "sourceCommit": "d30dfaaba946f5de0f977dd875748d176f7685ab",
+    "originalName": "OpenDirector_x_vLLM-Omni_v3_AppRender.mp4",
+    "webOptimized": false,
+    "sizeBytes": 23588055
+  },
+  {
     "id": "h3-metal-inferrsi-en",
     "repo": "inferrsi",
     "title": "h3-metal × InferRSI",

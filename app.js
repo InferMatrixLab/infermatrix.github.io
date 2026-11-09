@@ -58,6 +58,7 @@ const projects = [
 ];
 const copy = {
   en: {
+    partnersKicker:'OPEN COLLABORATION. SHARED POSSIBILITIES.',partnersTitle:'Partners',partnersDescription:'Connecting inference and creativity with our open-source partners.',partnerOpenDirectorDescription:'An agent-driven workflow for video creation.',
     filterOptimization:'Optimization',navVision:'Vision',navProjects:'Projects',navExplore:'Explore',navBuild:'Build with us',
     heroEyebrow:'OPEN SOURCE. OPEN POSSIBILITIES.',heroDescription:'An open-source constellation for the next era of AI inference.',heroSubline:'让每一次推理，都成为下一次进化的起点。',heroCta:'Explore the ecosystem',heroSecondary:'See the connections',scroll:'SCROLL TO DISCOVER',heroBottom:'SEVEN PROJECTS. SHARED INNOVATION.',motion:'MOTION ON',motionOff:'MOTION OFF',
     visionKicker:'THE VISION',visionTitle:'Intelligence moves forward.<br><span>Infrastructure should, too.</span>',visionDescription:'New modalities. New architectures. New ways to think. The future of inference is being built in the open.',visionSecondary:'InferMatrix brings seven open-source projects into view, connecting ideas across models, hardware, and serving infrastructure.',visionCta:'Meet the ecosystem',
@@ -67,6 +68,7 @@ const copy = {
     details:'Architecture & details',github:'GitHub',preview:'VIEW ARCHITECTURE',viewRepo:'View repository',architectureOfficial:'Official architecture image',architectureDocsVector:'Vector diagram redrawn from official documentation',architectureVector:'Vector diagram redrawn from official architecture',architecturePosterVector:'Vector diagram redrawn from the supplied poster',architectureSource:'View source',architectureAlt:'architecture diagram',architectureUnavailable:'Architecture image is being prepared.',zoomIn:'Zoom in',zoomOut:'Zoom out',zoomReset:'Fit to window',zoomActual:'Original size',zoomControls:'Architecture image zoom controls',zoomLevel:'Zoom',zoomHint:'Use + / − to zoom. Scroll to explore the diagram.',viewerLabel:'Scrollable architecture image',openOriginal:'Open original',openVector:'Open vector',downloadArchitecture:'Download image',showing:'SHOWING',direction:'DIRECTION',closeDetails:'Close project details',closePoster:'Close poster',openNav:'Open navigation',closeNav:'Close navigation',pauseMotion:'Pause decorative motion',resumeMotion:'Resume decorative motion',switchLang:'Switch language to Chinese',skip:'Skip to content',mapLabel:'Conceptual map highlighting {names} around an inference core'
   },
   zh: {
+    partnersKicker:'开放协作，共创可能',partnersTitle:'合作伙伴',partnersDescription:'与开源伙伴一起，连接推理与创作。',partnerOpenDirectorDescription:'面向视频创作的智能体工作流。',
     filterOptimization:'优化探索',navVision:'品牌愿景',navProjects:'开源项目',navExplore:'探索生态',navBuild:'一起构建',
     heroEyebrow:'开放源码，无限可能。',heroDescription:'为 AI 推理的下一个时代，连接开放创新的力量。',heroSubline:'让每一次推理，都成为下一次进化的起点。',heroCta:'探索开源生态',heroSecondary:'发现技术连接',scroll:'向下探索',heroBottom:'七个开源项目，共享创新。',motion:'动态效果 开',motionOff:'动态效果 关',
     visionKicker:'品牌愿景',visionTitle:'智能不断向前。<br><span>基础设施，也应持续进化。</span>',visionDescription:'新的模态，新的架构，新的思考方式。推理的未来，正在开放协作中构建。',visionSecondary:'InferMatrix 汇聚七个开源项目，连接模型、硬件与推理服务基础设施中的创新思路。',visionCta:'认识开源生态',

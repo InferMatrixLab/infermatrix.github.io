@@ -150,8 +150,22 @@
       "usage": "Small transparent full-body floating assistant launcher in the local homepage prototype",
       "license": "No new license grant asserted",
       "changes": "New full-body chibi illustration; generated transparent PNG bytes preserved"
+    },
+    {
+      "file": "assets/partners/opendirector-logo.png",
+      "project": "OpenDirector",
+      "origin": "user-supplied-partner-logo",
+      "recordedOn": "2026-11-09",
+      "source": "User-supplied logo attachment",
+      "sourceUrl": "https://github.com/ThinkFlowLab/OpenDirector",
+      "width": 1600,
+      "height": 504,
+      "bytes": 105249,
+      "sha256": "0153d1b4f5fb847a64ce383074e7172a56985da9f5db1c5fda238875b5d8f446",
+      "license": "No new license grant asserted",
+      "changes": "Original supplied PNG bytes preserved"
     }
   ],
-  "updatedOn": "2026-10-24",
+  "updatedOn": "2026-11-09",
   "videoProvenance": "SHOWCASE.md"
 }

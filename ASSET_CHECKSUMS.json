@@ -24,8 +24,8 @@
     "bytes": 9895797
   },
   "assets/showcase/videos.json": {
-    "sha256": "572a95840b7d521d61a56a942003bdbc62d4607a894c7c85083c01947a5ff8c2",
-    "bytes": 5115
+    "sha256": "1fb8ba394b6794fc66f4747d5eb01a21b86c25470d6e78bb372bf6e0e41e22ab",
+    "bytes": 6659
   },
   "assets/showcase/personaplex.jpg": {
     "sha256": "ca0c9a6ac2078689449c8d8bc679ce16ee28e2376bbb7c6dee2fea0da7a4f2df",
@@ -118,5 +118,25 @@
   "assets/showcase/inferrsi-en.jpg": {
     "sha256": "35565864561852e8955756bdc8e3b3190d04b4257d060a6e637ca8f6680070fd",
     "bytes": 95191
+  },
+  "assets/partners/opendirector-logo.png": {
+    "sha256": "0153d1b4f5fb847a64ce383074e7172a56985da9f5db1c5fda238875b5d8f446",
+    "bytes": 105249
+  },
+  "assets/showcase/opendirector-vllm-omni.mp4": {
+    "sha256": "d784f5e8086d295007c8d4b2b4e5136b54b5838d1915bcd6c2215c58330c297f",
+    "bytes": 12559735
+  },
+  "assets/showcase/opendirector-vllm-omni.jpg": {
+    "sha256": "c5e6e2a44c69356d9a57496ee92753fc997f2520d41ff1427da44a12c2510cf4",
+    "bytes": 42234
+  },
+  "assets/showcase/opendirector-vllm-omni-app-render.mp4": {
+    "sha256": "a39913efc9254583c2fb2967b10cf03ef56ff572748de04138e1527adc483371",
+    "bytes": 23588055
+  },
+  "assets/showcase/opendirector-vllm-omni-app-render.jpg": {
+    "sha256": "631227070dfb677bcf417b0ed8c9e72c464136d3c7b36e11bf29279f2863dbd6",
+    "bytes": 70634
   }
 }
