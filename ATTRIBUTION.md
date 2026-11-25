@@ -22,7 +22,14 @@ This file records the assets used by the current website, checked on 2026-10-12.
 - License: Apache License 2.0. A complete, unchanged copy of the upstream license is included as [licenses/afd-plugin-LICENSE.txt](licenses/afd-plugin-LICENSE.txt). That license file also retains the upstream notice concerning CAM operator code; no CAM operator code is distributed here.
 - Modification notice: the deployed SVG retained here contains one additional trailing newline compared with the original Git blob. Diagram geometry, text, embedded source, and metadata are unchanged. See also [the accompanying modification notice](assets/architecture/afd.svg.license).
 
-The source repositories' root and relevant ancestor directories were checked for separate LICENSE, NOTICE, or copyright files. The license copies above were the applicable repository-level license files found; neither source had a separate NOTICE in those checked locations.
+The vLLM-Omni and afd-plugin source repositories had no separate NOTICE in the checked locations.
+
+### vLLM-GR
+
+- Included file: `assets/architecture/gr.svg` (1200 × 380), byte-identical to the upstream figure.
+- Source: [vLLM-GR model architecture](https://github.com/vllm-project/vllm-gr/blob/dda07adc0fee8e269d89c0d82359e778bfa72b10/docs/assets/framework-overview.svg).
+- Original Git blob: `b376f0795b1f6919b3cb0e005e5168068a1a8068`.
+- License: Apache License 2.0. The upstream [LICENSE](licenses/vllm-gr-LICENSE.txt) and [NOTICE](licenses/vllm-gr-NOTICE.txt) accompany the figure.
 
 ## Supplied InferMatrix artwork
 

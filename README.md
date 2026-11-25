@@ -2,9 +2,9 @@
 
 **Open to Infer. Built to Evolve.**
 
-InferMatrix 开源推理生态展示网站。当前版本提供中文/英文切换、七个项目的分类筛选、架构图缩放查看、生态方向探索、视频资源专栏，以及原始海报下载。
+InferMatrix 开源推理生态展示网站。当前版本提供中文/英文切换、八个项目的分类筛选、架构图缩放查看、生态方向探索、视频资源专栏，以及原始海报下载。
 
-A bilingual, buildless website showcasing seven open-source inference projects: vLLM-Omni, afd-plugin, vLLM Router, agent-infer, vllm-rlt, vllm-omni-mlx, and InferRSI.
+A bilingual, buildless website showcasing eight open-source inference projects: vLLM-Omni, afd-plugin, vLLM Router, agent-infer, vllm-rlt, vllm-omni-mlx, InferRSI, and [vLLM-GR](https://github.com/vllm-project/vllm-gr).
 
 ## 本地运行 / Run locally
 
@@ -32,7 +32,7 @@ node --check qa-interactions.cjs
 node qa-interactions.cjs
 ```
 
-The interaction suite reads the current `index.html` and runs `app.js` in a simulated DOM using Node's VM. It covers filtering, bilingual content, keyboard navigation, project/poster dialogs, focus return, motion preferences, blocked storage, and all six architecture viewers. This is a logic regression check; it does not replace real-browser visual or accessibility testing.
+The interaction suite reads the current `index.html` and runs `app.js` in a simulated DOM using Node's VM. It covers filtering, bilingual content, keyboard navigation, project/poster dialogs, focus return, motion preferences, blocked storage, and all eight architecture viewers. This is a logic regression check; it does not replace real-browser visual or accessibility testing.
 
 项目资料和中英文文案集中在 `app.js`。修改项目卡片内容后，重新生成 HTML 中供无 JavaScript 环境阅读的卡片：
 
@@ -84,7 +84,7 @@ for the optional dependency-free Node preview and interaction checklist.
 
 首页导航的「视频资源」指向 `#video-resources`，与「演示展示」分别维护。专栏收录学习教程、技术分享和宣讲回放的外部链接，点击后在新窗口打开原发布平台，不嵌入或下载视频。
 
-资源清单集中在 `assets/video-resources.json`。当前收录 11 条：vLLM-Omni 8 条、afd-plugin 2 条、vLLM Router 1 条；其他四个项目暂未找到可核实的教程或宣讲回放。用户指定合集分集时保留 `p` 参数，并移除分享链接中的跟踪参数；可用 B 站官方分页元数据核实分集标题、讲者（标题明确标注时）与时长。每添加一条资源，填写以下格式；示例仅说明字段，不是已收录的视频：
+资源清单集中在 `assets/video-resources.json`。当前收录 11 条：vLLM-Omni 8 条、afd-plugin 2 条、vLLM Router 1 条；其他五个项目暂无已收录的教程或宣讲回放。用户指定合集分集时保留 `p` 参数，并移除分享链接中的跟踪参数；可用 B 站官方分页元数据核实分集标题、讲者（标题明确标注时）与时长。每添加一条资源，填写以下格式；示例仅说明字段，不是已收录的视频：
 
 ```json
 {

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="title desc">
+  <title id="title">vLLM-GR model architecture</title>
+  <desc id="desc">User interaction history and task inputs are represented as tokens or features. A recommendation model predicts candidates by generating item IDs or by scoring supplied items. The scoring path is planned.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#34465b"/></marker>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif;fill:#1a2739}
+      .title{font-size:26px;font-weight:700}
+      .group{font-size:16px;font-weight:600;fill:#485c73}
+      .name{font-size:21px;font-weight:600}
+      .detail{font-size:16px;fill:#41546b}
+      .line{fill:none;stroke:#34465b;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+      .card{stroke-width:1.6}
+      .icon{fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="1200" height="380" rx="12" fill="#fff"/>
+  <text class="title" x="600" y="43" text-anchor="middle">vLLM-GR Model Architecture</text>
+  <text class="group" x="113" y="88" text-anchor="middle">Request inputs</text>
+  <text class="group" x="1084" y="88" text-anchor="middle">Outputs</text>
+
+  <g class="line">
+    <path d="M210 152H225Q232 152 232 159V194Q232 201 239 201H249"/>
+    <path d="M210 282H225Q232 282 232 275V240Q232 233 239 233H249"/>
+    <path d="M441 217H483"/>
+    <path d="M685 217H727"/>
+    <path d="M928 201H946Q955 201 955 192V161Q955 152 964 152H978"/>
+    <path d="M928 233H946Q955 233 955 242V273Q955 282 964 282H978"/>
+  </g>
+
+  <g text-anchor="middle">
+    <rect class="card" x="16" y="110" width="194" height="84" rx="13" fill="#eff9f6" stroke="#2c9a80"/>
+    <text class="name" x="113" y="147">User interaction</text>
+    <text class="name" x="113" y="172">history</text>
+    <rect class="card" x="16" y="240" width="194" height="84" rx="13" fill="#f6f2fd" stroke="#9276c5"/>
+    <text class="name" x="113" y="276">Task inputs</text>
+    <text class="detail" x="113" y="303">Prompt or candidates</text>
+
+    <rect class="card" x="253" y="104" width="188" height="222" rx="17" fill="#fff9ed" stroke="#d69b31"/>
+    <g class="icon" stroke="#b87717">
+      <rect x="327" y="148" width="8" height="14" rx="2"/><rect x="342" y="140" width="8" height="22" rx="2"/><rect x="357" y="131" width="8" height="31" rx="2"/>
+    </g>
+    <text class="name" x="347" y="205">Input</text>
+    <text class="name" x="347" y="231">representation</text>
+    <text class="detail" x="347" y="285">Tokens or features</text>
+
+    <rect class="card" x="487" y="104" width="198" height="222" rx="17" fill="#f0f5fd" stroke="#618bd1"/>
+    <g class="icon" stroke="#4479bf">
+      <path d="M567 148 586 135 605 148 586 161Z M567 148H605"/>
+      <g fill="#f0f5fd"><circle cx="567" cy="148" r="4"/><circle cx="586" cy="135" r="4"/><circle cx="605" cy="148" r="4"/><circle cx="586" cy="161" r="4"/></g>
+    </g>
+    <text class="name" x="586" y="205">Recommendation</text>
+    <text class="name" x="586" y="231">model</text>
+    <text class="detail" x="586" y="280">User preference</text>
+    <text class="detail" x="586" y="301">modeling</text>
+
+    <rect class="card" x="731" y="104" width="197" height="222" rx="17" fill="#f3f9ef" stroke="#77a65a"/>
+    <g class="icon" stroke="#628e47">
+      <path d="M810 148H823L834 136H846 M823 148 834 160H846"/>
+      <g fill="#f3f9ef"><circle cx="808" cy="148" r="4"/><circle cx="848" cy="136" r="4"/><circle cx="848" cy="160" r="4"/></g>
+    </g>
+    <text class="name" x="830" y="205">Candidate</text>
+    <text class="name" x="830" y="231">prediction</text>
+    <text class="detail" x="830" y="285">Generation or scoring</text>
+
+    <rect class="card" x="982" y="110" width="202" height="84" rx="13" fill="#f1f6fd" stroke="#6d91c6"/>
+    <text class="name" x="1083" y="147">Candidate IDs</text>
+    <text class="detail" x="1083" y="174">e.g., semantic IDs</text>
+    <rect class="card" x="982" y="240" width="202" height="84" rx="13" fill="#fdf2f4" stroke="#c77e90" stroke-dasharray="6 4"/>
+    <text class="name" x="1083" y="276">Candidate scores</text>
+    <text class="detail" x="1083" y="303">Ranking (planned)</text>
+  </g>
+</svg>

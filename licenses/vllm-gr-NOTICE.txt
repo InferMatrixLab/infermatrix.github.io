@@ -1,0 +1,279 @@
+vLLM-GR
+
+Project-original contributions:
+Copyright contributors to the vLLM-GR project
+
+This distribution includes third-party code and material described below.
+Applicable file-level copyright and attribution notices are retained. The
+Apache License, Version 2.0 is in the LICENSE file. The MIT and BSD-3-Clause
+license texts that apply to some of the material below are reproduced in this
+file, so they are available in every distribution.
+
+Octicons documentation icon
+---------------------------
+Upstream: https://github.com/primer/octicons
+Revision: e6626e159c4ba786d512e252182b62617014c752
+Copyright (c) 2026 GitHub Inc.
+License: MIT (included in the stylesheet)
+
+The important admonition icon in docs/mkdocs/stylesheets/content.css is
+icons/stop-16.svg, embedded as a CSS data URL.
+
+vLLM
+-----
+Upstream: https://github.com/vllm-project/vllm
+Revision: ced6857afa0ea7b2e3f0846a62e1394e90f15607
+Copyright contributors to the vLLM project
+License: Apache License, Version 2.0 (see LICENSE)
+
+Local files adapted from vLLM, with the upstream path at the revision above:
+  benchmarks/open_one_rec/one_rec_patch.py
+    vllm/benchmarks/lib/endpoint_request_func.py
+  collect_env.py
+    vllm/collect_env.py
+  tests/kernels/attention/test_beam_short_suffix.py
+    tests/kernels/test_compressor_kv_cache.py
+  tools/pre_commit/check_spdx_header.py
+    tools/pre_commit/check_spdx_header.py
+  tools/pre_commit/check_torch_cuda.py
+    tools/pre_commit/check_torch_cuda.py
+  tools/pre_commit/mypy.py
+    tools/pre_commit/mypy.py
+  vllm_gr/entrypoints/cli/main.py
+    vllm/entrypoints/cli/main.py
+  vllm_gr/entrypoints/openai/protocol.py
+    vllm/entrypoints/openai/chat_completion/protocol.py
+  vllm_gr/v1/attention/backends/beam_attn.py
+    vllm/v1/attention/backends/flash_attn.py
+  vllm_gr/v1/engine/core.py
+    vllm/v1/engine/core.py
+
+The following are adapted from earlier vLLM revisions, at the same upstream
+path, and are not present at the revision above:
+  tests/kernels/attention/test_cascade_beam_attn_gpu.py
+    tests/kernels/attention/test_cascade_flash_attn.py (0.14.1, d7de043d55d1dd629554467e23874097e1c48993)
+  tools/pre_commit/shellcheck.sh (0.22.1, 0decac0d96c42b49572498019f0a0e3600f50398)
+
+Local files copied from vLLM without changes, at the same upstream path:
+  tools/pre_commit/check_boolean_context_manager.py (revision above)
+  tools/pre_commit/png-lint.sh (revision above)
+  tools/pre_commit/enforce_regex_import.py (0.14.1, d7de043d55d1dd629554467e23874097e1c48993)
+  tools/pre_commit/validate_config.py (0.14.1, d7de043d55d1dd629554467e23874097e1c48993)
+
+OpenOneRec evaluation code and template
+--------------------------------------
+Upstream: https://github.com/Kuaishou-OneRec/OpenOneRec
+Revision: ae668a6a30bd71bde7a3f459fe0ac958182ce1d2
+Copyright notice, reproduced as written in upstream benchmarks/LICENSE:
+Copyright [2025] [OneRec Team]
+License: Apache License, Version 2.0 (see LICENSE)
+
+Local files adapted from OpenOneRec. Paths on the left are under
+benchmarks/open_one_rec/; paths on the right are under
+benchmarks/benchmark/tasks/v1_0/ upstream:
+  base_evaluator.py                     base_evaluator.py
+  open_one_rec_loader.py                base_loader.py
+  tasks/item_understand/__init__.py     item_understand/__init__.py
+  tasks/item_understand/config.py       item_understand/config.py
+  tasks/item_understand/evaluator.py    item_understand/evaluator.py
+  tasks/item_understand/utils.py        item_understand/utils.py
+  tasks/label_pred/__init__.py          label_pred/__init__.py
+  tasks/label_pred/config.py            label_pred/config.py
+  tasks/label_pred/evaluator.py         label_pred/evaluator.py
+  tasks/label_pred/utils.py             label_pred/utils.py
+  tasks/rec_reason/__init__.py          rec_reason/__init__.py
+  tasks/rec_reason/config.py            rec_reason/config.py
+  tasks/rec_reason/evaluator.py         rec_reason/evaluator.py
+  tasks/rec_reason/utils.py             rec_reason/utils.py
+  tasks/recommendation/__init__.py      recommendation/__init__.py
+  tasks/recommendation/config.py        recommendation/config.py
+  tasks/recommendation/evaluator.py     recommendation/evaluator.py
+  tasks/recommendation/utils.py         recommendation/utils.py
+  tasks/recommendation/utils_by_pid.py  recommendation/utils_by_pid.py
+
+The following template has a separate attribution file so its rendered content
+is not changed by a source header:
+  benchmarks/open_one_rec/qwen3_soft_switch.jinja2
+  benchmarks/open_one_rec/qwen3_soft_switch.jinja2.license
+
+The LLM-as-Judge prompts below are the upstream prompt constants moved out of
+the code into data files, each with a separate attribution file. Their text is
+unchanged; only the final space is stored as a newline and restored on load.
+Paths on the left are under benchmarks/open_one_rec/prompts/; the right column
+names the upstream constant under benchmarks/benchmark/tasks/v1_0/:
+  item_understand_wip_extraction.txt    item_understand/utils.py WIP_EXTRACTION_PROMPT
+  item_understand_wip_matching.txt      item_understand/utils.py WIP_MATCHING_PROMPT
+  rec_reason_evaluation.txt             rec_reason/utils.py EVALUATION_PROMPT
+
+These notices concern the imported code, template and prompts; they do not
+grant rights to external evaluation datasets referenced by that code.
+
+SMG gRPC schemas and generated bindings
+--------------------------------------
+Schema package: smg-grpc-proto==0.4.6
+Upstream: https://github.com/lightseekorg/smg
+Revision: 23518d2d5f317d8e104ceed752efbf3775829383
+The common.proto and vllm_engine.proto files in that source revision are
+byte-identical to the schemas shipped in the published 0.4.6 wheel.
+The copyright notice in that revision's LICENSE is retained as written:
+Copyright 2023-2024 SGLang Team
+License: Apache License, Version 2.0 (see LICENSE)
+
+common.proto and its binding common_pb2.py retain the upstream schema and the
+copyright line above, taken from the repository LICENSE because the schema
+files carry none of their own. vllm_engine.proto adds the GR fields and methods
+documented in its source comments; it and its bindings are attributed to the
+project.
+
+David Lord code snippet
+-----------------------
+The get_attr_docs helper in tools/pre_commit/validate_config.py is adapted
+from "Finding Attribute Docstrings" by David Lord:
+https://davidism.com/attribute-docstrings/
+License: MIT. The license text follows.
+
+  MIT License
+
+  Copyright (c) David Lord
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+PyTorch environment collector
+-----------------------------
+collect_env.py retains implementation from PyTorch and vLLM.
+Upstream: https://github.com/pytorch/pytorch
+Revision: 0fabc3ba44823f257e70ce397d989c8de5e362c1 (torch/utils/collect_env.py)
+The vLLM revision and path are listed in the vLLM section above.
+License: BSD-3-Clause, with the mixed-file conditions Apache-2.0 AND
+BSD-3-Clause. The license text follows, as published in the PyTorch repository.
+
+  From PyTorch:
+
+  Copyright (c) 2016-     Facebook, Inc            (Adam Paszke)
+  Copyright (c) 2014-     Facebook, Inc            (Soumith Chintala)
+  Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+  Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+  Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+  Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+  Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+  Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+  Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+
+  From Caffe2:
+
+  Copyright (c) 2016-present, Facebook Inc. All rights reserved.
+
+  All contributions by Facebook:
+  Copyright (c) 2016 Facebook Inc.
+
+  All contributions by Google:
+  Copyright (c) 2015 Google Inc.
+  All rights reserved.
+
+  All contributions by Yangqing Jia:
+  Copyright (c) 2015 Yangqing Jia
+  All rights reserved.
+
+  All contributions by Kakao Brain:
+  Copyright 2019-2020 Kakao Brain
+
+  All contributions by Cruise LLC:
+  Copyright (c) 2022 Cruise LLC.
+  All rights reserved.
+
+  All contributions by Tri Dao:
+  Copyright (c) 2024 Tri Dao.
+  All rights reserved.
+
+  All contributions by Arm:
+  Copyright (c) 2021, 2023-2024 Arm Limited and/or its affiliates
+
+  All contributions from Caffe:
+  Copyright(c) 2013, 2014, 2015, the respective contributors
+  All rights reserved.
+
+  All other contributions:
+  Copyright(c) 2015, 2016 the respective contributors
+  All rights reserved.
+
+  Caffe2 uses a copyright model similar to Caffe: each contributor holds
+  copyright over their contributions to Caffe2. The project versioning records
+  all such contribution and copyright details. If a contributor wants to further
+  mark their specific copyright on a particular contribution, they should
+  indicate their copyright solely in the commit message of the change when it is
+  committed.
+
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1. Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+  2. Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+  3. Neither the names of Facebook, Deepmind Technologies, NYU, NEC Laboratories America
+     and IDIAP Research Institute nor the names of its contributors may be
+     used to endorse or promote products derived from this software without
+     specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  POSSIBILITY OF SUCH DAMAGE.
+
+xllm-ops test adaptations
+-------------------------
+Upstream: https://github.com/xLLM-AI/xllm-ops
+Revision: d5694d2248e24902b5a6331aa909b283a38f5bd6 (test/python_test)
+License: Apache License, Version 2.0 (see LICENSE)
+The root license of that repository carries a separate "Copyright 2025
+JD.com" statement; it does not replace the test files' own xLLM Authors
+notices below.
+
+Local files adapted from xllm-ops, with the upstream file(s) under
+test/python_test/ and their copyright statement:
+  tests/kernels/test_beam_search_group_npu.py
+    test_beam_search_group.py  (Copyright 2025 The xLLM Authors. All Rights Reserved.)
+  tests/kernels/test_beam_search_rec_final_select_npu.py
+    test_onerec_final_beam_select.py  (Copyright 2026 The xLLM Authors. All Rights Reserved.)
+  tests/kernels/test_cache_unshared_kv.py
+    test_cache_unshared_kv.py  (Copyright 2025 The xLLM Authors. All Rights Reserved.)
+  tests/kernels/test_cache_unshared_kv_npu.py
+    test_cache_unshared_kv.py  (Copyright 2025 The xLLM Authors. All Rights Reserved.)
+  tests/kernels/test_select_unshared_kv_npu.py
+    test_select_unshared_kv.py  (Copyright 2025 The xLLM Authors. All Rights Reserved.)
+  tests/kernels/test_x_attention_npu.py
+    test_x_attention.py  (Copyright 2025 The xLLM Authors. All Rights Reserved.)
+  tests/kernels/test_onerec_decode_ops.py
+    test_select_unshared_kv.py, test_onerec_final_beam_select.py,
+    test_beam_search_group.py, test_rec_constrained_topk.py
+    (Copyright 2025 and 2026 The xLLM Authors. All Rights Reserved.)
+
+This NOTICE is informational and does not modify any applicable license.

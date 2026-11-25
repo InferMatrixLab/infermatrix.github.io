@@ -164,8 +164,23 @@
       "sha256": "0153d1b4f5fb847a64ce383074e7172a56985da9f5db1c5fda238875b5d8f446",
       "license": "No new license grant asserted",
       "changes": "Original supplied PNG bytes preserved"
+    },
+    {
+      "file": "assets/architecture/gr.svg",
+      "project": "vLLM-GR",
+      "origin": "official-upstream",
+      "sourceUrl": "https://github.com/vllm-project/vllm-gr/blob/dda07adc0fee8e269d89c0d82359e778bfa72b10/docs/assets/framework-overview.svg",
+      "upstreamGitBlobSha": "b376f0795b1f6919b3cb0e005e5168068a1a8068",
+      "license": "Apache-2.0",
+      "licenseFile": "licenses/vllm-gr-LICENSE.txt",
+      "noticeFile": "licenses/vllm-gr-NOTICE.txt",
+      "width": 1200,
+      "height": 380,
+      "changes": "None",
+      "sha256": "420480a121b1be0c375b9374cffcd6e1731b1591457e86db8e1deac2516487b8",
+      "bytes": 4400
     }
   ],
-  "updatedOn": "2026-11-09",
+  "updatedOn": "2026-11-25",
   "videoProvenance": "SHOWCASE.md"
 }

@@ -138,5 +138,9 @@
   "assets/showcase/opendirector-vllm-omni-app-render.jpg": {
     "sha256": "631227070dfb677bcf417b0ed8c9e72c464136d3c7b36e11bf29279f2863dbd6",
     "bytes": 70634
+  },
+  "assets/architecture/gr.svg": {
+    "sha256": "420480a121b1be0c375b9374cffcd6e1731b1591457e86db8e1deac2516487b8",
+    "bytes": 4400
   }
 }
