@@ -211,19 +211,19 @@
     "project": "router",
     "type": "tutorial",
     "title": {
-      "zh": "vLLM Router：让 KV Cache 与 PD 分离更懂大模型推理",
-      "en": "vLLM Router: KV Cache-Aware Routing and Prefill/Decode Disaggregation"
+      "zh": "vllm-router：让 KV Cache 与 PD 分离更懂大模型推理",
+      "en": "vllm-router: KV Cache-Aware Routing and Prefill/Decode Disaggregation"
     },
     "description": {
-      "zh": "LLM讲师发布的社区讲解，围绕 vLLM Router、KV Cache 和 Prefill / Decode 分离展开，适合了解推理请求路由。",
-      "en": "A community lesson published by LLM讲师 about vLLM Router, KV cache and prefill/decode disaggregation."
+      "zh": "LLM讲师发布的社区讲解，围绕 vllm-router、KV Cache 和 Prefill / Decode 分离展开，适合了解推理请求路由。",
+      "en": "A community lesson published by LLM讲师 about vllm-router, KV cache and prefill/decode disaggregation."
     },
     "url": "https://www.bilibili.com/video/BV1BxBKBVEZd/",
     "platform": "Bilibili",
     "publisher": "LLM讲师",
     "publishedAt": "2025-12-23",
     "sourceUrl": "https://www.bilibili.com/video/BV1BxBKBVEZd/",
-    "sourceNote": "The indexed original Bilibili page verifies the exact vLLM Router title, publisher and upload date. This is a community lesson, not a project-official recording. Direct playback was not verified.",
+    "sourceNote": "The indexed Bilibili page verifies the original recording, publisher and upload date. The displayed title uses the site’s vllm-router spelling. This is a community lesson, not a project-official recording. Direct playback was not verified.",
     "verifiedAt": "2026-10-28"
   }
 ]

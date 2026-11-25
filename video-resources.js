@@ -4,8 +4,8 @@
   if (!section) return;
 
   const projects = {
-    omni: 'vLLM-Omni', afd: 'afd-plugin', router: 'vLLM Router',
-    agent: 'agent-infer', rlt: 'vllm-rlt', mlx: 'vllm-omni-mlx', inferrsi: 'InferRSI', gr: 'vLLM-GR'
+    omni: 'vLLM-Omni', afd: 'afd-plugin', router: 'vllm-router',
+    agent: 'agent-infer', rlt: 'vllm-rlt', inferrsi: 'InferRSI', gr: 'vLLM-GR'
   };
   const copy = {
     zh: {

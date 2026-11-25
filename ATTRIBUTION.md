@@ -41,14 +41,13 @@ These assets were supplied for this website. No additional license grant for the
 
 ## Poster-matched vector redraws
 
-The four files below are newly authored SVG transcriptions of individual panels in the supplied poster. They are clearly identified in the interface as poster-based redraws. Their editable SVG geometry and text are the source files.
+The three files below are SVG transcriptions of individual panels in the supplied poster. They are clearly identified in the interface as poster-based redraws. Their editable SVG geometry and text are the source files.
 
-- `assets/architecture/router-poster.svg` (1800 × 1360): panel 03, vLLM Router. Retains the poster's API, profiling/monitoring, scheduling, cache, transport, and worker hierarchy. Three tiny annotations that could not be read reliably were omitted. The small vLLM mark is a vector approximation. This depicts the poster concept and is not a claim about the current project implementation.
+- `assets/architecture/router-poster.svg` (1800 × 1360): panel 03, vllm-router. Retains the poster's API, profiling/monitoring, scheduling, cache, transport, and worker hierarchy. Three tiny annotations that could not be read reliably were omitted. The small vLLM mark is a vector approximation. The redraw uses the site’s vllm-router spelling. This depicts the poster concept and is not a claim about the current project implementation.
 - `assets/architecture/agent-poster.svg` (1295 × 1260): panel 04, agent-infer. Redraw of the poster architecture, rather than the separately styled architecture image in the current project repository.
 - `assets/architecture/rlt-poster.svg` (1544 × 1028): panel 05, recurrent looped Transformer / OURO inference. Retains the light-background, multiple-pass illustration from the poster. Website text uses the updated recurrent looped Transformer description.
-- `assets/architecture/mlx-poster.svg` (1792 × 1044): panel 06, vllm-omni-mlx. Redraw of the poster's API and modality branches; it does not substitute a later documentation topology.
 
-Source for all four: [the included InferMatrix poster](assets/infermatrix-poster.png). These redraws do not receive an Apache-2.0 license merely because the projects they illustrate use one. No new blanket licensing or trademark permission is asserted.
+Source for all three: [the included InferMatrix poster](assets/infermatrix-poster.png). These redraws do not receive an Apache-2.0 license merely because the projects they illustrate use one. No new blanket licensing or trademark permission is asserted.
 
 ## Runtime fonts
 

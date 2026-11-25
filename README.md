@@ -2,9 +2,9 @@
 
 **Open to Infer. Built to Evolve.**
 
-InferMatrix 开源推理生态展示网站。当前版本提供中文/英文切换、八个项目的分类筛选、架构图缩放查看、生态方向探索、视频资源专栏，以及原始海报下载。
+InferMatrix 开源推理生态展示网站。当前版本提供中文/英文切换、七个项目的分类筛选、架构图缩放查看、生态方向探索、视频资源专栏，以及原始海报下载。
 
-A bilingual, buildless website showcasing eight open-source inference projects: vLLM-Omni, afd-plugin, vLLM Router, agent-infer, vllm-rlt, vllm-omni-mlx, InferRSI, and [vLLM-GR](https://github.com/vllm-project/vllm-gr).
+A bilingual, buildless website showcasing seven open-source inference projects: vLLM-Omni, afd-plugin, vllm-router, agent-infer, vllm-rlt, InferRSI, and [vLLM-GR](https://github.com/vllm-project/vllm-gr).
 
 ## 本地运行 / Run locally
 
@@ -32,7 +32,7 @@ node --check qa-interactions.cjs
 node qa-interactions.cjs
 ```
 
-The interaction suite reads the current `index.html` and runs `app.js` in a simulated DOM using Node's VM. It covers filtering, bilingual content, keyboard navigation, project/poster dialogs, focus return, motion preferences, blocked storage, and all eight architecture viewers. This is a logic regression check; it does not replace real-browser visual or accessibility testing.
+The interaction suite reads the current `index.html` and runs `app.js` in a simulated DOM using Node's VM. It covers filtering, bilingual content, keyboard navigation, project/poster dialogs, focus return, motion preferences, blocked storage, and all seven architecture viewers. This is a logic regression check; it does not replace real-browser visual or accessibility testing.
 
 项目资料和中英文文案集中在 `app.js`。修改项目卡片内容后，重新生成 HTML 中供无 JavaScript 环境阅读的卡片：
 
@@ -57,10 +57,10 @@ Bind each custom domain in its Pages project. The registrar must delegate `infer
 
 ## Latest additions
 
-- A bilingual Video resources column for external learning tutorials and project talks, with project/type filters and search. Eleven links cover vLLM-Omni, afd-plugin and vLLM Router, with available publisher information and verification sources retained.
+- A bilingual Video resources column for external learning tutorials and project talks, with project/type filters and search. Eleven links cover vLLM-Omni, afd-plugin and vllm-router, with available publisher information and verification sources retained.
 - A video showcase with vLLM-Omni, InferRSI, and vLLM-GR groups, local poster previews, click-to-play and fullscreen controls.
 - A bilingual Partners section at the end of the page, with the supplied OpenDirector logo and links to ThinkFlowLab/OpenDirector.
-- InferRSI as a seventh project and an evidence-driven optimization direction, with a brand-styled, scalable architecture SVG.
+- InferRSI as an evidence-driven optimization direction, with a brand-styled, scalable architecture SVG.
 - Qwen3-TTS and Drama 3 dedicated-engine examples with pinned, workload-specific C1/C64 audio-throughput comparisons. See `INFERRSI.md` and `BENCHMARK_EVIDENCE.json`; these are author-reported results, not independently rerun benchmarks.
 - MiniCPM-o 4.5 single-GPU streaming speech: H200 target configuration with explicitly labelled L20X source C1/C32 measurements and reproduction links. The all-metric 2× target is unmet; the measured r11 profile has a HiFT numerical failure and pending speech-quality gates.
 - h3-metal as a fourth dedicated-engine example: original H3 and distilled FastH3 on Apple M5 Max, with separate cold/warm measurements, pinned evidence and explicit checkpoint/quality limitations.
@@ -84,7 +84,7 @@ for the optional dependency-free Node preview and interaction checklist.
 
 首页导航的「视频资源」指向 `#video-resources`，与「演示展示」分别维护。专栏收录学习教程、技术分享和宣讲回放的外部链接，点击后在新窗口打开原发布平台，不嵌入或下载视频。
 
-资源清单集中在 `assets/video-resources.json`。当前收录 11 条：vLLM-Omni 8 条、afd-plugin 2 条、vLLM Router 1 条；其他五个项目暂无已收录的教程或宣讲回放。用户指定合集分集时保留 `p` 参数，并移除分享链接中的跟踪参数；可用 B 站官方分页元数据核实分集标题、讲者（标题明确标注时）与时长。每添加一条资源，填写以下格式；示例仅说明字段，不是已收录的视频：
+资源清单集中在 `assets/video-resources.json`。当前收录 11 条：vLLM-Omni 8 条、afd-plugin 2 条、vllm-router 1 条；其他四个项目暂无已收录的教程或宣讲回放。用户指定合集分集时保留 `p` 参数，并移除分享链接中的跟踪参数；可用 B 站官方分页元数据核实分集标题、讲者（标题明确标注时）与时长。每添加一条资源，填写以下格式；示例仅说明字段，不是已收录的视频：
 
 ```json
 {
@@ -102,7 +102,7 @@ for the optional dependency-free Node preview and interaction checklist.
 }
 ```
 
-项目 ID：`omni`（vLLM-Omni）、`afd`（afd-plugin）、`router`（vLLM Router）、`agent`（agent-infer）、`rlt`（vllm-rlt）、`mlx`（vllm-omni-mlx）、`inferrsi`（InferRSI）。类型为 `tutorial`（学习教程）或 `talk`（技术分享 / 宣讲）。`publisher`、`speaker`、`publishedAt`、`duration` 可省略；链接必须使用 HTTPS。标题与简介提供中英文，列表按清单顺序显示。发布前核实链接、项目归属和视频内容，清单中不要保留示例占位链接。
+项目 ID：`omni`（vLLM-Omni）、`afd`（afd-plugin）、`router`（vllm-router）、`agent`（agent-infer）、`rlt`（vllm-rlt）、`inferrsi`（InferRSI）、`gr`（vLLM-GR）。类型为 `tutorial`（学习教程）或 `talk`（技术分享 / 宣讲）。`publisher`、`speaker`、`publishedAt`、`duration` 可省略；链接必须使用 HTTPS。标题与简介提供中英文，列表按清单顺序显示。发布前核实链接、项目归属和视频内容，清单中不要保留示例占位链接。
 
 每条已收录资源还保留 `sourceUrl`、`verifiedAt` 和 `sourceNote`，供维护者核对来源、核实日期及证据范围；有依据时记录 `eventDate`。这些维护字段不显示在视频卡片上。`publishedAt` 只填写已确认的视频上传日期，不能用会议日期或配套文章日期代替。中英文标题是便于浏览的编辑文案；原始标题与信息请以来源页面为准。首批资料来源包括 vLLM 官方 Office Hours、Conf42、Red Hat Developer、B 站原视频页面以及 vLLM 小课堂的原视频与课件索引。B 站的部分页面/API 会对自动抓取返回 412；其链接由原始页面索引或配套资料交叉核对，未逐条验证实际播放。
 

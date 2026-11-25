@@ -80,15 +80,11 @@
     "bytes": 28858
   },
   "assets/architecture/router-poster.svg": {
-    "sha256": "5c35d3277b107940d1cf501b5344d5e3a06f68f60cda6b34dfa274b0defdd731",
+    "sha256": "61efde250b429643f4eef6a9e461eebbe7f21cc6848c694a42605f8f80e31f06",
     "bytes": 6824
   },
-  "assets/architecture/mlx.svg": {
-    "sha256": "a5550bbdfda86ed343008589656ed73de93eb9ee07ef84f16db31a716e054ca6",
-    "bytes": 7523
-  },
   "assets/architecture/router.svg": {
-    "sha256": "cc3545981d0ec428efe6dd61d35901b0fc3f8beb50f696616f5eb30a1689faae",
+    "sha256": "4e53fc51f5dfa34f27576c3a31dd1a0397dcc0cf0544fba9c171b61681fd9aea",
     "bytes": 4951
   },
   "assets/architecture/rlt.png": {
@@ -98,10 +94,6 @@
   "assets/architecture/agent.png": {
     "sha256": "bd2c640901e64806fd2e4d7d2914d0ca90ecd0b43207eab6361bbd9e1abeb2ee",
     "bytes": 609129
-  },
-  "assets/architecture/mlx-poster.svg": {
-    "sha256": "fb38f9521354fb072a4e6078cdc5f5867b54cd6264b8e18cd460a4e3dc55868b",
-    "bytes": 4243
   },
   "assets/showcase/h3-metal-inferrsi-en.mp4": {
     "sha256": "605472dc1ba9b7658bf70044d963d3831919d63cad8b0274233281c9aca80d09",
@@ -158,5 +150,9 @@
   "assets/showcase/vllm-gr-intro.jpg": {
     "sha256": "9184ce0d961ca79f9b407b10783da985c121107915044661c01a993a6fd33b69",
     "bytes": 33886
+  },
+  "assets/video-resources.json": {
+    "sha256": "b4a19484c9c514e48b1c30301e0189fb83cc46680d1088681ec29b913d70ce5a",
+    "bytes": 12101
   }
 }

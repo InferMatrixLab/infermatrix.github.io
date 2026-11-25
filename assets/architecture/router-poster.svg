@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1360" viewBox="0 0 1800 1360" role="img" aria-labelledby="title desc">
-<title id="title">vLLM Router — faithful redraw of poster panel 03</title>
+<title id="title">vllm-router — faithful redraw of poster panel 03</title>
 <desc id="desc">Poster architecture with API Server, three APIs, Workflow Profiler, Worker Monitor, Global Scheduler containing DP/PD Aware, Agent Aware and Cache Aware, Tokenizer and Token Cache, HTTP/ZMQ/gRPC transport, and HTTP and ZMQ/gRPC workers. Three tiny source annotations are omitted because they cannot be read reliably in the provided poster. This reproduces the poster concept and is not a statement of current implementation.</desc>
 <defs><marker id="arrow" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0 0L5 2.5L0 5Z" fill="#92aac1"/></marker></defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#23435a;text-anchor:middle} .title{font-weight:700;fill:#16384f} .label{font-weight:500} .note{font-size:28px;fill:#567287} .line{fill:none;stroke:#8ea8bf;stroke-width:4;stroke-linecap:round;stroke-linejoin:round} .faint{stroke:#dfe7ef} .dash{stroke-dasharray:10 10}</style>
@@ -20,7 +20,7 @@
 <path d="M953 940V1030H416V1168" class="line faint" marker-end="url(#arrow)"/>
 <path d="M953 1030H1428V1168" class="line faint" marker-end="url(#arrow)"/>
 <text x="900" y="73" font-size="46" class="title" font-weight="700">
-<tspan x="900" dy="0">vLLM-Router</tspan>
+<tspan x="900" dy="0">vllm-router</tspan>
 </text>
 <rect x="64" y="117" width="1672" height="213" rx="12" fill="#eaf2ff" stroke="#9dc1f7" stroke-width="3"/>
 <text x="900" y="169" font-size="44" class="title" font-weight="700">

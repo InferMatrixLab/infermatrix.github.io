@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1180" viewBox="0 0 1600 1180" role="img" aria-labelledby="title desc">
-<title id="title">vLLM Router: documented request and backend architecture</title>
-<desc id="desc">OpenAI-compatible HTTP requests enter vLLM Router. Native request-level routing or explicitly enabled Program scheduling determines placement. The router manages discovery, health, retries and metrics. A deployment uses a homogeneous HTTP or gRPC worker pool. HTTP proxies OpenAI requests. The gRPC path renders and tokenizes chat, sends token IDs using Inference.GenerateStream, and adapts output to OpenAI JSON or SSE. Diagram redrawn from official documentation.</desc>
+<title id="title">vllm-router: documented request and backend architecture</title>
+<desc id="desc">OpenAI-compatible HTTP requests enter vllm-router. Native request-level routing or explicitly enabled Program scheduling determines placement. The router manages discovery, health, retries and metrics. A deployment uses a homogeneous HTTP or gRPC worker pool. HTTP proxies OpenAI requests. The gRPC path renders and tokenizes chat, sends token IDs using Inference.GenerateStream, and adapts output to OpenAI JSON or SSE. Diagram redrawn from official documentation.</desc>
 <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#4276a8" stroke-width="1.8"/></marker>
 <style>
 text {font-family:Arial,Helvetica,sans-serif;fill:#17344e}
@@ -13,14 +13,14 @@ text {font-family:Arial,Helvetica,sans-serif;fill:#17344e}
 .optional {fill:#f5f2ff;stroke:#b49adc;stroke-width:2;stroke-dasharray:9 6}
 </style></defs>
 <rect width="1600" height="1180" fill="#fff"/>
-<text class="title" x="800" y="64" text-anchor="middle">vLLM Router</text>
+<text class="title" x="800" y="64" text-anchor="middle">vllm-router</text>
 <text class="small" x="800" y="106" text-anchor="middle">Documented runtime architecture · October 2026</text>
 <rect class="box" x="390" y="145" width="820" height="88" rx="15" fill="#f1f7fd"/>
 <text class="h" x="800" y="182" text-anchor="middle">Clients / SDKs</text>
 <text class="body" x="800" y="217" text-anchor="middle">OpenAI-compatible HTTP requests</text>
 <path class="arrow" d="M800 233V290"/>
 <rect x="60" y="291" width="1480" height="530" rx="24" fill="#f6f9ff" stroke="#80a9d1" stroke-width="2.5"/>
-<text class="h" x="100" y="338">vLLM Router · HTTP ingress and request forwarding</text>
+<text class="h" x="100" y="338">vllm-router · HTTP ingress and request forwarding</text>
 <path d="M800 354V375M800 375H420V398M800 375H1180V398" fill="none" stroke="#4276a8" stroke-width="3"/>
 <path class="arrow" d="M420 387V410"/><path class="arrow" d="M1180 387V410"/>
 <rect class="box" x="100" y="410" width="640" height="163" rx="15"/>

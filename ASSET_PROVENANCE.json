@@ -31,15 +31,15 @@
     },
     {
       "file": "assets/architecture/router-poster.svg",
-      "project": "vLLM Router",
+      "project": "vllm-router",
       "origin": "poster-vector-redraw",
       "sourceFile": "assets/infermatrix-poster.png",
       "sourcePanel": 3,
       "license": "No new license grant asserted",
       "width": 1800,
       "height": 1360,
-      "changes": "Native SVG transcription of supplied poster; see ATTRIBUTION.md for scope and caveats",
-      "sha256": "5c35d3277b107940d1cf501b5344d5e3a06f68f60cda6b34dfa274b0defdd731",
+      "changes": "Poster transcription with updated project spelling; see ATTRIBUTION.md",
+      "sha256": "61efde250b429643f4eef6a9e461eebbe7f21cc6848c694a42605f8f80e31f06",
       "bytes": 6824
     },
     {
@@ -67,19 +67,6 @@
       "changes": "Native SVG transcription of supplied poster; see ATTRIBUTION.md for scope and caveats",
       "sha256": "9699db2e0fd79309702d52c467fa09b318ae8bb30a8c29ecf8da0b04c5167cf3",
       "bytes": 6257
-    },
-    {
-      "file": "assets/architecture/mlx-poster.svg",
-      "project": "vllm-omni-mlx",
-      "origin": "poster-vector-redraw",
-      "sourceFile": "assets/infermatrix-poster.png",
-      "sourcePanel": 6,
-      "license": "No new license grant asserted",
-      "width": 1792,
-      "height": 1044,
-      "changes": "Native SVG transcription of supplied poster; see ATTRIBUTION.md for scope and caveats",
-      "sha256": "fb38f9521354fb072a4e6078cdc5f5867b54cd6264b8e18cd460a4e3dc55868b",
-      "bytes": 4243
     },
     {
       "file": "assets/infermatrix-logo.png",
