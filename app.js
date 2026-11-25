@@ -87,7 +87,16 @@ const capabilities = {
   agentic: { number:'02', names:['agent-infer'], title:{en:'Inference for agents.',zh:'为智能体工作负载而探索。'}, description:{en:'Discover agent-infer, a vLLM-based inference framework focused on agentic workloads. Follow the project from architecture to implementation.',zh:'认识 agent-infer：基于 vLLM、聚焦智能体工作负载的推理框架。从架构出发，深入了解项目实现。'} },
   infrastructure: { number:'03', names:['afd-plugin','vllm-router'], title:{en:'Rethink the serving layer.',zh:'重新思考推理服务层。'}, description:{en:'Explore two infrastructure directions: Attention-FFN Disaggregation with the experimental afd-plugin, and large-scale request forwarding with vllm-router.',zh:'探索两个基础设施方向：实验性 afd-plugin 带来的 Attention-FFN 分离，以及 vllm-router 面向大规模部署的请求转发。'} },
   recurrent: { number:'04', names:['vllm-rlt'], title:{en:'A different path through inference.',zh:'探索循环迭代推理。'}, description:{en:'Meet vllm-rlt: a standalone inference and serving engine for recurrent looped transformers. Explore its architecture and current implementation in the repository.',zh:'认识 vllm-rlt：面向循环迭代 Transformer 的独立推理与服务引擎。在项目仓库中探索架构与当前实现。'} },
-  optimization: { number:'05', names:['InferRSI'], title:{en:'Let inference evolve.',zh:'让推理，在探索中自主进化。'}, description:{en:'Explore InferRSI’s evidence-driven optimization loop: propose changes, benchmark candidates, validate results, and retain failed directions for future investigation. Discover dedicated-engine examples for Qwen3-TTS and Drama-3.',zh:'通过 InferRSI 探索以证据驱动的推理自主优化闭环：提出改进、运行基准、验证结果，并记录失败方向供后续排查。了解 Qwen3-TTS 与 Drama-3 专用引擎示例。'} }
+  optimization: { number:'05', names:['InferRSI'], title:{en:'Let inference evolve.',zh:'让推理，在探索中自主进化。'}, description:{en:'Explore InferRSI’s evidence-driven optimization loop: propose changes, benchmark candidates, validate results, and retain failed directions for future investigation. Discover dedicated-engine examples for Qwen3-TTS and Drama-3.',zh:'通过 InferRSI 探索以证据驱动的推理自主优化闭环：提出改进、运行基准、验证结果，并记录失败方向供后续排查。了解 Qwen3-TTS 与 Drama-3 专用引擎示例。'} },
+  recommendation: {
+    number: '06',
+    names: ['vLLM-GR'],
+    title: { en: 'Inference for generative recommendation.', zh: '探索生成式推荐推理。' },
+    description: {
+      en: 'Explore vLLM-GR, a framework that generates ranked item recommendations from user interaction history. See the project repository for supported models and the OneRec quickstart.',
+      zh: '了解 vLLM-GR 如何根据用户交互历史生成排序后的候选物品。支持的模型和 OneRec 快速入门可在项目仓库中查看。'
+    }
+  }
 };
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
