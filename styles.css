@@ -261,13 +261,17 @@ html[lang=zh-CN] .hero-description{font-size:20px;max-width:550px;line-height:1.
 .engine-benchmark{margin:24px 0;padding:22px 0;border-top:1px solid #29445f;border-bottom:1px solid #29445f}.benchmark-label{font-size:14px;letter-spacing:.02em;color:#9bbbdc;margin-bottom:18px}.benchmark-grid{display:grid;grid-template-columns:.65fr 1fr 1fr;gap:20px 12px;align-items:center}.benchmark-grid strong{display:block;font-family:var(--display);font-size:clamp(25px,2.6vw,37px);line-height:1.15;color:#6bdbf2;letter-spacing:-1px}.benchmark-grid span{display:block;font-size:13px;color:#a9bdd5;margin-top:7px}.benchmark-cohort{font:700 23px var(--mono);color:#f4f7fe}.benchmark-cohort span{font:13px var(--font)}.rsi-example .benchmark-note{font-size:13px;line-height:1.7;color:#a6b8d0;margin:20px 0 12px}.benchmark-source{font-size:14px;color:#80c6ff;text-decoration:underline;text-underline-offset:4px}@media(max-width:400px){.engine-benchmark{padding:18px 0}.benchmark-grid{gap:18px 8px;grid-template-columns:.56fr 1fr 1fr}.benchmark-grid strong{font-size:27px}.benchmark-grid span{font-size:12px}}
 
 /* Five exploration directions, including autonomous inference optimization. */
-.explorer-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
+.explorer-tabs{grid-template-columns:repeat(6,minmax(0,1fr))}
 .explorer-tab{min-width:0;white-space:normal;line-height:1.5}
+.node-gr{left:50%;bottom:2%;transform:translateX(-50%)}
 .node-rsi{top:3%;left:50%;transform:translateX(-50%)}
-.constellation[data-mode=optimization] [data-connect=optimization]{opacity:.9}
-.constellation[data-mode=optimization] [data-node=optimization]{color:#acdfff}
-.constellation[data-mode=optimization] [data-node=optimization] .node-symbol{color:#6acbf8;border-color:#3a88b8;box-shadow:0 0 24px #158fda22;background:#10304a}
-@media(max-width:680px){.explorer-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.explorer-tab:last-child{grid-column:1/-1}.node-rsi{top:2%}.capability-strip{overflow-x:auto}}
+.constellation[data-mode=optimization] [data-connect=optimization],
+.constellation[data-mode=recommendation] [data-connect=recommendation]{opacity:.9}
+.constellation[data-mode=optimization] [data-node=optimization],
+.constellation[data-mode=recommendation] [data-node=recommendation]{color:#acdfff}
+.constellation[data-mode=optimization] [data-node=optimization] .node-symbol,
+.constellation[data-mode=recommendation] [data-node=recommendation] .node-symbol{color:#6acbf8;border-color:#3a88b8;box-shadow:0 0 24px #158fda22;background:#10304a}
+@media(max-width:680px){.explorer-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.node-rsi{top:2%}.capability-strip{overflow-x:auto}}
 
 /* Four dedicated-engine examples retain balanced two-column cards on desktop. */
 

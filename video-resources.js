@@ -5,7 +5,7 @@
 
   const projects = {
     omni: 'vLLM-Omni', afd: 'afd-plugin', router: 'vLLM Router',
-    agent: 'agent-infer', rlt: 'vllm-rlt', mlx: 'vllm-omni-mlx', inferrsi: 'InferRSI'
+    agent: 'agent-infer', rlt: 'vllm-rlt', mlx: 'vllm-omni-mlx', inferrsi: 'InferRSI', gr: 'vLLM-GR'
   };
   const copy = {
     zh: {

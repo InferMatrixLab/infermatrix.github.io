@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('fs'),vm=require('vm'),assert=require('assert');
-const fixture=JSON.parse(fs.readFileSync(__dirname+'/dom-fixture.json'));
+const html=fs.readFileSync(__dirname+'/index.html','utf8');
 let doc;
 class Element {
  constructor(tag,attrs={},text=''){this.tagName=tag;this.attrs={...attrs};this._text=text;this.children=[];this.parentNode=null;this.listeners={};this.scrollLeft=0;this.scrollTop=0;this.styles={};this.style={setProperty:(k,v)=>this.styles[k]=v,removeProperty:k=>delete this.styles[k]};this.classList={contains:c=>this.classes.includes(c),add:c=>this.setClass([...new Set([...this.classes,c])]),remove:c=>this.setClass(this.classes.filter(x=>x!==c)),toggle:(c,v)=>{let on=v===undefined?!this.classes.includes(c):v;on?this.classList.add(c):this.classList.remove(c);return on;}};}
@@ -34,32 +34,31 @@ function parseMarkup(html){
  }
  return root.children;
 }
-function build(f){const e=new Element(f.tag,f.attrs,f.text);e.children=f.children.map(build);e.children.forEach(c=>c.parentNode=e);return e}
 function run({storageFail=false,reduced=false}={}){
- const root=build(fixture);doc={documentElement:root,body:root.querySelector('body'),activeElement:null,querySelector:s=>root.matches(s)?root:root.querySelector(s),querySelectorAll:s=>root.querySelectorAll(s),contains:e=>root.contains(e),listeners:{},addEventListener(n,f){(this.listeners[n]??=[]).push(f)}};
+ const [root]=parseMarkup(html);doc={documentElement:root,body:root.querySelector('body'),activeElement:null,querySelector:s=>root.matches(s)?root:root.querySelector(s),querySelectorAll:s=>root.querySelectorAll(s),contains:e=>root.contains(e),listeners:{},addEventListener(n,f){(this.listeners[n]??=[]).push(f)}};
  const storage={};const media={matches:reduced,addEventListener(){}};
  const ctx={document:doc,window:{matchMedia:()=>media},localStorage:{getItem:k=>{if(storageFail)throw Error('blocked');return storage[k]??null},setItem:(k,v)=>{if(storageFail)throw Error('blocked');storage[k]=v}},requestAnimationFrame:f=>{f();return 1},cancelAnimationFrame(){},console};vm.createContext(ctx);vm.runInContext(fs.readFileSync(__dirname+'/app.js','utf8'),ctx);return {ctx,doc,root,storage};
 }
 const {ctx}=run();const q=s=>doc.querySelector(s),qa=s=>doc.querySelectorAll(s),exec=s=>vm.runInContext(s,ctx);
-assert.equal(doc.documentElement.lang,'zh-CN');assert.equal(qa('.project-card').length,7);assert.equal(qa('.project-card').filter(e=>!e.hidden).length,7);
-for(const [filter,count]of Object.entries({multimodal:2,infrastructure:2,agentic:1,recurrent:1,all:7})){q(`.filter-button[data-filter="${filter}"]`).dispatch('click');assert.equal(qa('.project-card').filter(e=>!e.hidden).length,count);assert.equal(q(`.filter-button[data-filter="${filter}"]`).getAttribute('aria-pressed'),'true');}
+assert.equal(doc.documentElement.lang,'zh-CN');assert.equal(qa('.project-card').length,8);assert.equal(qa('.project-card').filter(e=>!e.hidden).length,8);
+for(const [filter,count]of Object.entries({multimodal:2,infrastructure:2,agentic:1,recurrent:1,optimization:1,recommendation:1,all:8})){q(`.filter-button[data-filter="${filter}"]`).dispatch('click');assert.equal(qa('.project-card').filter(e=>!e.hidden).length,count);assert.equal(q(`.filter-button[data-filter="${filter}"]`).getAttribute('aria-pressed'),'true');}
 q('#language-toggle').dispatch('click');assert.equal(doc.documentElement.lang,'en');assert.ok(q('#project-grid').innerHTML.includes('A standalone inference and serving engine for recurrent looped transformers.'));q('#language-toggle').dispatch('click');assert.equal(doc.documentElement.lang,'zh-CN');
-for(const capability of ['agentic','infrastructure','recurrent','optimization','multimodal']){q(`.explorer-tab[data-capability="${capability}"]`).dispatch('click');assert.equal(q('#constellation').dataset.mode,capability);assert.equal(q('#capability-panel').getAttribute('aria-labelledby'),'tab-'+capability);assert.equal(qa('.explorer-tab').filter(e=>e.tabIndex===0).length,1);}
+for(const capability of ['agentic','infrastructure','recurrent','optimization','recommendation','multimodal']){q(`.explorer-tab[data-capability="${capability}"]`).dispatch('click');assert.equal(q('#constellation').dataset.mode,capability);assert.equal(q('#capability-panel').getAttribute('aria-labelledby'),'tab-'+capability);assert.equal(qa('.explorer-tab').filter(e=>e.tabIndex===0).length,1);}
 q('.explorer-tabs').dispatch('keydown',{key:'ArrowRight',preventDefault(){}});assert.equal(q('#constellation').dataset.mode,'agentic');q('#capability-link').dispatch('click');assert.equal(qa('.project-card').filter(e=>!e.hidden).length,1);
-q('.explorer-tabs').dispatch('keydown',{key:'End',preventDefault(){}});assert.equal(q('#constellation').dataset.mode,'optimization');q('.explorer-tabs').dispatch('keydown',{key:'Home',preventDefault(){}});assert.equal(q('#constellation').dataset.mode,'multimodal');
+q('.explorer-tabs').dispatch('keydown',{key:'End',preventDefault(){}});assert.equal(q('#constellation').dataset.mode,'recommendation');q('.explorer-tabs').dispatch('keydown',{key:'Home',preventDefault(){}});assert.equal(q('#constellation').dataset.mode,'multimodal');
 q('#menu-toggle').dispatch('click');assert.equal(q('#menu-toggle').getAttribute('aria-expanded'),'true');q('#main-nav a').dispatch('click');assert.equal(q('#menu-toggle').getAttribute('aria-expanded'),'false');
 const trigger=qa('[data-open-project]').find(e=>e.dataset.openProject==='rlt');q('#project-grid').dispatch('click',{target:trigger});assert.equal(q('#project-dialog').getAttribute('open'),'');assert.ok(q('#project-dialog-content').innerHTML.includes('recurrent looped transformers'));q('[data-close="project-dialog"]').dispatch('click');assert.equal(q('#project-dialog').getAttribute('open'),null);assert.equal(doc.activeElement,trigger);
 q('#poster-open').dispatch('click');assert.equal(q('#poster-dialog').getAttribute('open'),'');q('[data-close="poster-dialog"]').dispatch('click');assert.equal(q('#poster-dialog').getAttribute('open'),null);
 q('#motion-toggle').dispatch('click');assert.equal(q('#motion-toggle').getAttribute('aria-pressed'),'true');assert.ok(doc.documentElement.classList.contains('motion-paused'));q('#motion-toggle').dispatch('click');assert.equal(q('#motion-toggle').getAttribute('aria-pressed'),'false');
-run({storageFail:true});assert.equal(q('#project-grid').children.length,7);run({reduced:true});assert.equal(q('#motion-toggle').getAttribute('aria-pressed'),'true');assert.equal(q('#motion-toggle').disabled,true);assert.ok(doc.documentElement.classList.contains('motion-paused'));
-console.log('PASS: initial Chinese rendering; all five category filters; EN/ZH toggle; all five capability modes; keyboard Left/Right/Home/End state; related-project filtering; mobile menu; project dialog open/close and focus return; poster dialog; pause/resume; blocked localStorage; reduced-motion preference.');
+run({storageFail:true});assert.equal(q('#project-grid').children.length,8);run({reduced:true});assert.equal(q('#motion-toggle').getAttribute('aria-pressed'),'true');assert.equal(q('#motion-toggle').disabled,true);assert.ok(doc.documentElement.classList.contains('motion-paused'));
+console.log('PASS: initial Chinese rendering; all six category filters; EN/ZH toggle; all six capability modes; keyboard Left/Right/Home/End state; related-project filtering; mobile menu; project dialog open/close and focus return; poster dialog; pause/resume; blocked localStorage; reduced-motion preference.');
 console.log('Verification is a VM DOM simulation, not a rendered browser test.');
 
 // Full-resolution diagrams and image-viewer interactions.
 const fresh=run();const act=code=>vm.runInContext(code,fresh.ctx);
 const assetMap=JSON.parse(act('JSON.stringify(architectureAssets)'));
-assert.equal(Object.keys(assetMap).length,7,'Every project has a dedicated architecture asset');
-for(const project of ['omni','afd','router','agent','rlt','mlx','inferrsi']){
+assert.equal(Object.keys(assetMap).length,8,'Every project has a dedicated architecture asset');
+for(const project of ['omni','afd','router','agent','rlt','mlx','inferrsi','gr']){
  const opener=qa('[data-open-project]').find(e=>e.dataset.openProject===project);
  q('#project-grid').dispatch('click',{target:opener});
  const viewer=q('#architecture-viewer'),img=q('#architecture-image');
@@ -93,9 +92,25 @@ for(const project of ['omni','afd','router','agent','rlt','mlx','inferrsi']){
 q('#language-toggle').dispatch('click');const opener=qa('[data-open-project]')[0];q('#project-grid').dispatch('click',{target:opener});
 assert.equal(q('[data-zoom="in"]').getAttribute('aria-label'),'Zoom in');
 assert.ok(q('#project-dialog-content').innerHTML.includes('Open original'));
-console.log('PASS: six standalone asset files; viewer actual-layout zoom, keyboard shortcuts, original size, fit reset, limits, source/download links, bilingual labels, and close focus return.');
+console.log('PASS: eight standalone asset files; viewer actual-layout zoom, keyboard shortcuts, original size, fit reset, limits, source/download links, bilingual labels, and close focus return.');
 
-const finalRun=run();vm.runInContext("setCapability('optimization')",finalRun.ctx);assert.equal(q('#capability-counter').textContent,'探索方向 05 / 05');q('#capability-link').dispatch('click');assert.equal(qa('.project-card').filter(e=>!e.hidden).length,1);assert.ok(q('#capability-description').textContent.includes('失败方向'));vm.runInContext("setLanguage('en')",finalRun.ctx);assert.equal(q('#tab-optimization [data-i18n]').innerHTML,'Autonomous inference optimization');console.log('PASS: fifth RSI direction, related InferRSI filter, bilingual text, counter 05/05.');
+const finalRun=run();vm.runInContext("setCapability('optimization')",finalRun.ctx);assert.equal(q('#capability-counter').textContent,'探索方向 05 / 06');q('#capability-link').dispatch('click');assert.equal(qa('.project-card').filter(e=>!e.hidden).length,1);assert.ok(q('#capability-description').textContent.includes('失败方向'));vm.runInContext("setLanguage('en')",finalRun.ctx);assert.equal(q('#tab-optimization [data-i18n]').innerHTML,'Autonomous inference optimization');console.log('PASS: fifth RSI direction, related InferRSI filter, bilingual text, counter 05/06.');
+
+// The recommendation direction should reach the same project as the static card.
+{
+ const [page]=parseMarkup(html);
+ const card=page.querySelector('.project-card[data-project="gr"]');
+ assert.equal(card.querySelector('.github-link').getAttribute('href'),'https://github.com/vllm-project/vllm-gr');
+ assert.equal(card.querySelector('img').getAttribute('src'),assetMap.gr.src);
+ q('#tab-recommendation').dispatch('click');
+ assert.equal(q('#capability-counter').textContent,'DIRECTION 06 / 06');
+ q('#capability-link').dispatch('click');
+ assert.deepEqual(qa('.project-card').filter(e=>!e.hidden).map(e=>e.dataset.project),['gr']);
+ assert.equal(q('#filter-count').textContent,'SHOWING 01 / 08');
+ q('#language-toggle').dispatch('click');
+ assert.equal(q('#tab-recommendation [data-i18n]').innerHTML,'生成式推荐');
+ assert.equal(q('#filter-count').textContent,'显示 01 / 08');
+}
 
 // Dedicated-engine content must survive both language directions without losing evidence qualifiers.
 {

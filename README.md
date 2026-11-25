@@ -2,9 +2,9 @@
 
 **Open to Infer. Built to Evolve.**
 
-InferMatrix 开源推理生态展示网站。当前版本提供中文/英文切换、七个项目的分类筛选、架构图缩放查看、生态方向探索、视频资源专栏，以及原始海报下载。
+InferMatrix 开源推理生态展示网站。当前版本提供中文/英文切换、八个项目的分类筛选、架构图缩放查看、生态方向探索、视频资源专栏，以及原始海报下载。
 
-A bilingual, buildless website showcasing seven open-source inference projects: vLLM-Omni, afd-plugin, vLLM Router, agent-infer, vllm-rlt, vllm-omni-mlx, and InferRSI.
+A bilingual, buildless website showcasing eight open-source inference projects: vLLM-Omni, afd-plugin, vLLM Router, agent-infer, vllm-rlt, vllm-omni-mlx, InferRSI, and vLLM-GR.
 
 ## 本地运行 / Run locally
 
@@ -32,7 +32,7 @@ node --check qa-interactions.cjs
 node qa-interactions.cjs
 ```
 
-The interaction suite reads the current `index.html` and runs `app.js` in a simulated DOM using Node's VM. It covers filtering, bilingual content, keyboard navigation, project/poster dialogs, focus return, motion preferences, blocked storage, and all six architecture viewers. This is a logic regression check; it does not replace real-browser visual or accessibility testing.
+The interaction suite reads the current `index.html` and runs `app.js` in a simulated DOM using Node's VM. It covers filtering, bilingual content, keyboard navigation, project/poster dialogs, focus return, motion preferences, blocked storage, and all eight architecture viewers. This is a logic regression check; it does not replace real-browser visual or accessibility testing.
 
 项目资料和中英文文案集中在 `app.js`。修改项目卡片内容后，重新生成 HTML 中供无 JavaScript 环境阅读的卡片：
 
@@ -56,6 +56,8 @@ For the brand site, select framework `None`, leave the build command empty, and 
 Bind each custom domain in its Pages project. The registrar must delegate `infermatrix.si` to the Cloudflare nameservers assigned to the zone before the custom domains can become active. Both sites are public and require no sign-in.
 
 ## Latest additions
+
+- vLLM-GR brings generative recommendation to the ecosystem. The project card links to the repository and includes its [official architecture figure and attribution](assets/architecture/gr.svg.license).
 
 - A bilingual Video resources column for external learning tutorials and project talks, with project/type filters and search. Eleven links cover vLLM-Omni, afd-plugin and vLLM Router, with available publisher information and verification sources retained.
 - A repo-grouped video showcase with seven vLLM-Omni videos (including two OpenDirector collaborations) and two InferRSI English demos, local poster previews, click-to-play and fullscreen controls.
@@ -102,7 +104,7 @@ for the optional dependency-free Node preview and interaction checklist.
 }
 ```
 
-项目 ID：`omni`（vLLM-Omni）、`afd`（afd-plugin）、`router`（vLLM Router）、`agent`（agent-infer）、`rlt`（vllm-rlt）、`mlx`（vllm-omni-mlx）、`inferrsi`（InferRSI）。类型为 `tutorial`（学习教程）或 `talk`（技术分享 / 宣讲）。`publisher`、`speaker`、`publishedAt`、`duration` 可省略；链接必须使用 HTTPS。标题与简介提供中英文，列表按清单顺序显示。发布前核实链接、项目归属和视频内容，清单中不要保留示例占位链接。
+项目 ID：`omni`（vLLM-Omni）、`afd`（afd-plugin）、`router`（vLLM Router）、`agent`（agent-infer）、`rlt`（vllm-rlt）、`mlx`（vllm-omni-mlx）、`inferrsi`（InferRSI）、`gr`（vLLM-GR）。类型为 `tutorial`（学习教程）或 `talk`（技术分享 / 宣讲）。`publisher`、`speaker`、`publishedAt`、`duration` 可省略；链接必须使用 HTTPS。标题与简介提供中英文，列表按清单顺序显示。发布前核实链接、项目归属和视频内容，清单中不要保留示例占位链接。
 
 每条已收录资源还保留 `sourceUrl`、`verifiedAt` 和 `sourceNote`，供维护者核对来源、核实日期及证据范围；有依据时记录 `eventDate`。这些维护字段不显示在视频卡片上。`publishedAt` 只填写已确认的视频上传日期，不能用会议日期或配套文章日期代替。中英文标题是便于浏览的编辑文案；原始标题与信息请以来源页面为准。首批资料来源包括 vLLM 官方 Office Hours、Conf42、Red Hat Developer、B 站原视频页面以及 vLLM 小课堂的原视频与课件索引。B 站的部分页面/API 会对自动抓取返回 412；其链接由原始页面索引或配套资料交叉核对，未逐条验证实际播放。
 
