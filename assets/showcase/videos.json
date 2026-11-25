@@ -169,5 +169,43 @@
     "originalName": "InferRSI 英文宣传.mp4",
     "webOptimized": true,
     "sizeBytes": 11396590
+  },
+  {
+    "id": "vllm-gr-release",
+    "repo": "gr",
+    "title": "vLLM-GR · Release",
+    "description": {
+      "zh": "B 站发布短片《vLLM-GR正式发布》。",
+      "en": "The vLLM-GR release video, originally published on Bilibili."
+    },
+    "duration": 30,
+    "width": 1280,
+    "height": 720,
+    "src": "assets/showcase/vllm-gr-release.mp4",
+    "poster": "assets/showcase/vllm-gr-release.jpg",
+    "source": "https://github.com/InferMatrixLab/infermatrix-marketing/blob/fe90b2bbe0e1fdaa0f3eb210ebf48cf5dbde2f6b/vllm_gr/video/vLLM-GR%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83%20%5BBV198yzzcEhD%5D.mp4",
+    "sourceCommit": "fe90b2bbe0e1fdaa0f3eb210ebf48cf5dbde2f6b",
+    "originalName": "vLLM-GR正式发布 [BV198yzzcEhD].mp4",
+    "webOptimized": true,
+    "sizeBytes": 1264314
+  },
+  {
+    "id": "vllm-gr-intro",
+    "repo": "gr",
+    "title": "vLLM-GR · 90-second overview",
+    "description": {
+      "zh": "90 秒宣传视频，介绍面向生成式推荐模型的推理与服务框架。",
+      "en": "A 90-second introduction to the inference and serving framework for generative recommendation models."
+    },
+    "duration": 90,
+    "width": 1920,
+    "height": 1080,
+    "src": "assets/showcase/vllm-gr-intro.mp4",
+    "poster": "assets/showcase/vllm-gr-intro.jpg",
+    "source": "https://github.com/InferMatrixLab/infermatrix-marketing/blob/fe90b2bbe0e1fdaa0f3eb210ebf48cf5dbde2f6b/vllm_gr/video/vLLM-GR_Claude%E4%BC%98%E5%8C%96%E7%89%88_90%E7%A7%92_2K.mp4",
+    "sourceCommit": "fe90b2bbe0e1fdaa0f3eb210ebf48cf5dbde2f6b",
+    "originalName": "vLLM-GR_Claude优化版_90秒_2K.mp4",
+    "webOptimized": true,
+    "sizeBytes": 20731953
   }
 ]

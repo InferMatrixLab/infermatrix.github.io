@@ -24,8 +24,8 @@
     "bytes": 9895797
   },
   "assets/showcase/videos.json": {
-    "sha256": "1fb8ba394b6794fc66f4747d5eb01a21b86c25470d6e78bb372bf6e0e41e22ab",
-    "bytes": 6659
+    "sha256": "ac1ab6991c3a73da7af4cdc4e56d141003bb471b7d4d5b3a8c8dde532ef5e55a",
+    "bytes": 8323
   },
   "assets/showcase/personaplex.jpg": {
     "sha256": "ca0c9a6ac2078689449c8d8bc679ce16ee28e2376bbb7c6dee2fea0da7a4f2df",
@@ -142,5 +142,21 @@
   "assets/architecture/gr.svg": {
     "sha256": "420480a121b1be0c375b9374cffcd6e1731b1591457e86db8e1deac2516487b8",
     "bytes": 4400
+  },
+  "assets/showcase/vllm-gr-release.mp4": {
+    "sha256": "db61efa370e09fb7e6e979247469eb9390e6536555ba5281350817f21a8438c6",
+    "bytes": 1264314
+  },
+  "assets/showcase/vllm-gr-release.jpg": {
+    "sha256": "6813361468d8f406b0f573fd6b0261fd03daedba2805e17c8e6e885f65d5b800",
+    "bytes": 23990
+  },
+  "assets/showcase/vllm-gr-intro.mp4": {
+    "sha256": "e5e6f74e18ed6d24771723dcd78e46a536a1b16bae6d89b9ad0172e3312c3bd0",
+    "bytes": 20731953
+  },
+  "assets/showcase/vllm-gr-intro.jpg": {
+    "sha256": "9184ce0d961ca79f9b407b10783da985c121107915044661c01a993a6fd33b69",
+    "bytes": 33886
   }
 }

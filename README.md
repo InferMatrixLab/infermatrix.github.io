@@ -58,7 +58,7 @@ Bind each custom domain in its Pages project. The registrar must delegate `infer
 ## Latest additions
 
 - A bilingual Video resources column for external learning tutorials and project talks, with project/type filters and search. Eleven links cover vLLM-Omni, afd-plugin and vLLM Router, with available publisher information and verification sources retained.
-- A repo-grouped video showcase with seven vLLM-Omni videos (including two OpenDirector collaborations) and two InferRSI English demos, local poster previews, click-to-play and fullscreen controls.
+- A video showcase with vLLM-Omni, InferRSI, and vLLM-GR groups, local poster previews, click-to-play and fullscreen controls.
 - A bilingual Partners section at the end of the page, with the supplied OpenDirector logo and links to ThinkFlowLab/OpenDirector.
 - InferRSI as a seventh project and an evidence-driven optimization direction, with a brand-styled, scalable architecture SVG.
 - Qwen3-TTS and Drama 3 dedicated-engine examples with pinned, workload-specific C1/C64 audio-throughput comparisons. See `INFERRSI.md` and `BENCHMARK_EVIDENCE.json`; these are author-reported results, not independently rerun benchmarks.

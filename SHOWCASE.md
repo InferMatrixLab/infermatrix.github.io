@@ -1,6 +1,6 @@
 # Repository showcase
 
-The `#showcase` section includes seven vLLM-Omni videos and two InferRSI videos, grouped by project. Metadata lives in `assets/showcase/videos.json`; each record declares a repository, title, bilingual description, poster, local video URL, and pinned original source.
+The `#showcase` section includes seven vLLM-Omni videos, two InferRSI videos, and two vLLM-GR videos, grouped by project. Metadata lives in `assets/showcase/videos.json`; each record declares a repository, title, bilingual description, poster, local video URL, and pinned original source.
 
 Source: InferMatrixLab/infermatrix-marketing at commit `5e6b91b881b784aa221db021b12bdeb49b8882da`, `vllm_omni/video/` (2026-10-19).
 
@@ -34,3 +34,11 @@ Source: InferMatrixLab/infermatrix-marketing at commit `d30dfaaba946f5de0f977dd8
 - `OpenDirector_x_vLLM-Omni.mp4` → `assets/showcase/opendirector-vllm-omni.mp4` (45 seconds). The web copy retains 1920 × 1080 resolution and the original audio; video uses H.264 CRF 22 with a 2,400 kb/s rate cap and fast-start metadata.
 - `OpenDirector_x_vLLM-Omni_v3_AppRender.mp4` → `assets/showcase/opendirector-vllm-omni-app-render.mp4` (120 seconds). Original video and audio streams are preserved, remuxed for fast-start playback.
 - Both web assets remain below the hosting file-size limit. Their 960 × 540 JPEG previews are actual frames at 4 seconds, and the original video links are pinned to the source commit above.
+
+## vLLM-GR videos — 2026-11-25
+
+Both originals are archived under `vllm_gr/video/` in [infermatrix-marketing](https://github.com/InferMatrixLab/infermatrix-marketing/tree/fe90b2bbe0e1fdaa0f3eb210ebf48cf5dbde2f6b/vllm_gr/video).
+
+- `vllm-gr-release.mp4`: 30-second release clip downloaded with BBDown from [Bilibili](https://www.bilibili.com/video/BV198yzzcEhD/). The web copy keeps the 720p H.264 video stream, uses AAC-LC audio, and starts playback before the full file downloads.
+- `vllm-gr-intro.mp4`: 90-second clip supplied for the showcase. The web copy is scaled from 1440p to 1080p and encoded as H.264 for faster loading. The original AAC audio is retained.
+- Both poster images are frames from the videos at four seconds.
